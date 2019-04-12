@@ -1,0 +1,37 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        markup = pango
+        interval = 5
+        color_good = '#999999'
+	color_degraded = '#ebcb8b'
+	color_bad = '#ba5e57'
+}
+
+order += "load"
+order += "wireless _first_"
+order += "volume master"
+order += "tztime local"
+
+load {
+        format = "load %5min"
+}
+
+wireless _first_ {
+        format_up = "wifi %essid %quality"
+        format_down = "no WiFi"
+}
+
+volume master {
+        format = "vol %volume"
+        format_muted = "MUTE"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+	format = "%time"
+	format_time = "%a %-d %b %H:%M"
+}
+
