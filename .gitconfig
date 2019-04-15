@@ -1,0 +1,5 @@
+[user]
+	name = Gadzhi Kharkharov
+	email = me@kkga.me
+[credential]
+	helper = cache --timeout=999999999
