@@ -1,0 +1,102 @@
+# Config for sway.
+# Copy this to ~/.config/sway/config and edit it to your liking.
+# Read `man 5 sway` for a complete reference.
+# Author: Gadzhi Kharkharov <me@kkga.me>
+
+###############################################################################
+# TODO:
+#   + Sway:
+#      - Autoassign workspaces to certain applications
+#      - Unlock keychain after login
+#      -
+#   + SwayBar:
+#     - Show language layout for currently used keyboard
+###############################################################################
+
+
+# Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term alacritty
+# Your preferred application launcher
+# Note: it's recommended that you pass the final command to sway
+#set $menu dmenu_path | dmenu | xargs swaymsg exec
+set $menu rofi -show drun swaymsg exec
+
+# font
+font pango:Iosevka 0
+
+# window borders
+#hide_edge_borders smart
+default_border normal
+
+# gaps
+gaps inner 0
+gaps outer 0
+
+### Key bindings
+#
+# Basics:
+#
+    # start a terminal
+    bindsym $mod+Return exec $term
+
+    # kill focused window
+    bindsym $mod+Shift+q kill
+
+    # start your launcher
+    bindsym $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+
+# COLORS
+
+set $fg #ebdbb2
+set $fg0 #fbf1c7
+set $fg1 #ebdbb2
+set $fg2 #d5c4a1
+set $fg3 #bdae93
+set $fg4 #a89984
+set $bg #282828
+set $bg0_h #1d2021
+set $gray #928374
+set $aqua #689d6a
+set $blue #458588
+set $blue0 #83a598
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $orange #d65d0e
+
+
+# class                 border  backgr. text    indicat child_border
+client.focused          $blue   $blue   $fg     $bg     $bg
+client.focused_inactive $bg     $bg     $fg     $bg     $bg
+client.unfocused        $bg     $bg     $fg     $bg     $bg
+client.urgent           $bg     $bg     $fg     $fg     $red
+
+
+## startup apps
+exec dropbox start
+
+
+include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*

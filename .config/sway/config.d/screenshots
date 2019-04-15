@@ -1,0 +1,5 @@
+# screenshot to file
+bindsym $mod+Shift+p exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+
+# screenshot to clipboard
+bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
