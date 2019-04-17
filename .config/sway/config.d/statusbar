@@ -9,7 +9,7 @@ bar {
     #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
     #status_command while ~/.config/sway/sway_bar/sway_bar.sh; do sleep 1; done
     swaybar_command waybar
-    #font pango:Iosevka Medium 10
+    font pango:M+ 1mn 10
 
     # colors {
     #     background $bg0_h

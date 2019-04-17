@@ -30,15 +30,16 @@ set $term gnome-terminal
 set $menu rofi -show drun swaymsg exec
 
 # font
-font pango:Iosevka 0
+font pango:M+ 2c 0
 
 # window borders
-#hide_edge_borders smart
+hide_edge_borders smart
 default_border normal
 
 # gaps
-gaps inner 0
+gaps inner 16
 gaps outer 0
+smart_gaps on
 
 ### Key bindings
 #
