@@ -10,6 +10,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 " Normal mappings
@@ -27,7 +28,7 @@ set number
 set scrolloff=4
 set tabstop=4
 set autoindent
-set ruler
-set nowrap
-set cc=80
+"set ruler
+"set wrap
+"set cc=80
 syntax on
