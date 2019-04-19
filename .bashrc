@@ -2,19 +2,20 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
-if [ -e /home/kkga/.nix-profile/etc/profile.d/nix.sh ]; then
-    . /home/kkga/.nix-profile/etc/profile.d/nix.sh;
-fi # added by Nix installer
-
-#eval `/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg`
-#export SSH_AUTH_SOCK
-#export GPG_AGENT_INFO
-
 # User specific environment
-PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-export PATH
-export EDITOR=micro
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+export EDITOR=vim
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+export NNN_USE_EDITOR=1
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+exec fish
