@@ -15,7 +15,7 @@ c.aliases = {'q': 'close', 'qa': 'quit', 'w': 'session-save', 'wq': 'quit --save
 # environment variable and is useful to force using the XCB plugin when
 # running QtWebEngine on Wayland.
 # Type: String
-c.qt.force_platform = 'Wayland:'
+c.qt.force_platform = 'Wayland'
 
 # Turn on Qt HighDPI scaling. This is equivalent to setting
 # QT_AUTO_SCREEN_SCALE_FACTOR=1 in the environment. It's off by default
@@ -95,7 +95,7 @@ c.colors.tabs.selected.even.bg = 'white'
 # Default monospace fonts. Whenever "monospace" is used in a font
 # setting, it's replaced with the fonts listed here.
 # Type: Font
-c.fonts.monospace = 'Iosevka, "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.monospace = '"M+ 1mn", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 # Font used in the completion widget.
 # Type: Font

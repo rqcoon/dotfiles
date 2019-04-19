@@ -1,37 +1,71 @@
 general {
-        output_format = "i3bar"
-        colors = true
-        markup = pango
-        interval = 5
-        color_good = '#999999'
-	color_degraded = '#ebcb8b'
-	color_bad = '#ba5e57'
+	colors = true
+	interval = 5
 }
 
-order += "load"
-order += "wireless _first_"
+order += "disk /home/kkga"
+order += "path_exists VPN"
+order += "wireless wlp3s0"
+order += "ethernet enp0s25"
+order += "battery all"
 order += "volume master"
+order += "cpu_temperature 0"
+order += "load"
 order += "tztime local"
 
-load {
-        format = "load %5min"
+wireless wlp3s0 {
+	format_up = " %ip (%quality at %essid)" # wifi
+	color_good = "#ffffff"
+	format_down = ""
 }
 
-wireless _first_ {
-        format_up = "wifi %essid %quality"
-        format_down = "no WiFi"
+ethernet enp0s25 {
+	# if you use %speed, i3status requires the cap_net_admin capability
+	format_up = " %ip (%speed)" # sitemap
+	color_good = "#ffffff"
+	format_down = ""
 }
 
-volume master {
-        format = "vol %volume"
-        format_muted = "MUTE"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
+battery all {
+	#format = "%status%percentage %remaining %emptytime"
+	format = "%status %percentage %remaining"
+	format_down = ""
+	status_chr = ""
+	status_bat = " "
+	status_unk = " "
+	status_full = " "
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 10
+}
+
+path_exists VPN {
+	# path exists when a VPN tunnel launched by nmcli/nm-applet is active
+	path = "/proc/sys/net/ipv4/conf/tun0"
+	format = ""
+	format_down = ""
 }
 
 tztime local {
-	format = "%time"
-	format_time = "%a %-d %b %H:%M"
+	format = " %Y-%m-%d %H:%M" # clock
 }
 
+load {
+	format = " %5min"
+}
+
+cpu_temperature 0 {
+	format = " %degrees°C"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+}
+
+disk "/home/kkga" {
+	format = " %free"
+}
+
+volume master {
+	format = " %volume"
+	format_muted = " %volume"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}

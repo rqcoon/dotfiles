@@ -45,27 +45,31 @@ smart_gaps on
 #
 # Basics:
 #
-    # start a terminal
-    bindsym $mod+Return exec $term
+# start a terminal
+bindsym $mod+Return exec $term
 
-    # kill focused window
-    bindsym $mod+Shift+q kill
+# kill focused window
+bindsym $mod+Shift+q kill
 
-    # start your launcher
-    bindsym $mod+d exec $menu
+bindsym $mod+d exec $term --title=launcher -e "fish -c 'sway-launcher'"
+#bindsym $mod+d exec gnome-terminal --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
+for_window [title="^launcher$"] floating enable, border normal 
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+# start your launcher
+#bindsym $mod+d exec $menu
 
-    # reload the configuration file
-    bindsym $mod+Shift+c reload
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
 
-    # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 
 # COLORS
