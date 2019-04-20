@@ -22,6 +22,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
+Plug 'machakann/vim-highlightedyank'
 Plug 'plasticboy/vim-markdown'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
@@ -59,6 +60,8 @@ set splitbelow
 set splitright
 
 " SETTINGS
+set nocompatible
+syntax on
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -73,7 +76,6 @@ set autoindent
 "set ruler
 "set wrap
 "set cc=80
-syntax on
 set termguicolors
 let g:gruvbox_italic=1
 set background=dark
