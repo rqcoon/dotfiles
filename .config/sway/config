@@ -27,7 +27,7 @@ set $term gnome-terminal
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec
-set $menu rofi -show drun swaymsg exec
+#set $menu rofi -show drun swaymsg exec
 
 # font
 font pango:M+ 2c 0
@@ -51,8 +51,11 @@ bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+q kill
 
+#bindsym $mod+d exec $menu
+#bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
+
 bindsym $mod+d exec $term --title=launcher -e "fish -c 'sway-launcher'"
-#bindsym $mod+d exec gnome-terminal --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
+
 for_window [title="^launcher$"] floating enable, border normal 
 
 # start your launcher
