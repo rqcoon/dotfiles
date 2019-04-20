@@ -1,3 +1,7 @@
+set nocompatible
+filetype plugin on
+syntax on
+
 " Space as leader
 let mapleader = "\<Space>"
 
@@ -11,6 +15,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
 Plug 'plasticboy/vim-markdown'
+Plug 'machakann/vim-highlightedyank'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " Normal mappings
