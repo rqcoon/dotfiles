@@ -56,7 +56,7 @@ set ignorecase
 set smartcase
 
 " spell
-set spelllang=en_gb
+set spelllang=en_us
 syntax spell toplevel
 
 " open new splits below and on the right
