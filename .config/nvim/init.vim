@@ -42,8 +42,8 @@ call plug#end()
 
 " -------------------------------------- SETTINGS
 
-filetype plugin indent on
-set termguicolors
+filetype plugin indent on       " no idea
+set termguicolors               " use true colors for colorscheme
 set background=dark             " Use dark scheme
 colorscheme apprentice          " Set colorscheme
 set encoding=utf8               " Set UTF-8 encoding
@@ -70,7 +70,7 @@ set noshowcmd                   " Don't show incomplete cmds [bc Lightline]
 set laststatus=2                " Always show status bar
 set autoindent                  " Use existing indent depth starting a new line
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
-set digraph                     " Support special characters, eg German umlaut
+" set digraph                     " Support special characters, eg German umlaut
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
 set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
