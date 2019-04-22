@@ -58,19 +58,19 @@ set smarttab                    " A tab in front of a line inserts spaces
 set shiftwidth=4                " # of spaces to use for autoindent
 set tabstop=4                   " # of spaces that a tab counts for
 set textwidth=80                " Make all lines 80 chars or less
+set colorcolumn=80              " Show column
 set wrap                        " Wrap lines longer than 80 chars
 set linebreak                   " Wrap lines when convenient
+set lazyredraw                  " Probably speeds up vim
 set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 set scrolloff=999               " Working line will always be in the center
 set title                       " Set title of the Vim window
 set titleold=                   " Revert to original title when exiting
 set hlsearch                    " Highlight searches by default
 set noshowmode                  " Don't show current mode [bc Lightline]
-set noshowcmd                   " Don't show incomplete cmds [bc Lightline]
 set laststatus=2                " Always show status bar
 set autoindent                  " Use existing indent depth starting a new line
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
-" set digraph                     " Support special characters, eg German umlaut
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
 set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
@@ -78,6 +78,8 @@ set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 set splitright                  " Splitting will put the new window right
 set splitbelow                  " Splitting will put the new window below
+set wildmenu                    " Filename completion menu
+set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 
 
 " -------------------------------------- PLUGIN SETTINGS

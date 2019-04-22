@@ -17,7 +17,7 @@
 
 input "2131:308:LEOPOLD_Mini_Keyboard" {
     xkb_layout us,ru
-    xkb_options grp:alt_shift_toggle
+    xkb_options grp:alt_space_toggle
     repeat_delay 250
     repeat_rate 50
 }
