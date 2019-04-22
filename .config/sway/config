@@ -3,17 +3,6 @@
 # Read `man 5 sway` for a complete reference.
 # Author: Gadzhi Kharkharov <me@kkga.me>
 
-###############################################################################
-# TODO:
-#   + Sway:
-#      - Autoassign workspaces to certain applications
-#      - Unlock keychain after login
-#      -
-#   + SwayBar:
-#     - Show language layout for currently used keyboard
-###############################################################################
-
-
 # Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -26,15 +15,16 @@ set $right l
 set $term gnome-terminal
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-#set $menu dmenu_path | dmenu | xargs swaymsg exec
-#set $menu rofi -show drun swaymsg exec
+set $launcher dmenu_path | fzf | xargs swaymsg exec GDK_BACKEND=wayland
 
 # font
-font pango:M+ 2c 0
+font pango:M+ 2c Medium 11
 
 # window borders
+default_orientation auto
 hide_edge_borders smart
-default_border normal
+default_border pixel
+smart_borders on
 
 # gaps
 gaps inner 16
@@ -43,23 +33,18 @@ smart_gaps on
 
 ### Key bindings
 #
-# Basics:
-#
 # start a terminal
 bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-#bindsym $mod+d exec $menu
 #bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
 
-bindsym $mod+d exec $term --title=launcher -e "fish -c 'sway-launcher'"
-
-for_window [title="^launcher$"] floating enable, border normal 
-
-# start your launcher
-#bindsym $mod+d exec $menu
+bindsym $mod+d exec $term --title=launcher -e "sh -c \'$launcher\'"
+bindsym $mod+Control+f exec GDK_BACKEND=wayland firefox-nightly
+for_window [title="^launcher$"] floating enable, border pixel
+for_window [floating] border csd
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -96,7 +81,7 @@ set $orange #d65d0e
 
 
 # class                 border  backgr. text    indicat child_border
-client.focused          $blue   $blue   $fg     $bg     $bg
+client.focused          $blue   $blue   $fg     $bg     $blue
 client.focused_inactive $bg     $bg     $fg     $bg     $bg
 client.unfocused        $bg     $bg     $fg     $bg     $bg
 client.urgent           $bg     $bg     $fg     $fg     $red

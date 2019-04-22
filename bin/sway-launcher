@@ -55,4 +55,4 @@ printf "%s\n" "${update_line}" "${command_history}" | \
 
 # execute command
 echo "$command_str"
-swaymsg -t command exec "fish -c $command_str"
+swaymsg -t command exec "fish --command='$command_str'"

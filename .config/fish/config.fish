@@ -10,6 +10,7 @@ set -g -x fish_greeting ''
 
 # User bin folder
 set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
+set -U GDK_BACKEND wayland
 
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
