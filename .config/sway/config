@@ -18,7 +18,7 @@ set $term gnome-terminal
 set $launcher dmenu_path | fzf | xargs swaymsg exec GDK_BACKEND=wayland
 
 # font
-font pango:Input Sans Narrow 11
+font pango:PragmataPro 11
 
 # window borders
 default_orientation auto

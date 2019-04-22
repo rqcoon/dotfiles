@@ -33,6 +33,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " lintings
 Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " files
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -50,6 +51,7 @@ set encoding=utf8               " Set UTF-8 encoding
 set autoread                    " Reload files changed outside vim
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set relativenumber              " Line numbers are good
+set numberwidth=6               " Wider linenumbers
 set ttyfast                     " Faster term redrawing, scrolling; perhaps
 set nobackup                    " Disable file backups when writing files
 set nowritebackup               " Don't backup before overwriting files
@@ -58,7 +60,6 @@ set smarttab                    " A tab in front of a line inserts spaces
 set shiftwidth=4                " # of spaces to use for autoindent
 set tabstop=4                   " # of spaces that a tab counts for
 set textwidth=80                " Make all lines 80 chars or less
-set colorcolumn=80              " Show column
 set wrap                        " Wrap lines longer than 80 chars
 set linebreak                   " Wrap lines when convenient
 set lazyredraw                  " Probably speeds up vim
@@ -81,7 +82,6 @@ set splitbelow                  " Splitting will put the new window below
 set wildmenu                    " Filename completion menu
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 
-
 " -------------------------------------- PLUGIN SETTINGS
 
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
@@ -96,6 +96,10 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+
+" run prettier on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " disabling plasticboy's folding to use other plugin properly
 let g:vim_markdown_folding_disabled = 1
@@ -113,7 +117,7 @@ let g:vim_markdown_autowrite = 1
 let g:vim_markdown_edit_url_in = 'tab'
 
 let g:markdown_include_jekyll_support = 0
-let g:markdown_mapping_switch_status = '<leader>t'   
+let g:markdown_mapping_switch_status = '<leader>t'
 let g:markdown_enable_spell_checking = 0
 
 " ------------------------------------- MAPPINGS
@@ -133,6 +137,12 @@ imap <Up> <NOP>
 imap <Down> <NOP>
 imap <Left> <NOP>
 imap <Right> <NOP>
+
+" motion across wrapped lines
+nmap j gj
+nmap k gk
+vmap j gj
+vmap k gk
 
 " disable Ex mode
 nmap Q nop
