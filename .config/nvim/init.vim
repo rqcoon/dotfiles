@@ -12,8 +12,8 @@ Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
-Plug 'morhetz/gruvbox'
-Plug 'ericbn/vim-solarized'
+" Plug 'morhetz/gruvbox'
+Plug 'romainl/Apprentice'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
 
@@ -45,7 +45,7 @@ call plug#end()
 filetype plugin indent on
 set termguicolors
 set background=dark             " Use dark scheme
-colorscheme solarized           " Set colorscheme
+colorscheme apprentice          " Set colorscheme
 set encoding=utf8               " Set UTF-8 encoding
 set autoread                    " Reload files changed outside vim
 set backspace=indent,eol,start  " Allow backspace in insert mode
@@ -61,7 +61,7 @@ set textwidth=80                " Make all lines 80 chars or less
 set wrap                        " Wrap lines longer than 80 chars
 set linebreak                   " Wrap lines when convenient
 set nojoinspaces                " Set 1 space btwn lines/periods to be joined
-" set scrolloff=999               " Working line will always be in the center
+set scrolloff=999               " Working line will always be in the center
 set title                       " Set title of the Vim window
 set titleold=                   " Revert to original title when exiting
 set hlsearch                    " Highlight searches by default
@@ -85,7 +85,7 @@ set splitbelow                  " Splitting will put the new window below
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'powerline',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -94,8 +94,6 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
-
-let g:gruvbox_italic=1
 
 " disabling plasticboy's folding to use other plugin properly
 let g:vim_markdown_folding_disabled = 1
@@ -113,7 +111,8 @@ let g:vim_markdown_autowrite = 1
 let g:vim_markdown_edit_url_in = 'tab'
 
 let g:markdown_include_jekyll_support = 0
-let g:markdown_mapping_switch_status = '\t'   
+let g:markdown_mapping_switch_status = '<leader>t'   
+let g:markdown_enable_spell_checking = 0
 
 " ------------------------------------- MAPPINGS
 
