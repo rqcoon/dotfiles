@@ -7,17 +7,17 @@ bar {
     #status_command while ~/.config/sway/sway_bar/sway_bar.sh; do sleep 1; done
     swaybar_command waybar
     #status_command i3status
-    font pango:M+ 1mn 10
-    separator_symbol "  "
+    font pango:Input Sans Narrow 11
+    separator_symbol " "
     colors {
-         background $bg0_h
-         statusline $gray
-         separator $gray
+         background $bg
+         statusline $fg
+         separator $fg
 
          focused_workspace  $fg $fg $bg
-         active_workspace   $bg $bg $fg4
-         inactive_workspace $bg $bg $fg4
-         urgent_workspace   $red $red $fg0
-         binding_mode       $red $red $fg0
+         active_workspace   $bg $bg $fg
+         inactive_workspace $bg $bg $fg
+         urgent_workspace   $bg $bg $fg
+         binding_mode       $bg $bg $fg
     }
 }

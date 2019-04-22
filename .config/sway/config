@@ -18,7 +18,7 @@ set $term gnome-terminal
 set $launcher dmenu_path | fzf | xargs swaymsg exec GDK_BACKEND=wayland
 
 # font
-font pango:M+ 2c Medium 11
+font pango:Input Sans Narrow 11
 
 # window borders
 default_orientation auto
@@ -27,7 +27,7 @@ default_border pixel
 smart_borders on
 
 # gaps
-gaps inner 16
+gaps inner 24
 gaps outer 0
 smart_gaps on
 
@@ -61,30 +61,30 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
 
 
 # COLORS
-
-set $fg #ebdbb2
-set $fg0 #fbf1c7
-set $fg1 #ebdbb2
-set $fg2 #d5c4a1
-set $fg3 #bdae93
-set $fg4 #a89984
-set $bg #282828
-set $bg0_h #1d2021
-set $gray #928374
-set $aqua #689d6a
-set $blue #458588
-set $blue0 #83a598
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $orange #d65d0e
-
+set $fg          #BCBCBC
+set $bg          #262626
+set $color0      #1C1C1C
+set $color8      #444444
+set $color1      #AF5F5F
+set $color9      #FF8700
+set $color2      #5F875F
+set $color10     #87AF87
+set $color3      #87875F
+set $color11     #FFFFAF
+set $color4      #5F87AF
+set $color12     #8FAFD7
+set $color5      #5F5F87
+set $color13     #8787AF
+set $color6      #5F8787
+set $color14     #5FAFAF
+set $color7      #6C6C6C
+set $color15     #FFFFFF
 
 # class                 border  backgr. text    indicat child_border
-client.focused          $blue   $blue   $fg     $bg     $blue
+client.focused          $color4 $color4 $fg     $bg     $color4
 client.focused_inactive $bg     $bg     $fg     $bg     $bg
 client.unfocused        $bg     $bg     $fg     $bg     $bg
-client.urgent           $bg     $bg     $fg     $fg     $red
+client.urgent           $bg     $bg     $fg     $fg     $color1
 
 
 ## startup apps

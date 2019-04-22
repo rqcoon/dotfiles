@@ -15,7 +15,7 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'morhetz/gruvbox'
 Plug 'romainl/Apprentice'
 Plug 'junegunn/goyo.vim'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 
 " markdown
 " Plug 'plasticboy/vim-markdown'
