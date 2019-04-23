@@ -16,8 +16,8 @@ Plug 'romainl/Apprentice'
 Plug 'junegunn/goyo.vim'
 
 " markdown
-" Plug 'plasticboy/vim-markdown'
-Plug 'gabrielelana/vim-markdown'
+Plug 'plasticboy/vim-markdown'
+"Plug 'gabrielelana/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'masukomi/vim-markdown-folding'
 
@@ -131,7 +131,7 @@ let g:vim_markdown_no_extensions_in_markdown = 1
 let g:vim_markdown_autowrite = 1
 
 " open markdown links in tabs
-let g:vim_markdown_edit_url_in = 'tab'
+let g:vim_markdown_edit_url_in = 'split'
 
 let g:markdown_include_jekyll_support = 0
 let g:markdown_mapping_switch_status = '<leader>t'
