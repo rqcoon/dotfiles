@@ -48,6 +48,7 @@ set termguicolors               " use true colors for colorscheme
 set background=dark             " Use dark scheme
 colorscheme apprentice          " Set colorscheme
 set encoding=utf8               " Set UTF-8 encoding
+set clipboard+=unnamedplus      " Always use system clipboard'
 set autoread                    " Reload files changed outside vim
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set relativenumber              " Line numbers are good
@@ -98,8 +99,8 @@ let g:lightline = {
       \ }
 
 " run prettier on save
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " disabling plasticboy's folding to use other plugin properly
 let g:vim_markdown_folding_disabled = 1

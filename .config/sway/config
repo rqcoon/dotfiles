@@ -81,7 +81,7 @@ set $color7      #6C6C6C
 set $color15     #FFFFFF
 
 # class                 border  backgr. text    indicat child_border
-client.focused          $color4 $color4 $fg     $bg     $color4
+client.focused          $color4 $color4 $color15 $bg     $color4
 client.focused_inactive $bg     $bg     $fg     $bg     $bg
 client.unfocused        $bg     $bg     $fg     $bg     $bg
 client.urgent           $bg     $bg     $fg     $fg     $color1
