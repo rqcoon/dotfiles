@@ -12,10 +12,8 @@ Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
-" Plug 'morhetz/gruvbox'
 Plug 'romainl/Apprentice'
 Plug 'junegunn/goyo.vim'
-"Plug 'Yggdroot/indentLine'
 
 " markdown
 " Plug 'plasticboy/vim-markdown'
@@ -31,7 +29,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" lintings
+" linting
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
@@ -44,44 +42,61 @@ call plug#end()
 " -------------------------------------- SETTINGS
 
 filetype plugin indent on       " no idea
-set termguicolors               " use true colors for colorscheme
+syntax on
+runtime macros/matchit.vim      " hit '%' on if to jump to else
+
+" various
+set encoding=utf8               " Set UTF-8 encoding
+set autoindent                  " Minimal automatic indenting for any filetype
+set backspace=indent,eol,start  " Proper backspace behavior
+set hidden                      " Possibility to have more than one unsaved buffers
+set autoread                    " Reload files changed outside vim
+set incsearch                   " Incremental search, hit CR to stop
+set ruler                       " Shows the current line number at the bottom-right of the screen
+set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
+set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
+set backspace=indent,eol,start  " Allow backspace in insert mode
+set noshowmode                  " Don't show current mode [bc Lightline]
+set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
+
+" theme
+set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
 colorscheme apprentice          " Set colorscheme
-set encoding=utf8               " Set UTF-8 encoding
-set clipboard+=unnamedplus      " Always use system clipboard'
-set autoread                    " Reload files changed outside vim
-set backspace=indent,eol,start  " Allow backspace in insert mode
-set relativenumber              " Line numbers are good
-set numberwidth=6               " Wider linenumbers
-set ttyfast                     " Faster term redrawing, scrolling; perhaps
-set nobackup                    " Disable file backups when writing files
-set nowritebackup               " Don't backup before overwriting files
+
+" tabs
 set expandtab                   " Use the appropriate number of spaces to tab
 set smarttab                    " A tab in front of a line inserts spaces
 set shiftwidth=4                " # of spaces to use for autoindent
 set tabstop=4                   " # of spaces that a tab counts for
-set textwidth=80                " Make all lines 80 chars or less
+
+" lines and numbers
+set relativenumber              " Line numbers are good
+set numberwidth=6               " Wider linenumbers
+
+" splits
+set splitright                  " Splitting will put the new window right
+set splitbelow                  " Splitting will put the new window below
+
+" clipboard
+set clipboard+=unnamedplus      " Always use system clipboard
+
+" columns
+set textwidth=79                " Make all lines 80 chars or less
+set colorcolumn=80
 set wrap                        " Wrap lines longer than 80 chars
 set linebreak                   " Wrap lines when convenient
-set lazyredraw                  " Probably speeds up vim
 set nojoinspaces                " Set 1 space btwn lines/periods to be joined
+
+" scrolling
 set scrolloff=999               " Working line will always be in the center
-set title                       " Set title of the Vim window
-set titleold=                   " Revert to original title when exiting
-set hlsearch                    " Highlight searches by default
-set noshowmode                  " Don't show current mode [bc Lightline]
-set laststatus=2                " Always show status bar
-set autoindent                  " Use existing indent depth starting a new line
-set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
+
+" undo
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
 set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
-set splitright                  " Splitting will put the new window right
-set splitbelow                  " Splitting will put the new window below
-set wildmenu                    " Filename completion menu
-set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 
 " -------------------------------------- PLUGIN SETTINGS
 
@@ -128,60 +143,60 @@ let mapleader = "\<space>"
 let maplocalleader = ','
 
 " use arrows to resize panes in normal mode
-nmap <Left> :vertical resize -1<CR>
-nmap <Right> :vertical resize +1<CR>
-nmap <Up> :resize -1<CR>
-nmap <Down> :resize +1<CR>
+nnoremap <Left> :vertical resize -1<CR>
+nnoremap <Right> :vertical resize +1<CR>
+nnoremap <Up> :resize -1<CR>
+nnoremap <Down> :resize +1<CR>
 
 " don't use arrowkeys
-imap <Up> <NOP>
-imap <Down> <NOP>
-imap <Left> <NOP>
-imap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 
 " motion across wrapped lines
-nmap j gj
-nmap k gk
-vmap j gj
-vmap k gk
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " disable Ex mode
-nmap Q nop
+nnoremap Q nop
 
 " trim trailing whitespace
-nmap <leader>q :%s/\s\+$//<CR>:noh<CR>
+nnoremap <leader>q :%s/\s\+$//<CR>:noh<CR>
 
 " change/source config
-nmap <leader>vr :sp $MYVIMRC<cr>
-nmap <leader>so :source $MYVIMRC<cr>
+nnoremap <leader>vr :sp $MYVIMRC<cr>
+nnoremap <leader>so :source $MYVIMRC<cr>
 
 " files
-nmap <C-P> :Files<CR>
+nnoremap <C-P> :Files<CR>
 
 " quick exit and save
-imap jk <esc>
-imap kj <esc>
-imap <C-s> <esc>:w<cr>
-nmap <C-s> <esc>:w<cr>
+inoremap jk <esc>
+inoremap kj <esc>
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> <esc>:w<cr>
 
 " split faster
-nmap <Leader>h :split<CR>
-nmap <Leader>v :vsplit<CR>
+nnoremap <Leader>h :split<CR>
+nnoremap <Leader>v :vsplit<CR>
 
 " easy split navigation
-nmap <C-J> <C-W><C-J>
-nmap <C-K> <C-W><C-K>
-nmap <C-L> <C-W><C-L>
-nmap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " tabs
-"nmap tn :tabnew<Space>
-"nmap tk :tabnext<CR>
-"nmap th :tabfirst<CR>
-"nmap tl :tablast<CR>
-"nmap <Tab> gt
-"nmap <S-Tab> gT
-"nmap <silent> <S-t> :tabnew<CR>
+"nnoremap tn :tabnew<Space>
+"nnoremap tk :tabnext<CR>
+"nnoremap th :tabfirst<CR>
+"nnoremap tl :tablast<CR>
+"nnoremap <Tab> gt
+"nnoremap <S-Tab> gT
+"nnoremap <silent> <S-t> :tabnew<CR>
 
 " press Tab to fold a markdown heading
 nnoremap <Tab> za
