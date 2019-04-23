@@ -73,6 +73,7 @@ set tabstop=4                   " # of spaces that a tab counts for
 " lines and numbers
 set relativenumber              " Line numbers are good
 set numberwidth=6               " Wider linenumbers
+set cursorline                  " Show line
 
 " splits
 set splitright                  " Splitting will put the new window right
