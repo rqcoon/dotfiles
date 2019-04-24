@@ -58,6 +58,7 @@ set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set noshowmode                  " Don't show current mode [bc Lightline]
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
+set inccommand=split            " Highlight search results and show in preview split
 
 " theme
 set termguicolors               " Use true colors for colorscheme
