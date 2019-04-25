@@ -70,4 +70,4 @@ else
     audio_active='vol'
 fi
 
-echo "$song_status $media_artist - $media_song · $language · $network_active $interface_easyname ($ping ms) · load $loadavg_5min · $audio_active $audio_volume% · $date_and_week $current_time"
+echo "$song_status $media_artist - $media_song · $language · $network_active $interface_easyname ($ping ms) · load $loadavg_6min · $audio_active $audio_volume% · $date_and_week  🕘  $current_time"

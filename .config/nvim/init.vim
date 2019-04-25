@@ -17,7 +17,6 @@ Plug 'junegunn/goyo.vim'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
-"Plug 'gabrielelana/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'masukomi/vim-markdown-folding'
 
@@ -29,9 +28,19 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+" snippets
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " linting
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'editorconfig/editorconfig-vim'
 
 " files
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -72,7 +81,8 @@ set shiftwidth=4                " # of spaces to use for autoindent
 set tabstop=4                   " # of spaces that a tab counts for
 
 " lines and numbers
-set relativenumber              " Line numbers are good
+set number                      " Show line number
+set relativenumber              " Relative numbers are good
 set numberwidth=6               " Wider linenumbers
 set cursorline                  " Show line
 
@@ -126,17 +136,29 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 
 " allow following markdown links without the .md extension
-let g:vim_markdown_no_extensions_in_markdown = 1
+" let g:vim_markdown_no_extensions_in_markdown = 1
 
 " autosave file when following markdown links
 let g:vim_markdown_autowrite = 1
 
 " open markdown links in tabs
-let g:vim_markdown_edit_url_in = 'split'
+let g:vim_markdown_edit_url_in = 'vsplit'
 
-let g:markdown_include_jekyll_support = 0
-let g:markdown_mapping_switch_status = '<leader>t'
-let g:markdown_enable_spell_checking = 0
+
+" Trim whitespace
+let blacklist = ['md']
+autocmd BufWritePre * if index(blacklist, &ft) < 0 | %s/\s\+$//e
+
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
 
 " ------------------------------------- MAPPINGS
 
@@ -192,17 +214,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " tabs
-"nnoremap tn :tabnew<Space>
-"nnoremap tk :tabnext<CR>
-"nnoremap th :tabfirst<CR>
-"nnoremap tl :tablast<CR>
-"nnoremap <Tab> gt
-"nnoremap <S-Tab> gT
-"nnoremap <silent> <S-t> :tabnew<CR>
-
-" press Tab to fold a markdown heading
-nnoremap <Tab> za
-
-" quick date insert
-nnoremap <F5> "=strftime("%F")<CR>P
-inoremap <F5> <C-R>=strftime("%F")<CR>
+nnoremap tn :tabnew<Space>
+nnoremap tk :tabnext<CR>
+nnoremap th :tabfirst<CR>
+nnoremap tl :tablast<CR>
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <silent> <S-t> :tabnew<CR>
