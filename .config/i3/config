@@ -15,7 +15,7 @@ set $menu rofi
 set $term i3-sensible-terminal
 
 # font
-font pango:System Font Medium 8
+font pango:Pragmata Pro 9
 
 # remove fullscreen borders and titles
 hide_edge_borders vertical
@@ -273,7 +273,7 @@ client.background       #ffffff
 
 # bar
 bar {
-        status_command i3status
+        status_command ~/bin/i3status-rs ~/.config/i3status-rust/config.toml
         #status_command SCRIPT_DIR=~/.config/i3blocks i3blocks
         position top
         #tray_padding 0
@@ -281,7 +281,7 @@ bar {
         separator_symbol " · "
     	workspace_buttons yes
 		strip_workspace_numbers yes
-        font pango:System Font Medium 8
+        font pango:PragmataPro 9
         colors {
                 background $bg
                 statusline $text-dim

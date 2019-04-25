@@ -201,3 +201,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " press Tab to fold a markdown heading
 nnoremap <Tab> za
+
+" quick date insert
+nnoremap <F5> "=strftime("%F")<CR>P
+inoremap <F5> <C-R>=strftime("%F")<CR>
