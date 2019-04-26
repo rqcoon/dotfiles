@@ -18,10 +18,11 @@ Plug 'junegunn/goyo.vim'
 " markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'masukomi/vim-markdown-folding'
+" Plug 'masukomi/vim-markdown-folding'
 
 " syntax
 Plug 'mboughaba/i3config.vim'
+Plug 'pangloss/vim-javascript'
 
 " autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -56,11 +57,12 @@ runtime macros/matchit.vim      " hit '%' on if to jump to else
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
-set autoindent                  " Minimal automatic indenting for any filetype
 set backspace=indent,eol,start  " Proper backspace behavior
 set hidden                      " Possibility to have more than one unsaved buffers
 set autoread                    " Reload files changed outside vim
 set incsearch                   " Incremental search, hit CR to stop
+set ignorecase                  " Ignore case when searching
+set lazyredraw
 set ruler                       " Shows the current line number at the bottom-right of the screen
 set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
@@ -68,17 +70,28 @@ set backspace=indent,eol,start  " Allow backspace in insert mode
 set noshowmode                  " Don't show current mode [bc Lightline]
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
+set conceallevel=2              " Conceals markdown syntax
+
+" disable backups and swap
+set nobackup
+set nowb
+set noswapfile
 
 " theme
 set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
 colorscheme apprentice          " Set colorscheme
 
-" tabs
+" text, tabs and indents
 set expandtab                   " Use the appropriate number of spaces to tab
 set smarttab                    " A tab in front of a line inserts spaces
 set shiftwidth=4                " # of spaces to use for autoindent
 set tabstop=4                   " # of spaces that a tab counts for
+set linebreak                   " Wrap lines when convenient
+set wrap                        " Wrap lines
+set textwidth=500
+set autoindent                  " Minimal automatic indenting for any filetype
+set smartindent
 
 " lines and numbers
 set number                      " Show line number
@@ -94,14 +107,10 @@ set splitbelow                  " Splitting will put the new window below
 set clipboard+=unnamedplus      " Always use system clipboard
 
 " columns
-set textwidth=79                " Make all lines 80 chars or less
-set colorcolumn=80
-set wrap                        " Wrap lines longer than 80 chars
-set linebreak                   " Wrap lines when convenient
 set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 
 " scrolling
-set scrolloff=999               " Working line will always be in the center
+set scrolloff=8                 " Working line will always be in the center
 
 " undo
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
@@ -111,6 +120,9 @@ set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 
 " -------------------------------------- PLUGIN SETTINGS
+
+" enable flow syntax highlight
+let g:javascript_plugin_flow = 1
 
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 
@@ -130,7 +142,7 @@ let g:lightline = {
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " disabling plasticboy's folding to use other plugin properly
-let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_disabled = 1
 
 " enable plasticboy's markdown frontmatter
 let g:vim_markdown_frontmatter = 1
@@ -141,9 +153,9 @@ let g:vim_markdown_frontmatter = 1
 " autosave file when following markdown links
 let g:vim_markdown_autowrite = 1
 
-" open markdown links in tabs
+" open markdown links in splits
 let g:vim_markdown_edit_url_in = 'vsplit'
-
+" let g:vim_markdown_folding_style_pythonic = 1
 
 " Trim whitespace
 let blacklist = ['md']
