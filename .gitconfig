@@ -3,3 +3,5 @@
 	email = me@kkga.me
 [credential]
 	helper = cache --timeout=999999999
+[core]
+	excludesfile = /Users/gadzhi/.gitignore
