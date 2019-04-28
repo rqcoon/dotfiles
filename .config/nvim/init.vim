@@ -41,12 +41,11 @@ let g:vim_markdown_edit_url_in = 'vsplit'
 " fold in python style
 let g:vim_markdown_folding_style_pythonic = 1
 
-
 " syntax
 Plug 'mboughaba/i3config.vim'
 Plug 'pangloss/vim-javascript'
 " enable flow syntax highlight
-let g:javascript_plugin_flow = 1
+"let g:javascript_plugin_flow = 1
 
 " autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -56,12 +55,15 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " linting
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
+" let g:ale_linters = {
+"     \ 'javascript': ['eslint'],
+"     \}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " run prettier on save
 " let g:prettier#autoformat = 0
@@ -235,5 +237,7 @@ function! ToggleWrap()
         set wrap
     endif
 endfunc
+
+command! ToggleWrap call ToggleWrap()
 
 " }}}
