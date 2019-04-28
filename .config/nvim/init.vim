@@ -1,4 +1,6 @@
-" -------------------------------------- PLUGINS
+" vim:foldmethod=marker:foldlevel=0
+
+" PLUGINS {{{
 call plug#begin('~/.vim/plugged')
 
 " basics
@@ -10,6 +12,16 @@ Plug 'tpope/vim-commentary'
 
 " visual
 Plug 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
@@ -18,11 +30,23 @@ Plug 'junegunn/goyo.vim'
 " markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-" Plug 'masukomi/vim-markdown-folding'
+" enable plasticboy's markdown frontmatter
+let g:vim_markdown_frontmatter = 1
+" allow following markdown links without the .md extension
+let g:vim_markdown_no_extensions_in_markdown = 1
+" autosave file when following markdown links
+let g:vim_markdown_autowrite = 1
+" open markdown links in splits
+let g:vim_markdown_edit_url_in = 'vsplit'
+" fold in python style
+let g:vim_markdown_folding_style_pythonic = 1
+
 
 " syntax
 Plug 'mboughaba/i3config.vim'
 Plug 'pangloss/vim-javascript'
+" enable flow syntax highlight
+let g:javascript_plugin_flow = 1
 
 " autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -30,26 +54,32 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " snippets
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " linting
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" run prettier on save
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 Plug 'editorconfig/editorconfig-vim'
 
 " files
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-call plug#end()
+let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 
-" -------------------------------------- SETTINGS
+" undo
+Plug 'sjl/gundo.vim'
+
+call plug#end()
+" }}}
+" SETTINGS {{{
 
 filetype plugin indent on       " no idea
 syntax on
@@ -62,7 +92,7 @@ set hidden                      " Possibility to have more than one unsaved buff
 set autoread                    " Reload files changed outside vim
 set incsearch                   " Incremental search, hit CR to stop
 set ignorecase                  " Ignore case when searching
-set lazyredraw
+set lazyredraw                  " Don't redraw during macros
 set ruler                       " Shows the current line number at the bottom-right of the screen
 set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
@@ -83,10 +113,10 @@ set background=dark             " Use dark scheme
 colorscheme apprentice          " Set colorscheme
 
 " text, tabs and indents
-set expandtab                   " Use the appropriate number of spaces to tab
-set smarttab                    " A tab in front of a line inserts spaces
+set expandtab                   " Tabs are spaces
 set shiftwidth=4                " # of spaces to use for autoindent
 set tabstop=4                   " # of spaces that a tab counts for
+set softtabstop=4               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
 set wrap                        " Wrap lines
 set textwidth=500
@@ -118,61 +148,8 @@ set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
-
-" -------------------------------------- PLUGIN SETTINGS
-
-" enable flow syntax highlight
-let g:javascript_plugin_flow = 1
-
-let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
-
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
-
-" run prettier on save
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
-" disabling plasticboy's folding to use other plugin properly
-" let g:vim_markdown_folding_disabled = 1
-
-" enable plasticboy's markdown frontmatter
-let g:vim_markdown_frontmatter = 1
-
-" allow following markdown links without the .md extension
-" let g:vim_markdown_no_extensions_in_markdown = 1
-
-" autosave file when following markdown links
-let g:vim_markdown_autowrite = 1
-
-" open markdown links in splits
-let g:vim_markdown_edit_url_in = 'vsplit'
-" let g:vim_markdown_folding_style_pythonic = 1
-
-" Trim whitespace
-let blacklist = ['md']
-autocmd BufWritePre * if index(blacklist, &ft) < 0 | %s/\s\+$//e
-
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-
-" ------------------------------------- MAPPINGS
+" }}}
+" MAPPINGS {{{
 
 " space as leader
 let mapleader = "\<space>"
@@ -196,11 +173,21 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" highlight last inserted text
+nnoremap gV `[v`]<Paste>
+
 " disable Ex mode
 nnoremap Q nop
 
 " trim trailing whitespace
-nnoremap <leader>q :%s/\s\+$//<CR>:noh<CR>
+nnoremap <leader>w :%s/\s\+$//<CR>:noh<CR>
+
+" turn off search highlight
+nnoremap <leader>s :nohlsearch<CR>
 
 " change/source config
 nnoremap <leader>vr :sp $MYVIMRC<cr>
@@ -230,6 +217,23 @@ nnoremap tn :tabnew<Space>
 nnoremap tk :tabnext<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
-nnoremap <Tab> gt
+nnoremap <A-Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
+
+" open/close folds
+nnoremap <Tab> za
+
+" }}}
+" FUNCTIONS {{{
+
+" toggle wrap
+function! ToggleWrap()
+    if(&wrap == 1)
+        set nowrap
+    else
+        set wrap
+    endif
+endfunc
+
+" }}}
