@@ -79,6 +79,11 @@ let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/
 " undo
 Plug 'sjl/gundo.vim'
 
+" fzf note taking
+Plug 'https://github.com/Alok/notational-fzf-vim'
+let g:nv_search_paths = ['~/Dropbox (Personal)/Notes']
+let g:nv_use_short_pathnames = 1
+
 call plug#end()
 " }}}
 " SETTINGS {{{
@@ -226,6 +231,8 @@ nnoremap <silent> <S-t> :tabnew<CR>
 " open/close folds
 nnoremap <Tab> za
 
+" quick open notational notes
+nnoremap <silent> <leader>n :NV<CR>
 " }}}
 " FUNCTIONS {{{
 
