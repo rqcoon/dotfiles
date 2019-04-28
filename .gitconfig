@@ -4,4 +4,8 @@
 [credential]
 	helper = cache --timeout=999999999
 [core]
-	excludesfile = /Users/gadzhi/.gitignore
+	excludesfile = ~/.gitignore
+	editor = nvim
+[alias]
+	ci = commit
+    st = status

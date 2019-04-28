@@ -140,7 +140,7 @@ set clipboard+=unnamedplus      " Always use system clipboard
 set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 
 " scrolling
-set scrolloff=8                 " Working line will always be in the center
+set scrolloff=999               " Working line will always be in the center
 
 " undo
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
