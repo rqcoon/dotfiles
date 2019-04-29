@@ -8,7 +8,7 @@ bar {
     #status_command while ~/.config/sway/sway_bar/sway_bar.sh; do sleep 1; done
     #swaybar_command waybar
     status_command ~/bin/i3status-rs ~/.config/i3status-rust/config.toml
-    font pango:PragmataPro 9
+    font pango:Input Sans Compressed 9
     separator_symbol ""
     colors {
          background $bg

@@ -12,13 +12,13 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term gnome-terminal
+set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $launcher dmenu_path | fzf | xargs swaymsg exec GDK_BACKEND=wayland
 
 # font
-font pango:PragmataPro 11
+font pango:Input Sans Narrow 9
 
 # window borders
 default_orientation auto
@@ -27,7 +27,7 @@ default_border pixel
 smart_borders on
 
 # gaps
-gaps inner 24
+gaps inner 16
 gaps outer 0
 smart_gaps on
 
@@ -41,7 +41,7 @@ bindsym $mod+Shift+q kill
 
 #bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
 
-bindsym $mod+d exec $term --title=launcher -e "sh -c \'$launcher\'"
+bindsym $mod+d exec gnome-terminal --title=launcher -e "sh -c \'$launcher\'"
 bindsym $mod+Control+f exec GDK_BACKEND=wayland firefox-nightly
 for_window [title="^launcher$"] floating enable, border pixel
 for_window [floating] border csd

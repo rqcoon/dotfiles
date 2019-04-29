@@ -22,7 +22,7 @@ c.qt.force_platform = 'Wayland'
 # as it can cause issues with some bitmap fonts. As an alternative to
 # this, it's possible to set font sizes and the `zoom.default` setting.
 # Type: Bool
-c.qt.highdpi = True
+# c.qt.highdpi = True
 
 # Always restore open sites when qutebrowser is reopened.
 # Type: Bool
@@ -95,7 +95,7 @@ c.colors.tabs.selected.even.bg = 'white'
 # Default monospace fonts. Whenever "monospace" is used in a font
 # setting, it's replaced with the fonts listed here.
 # Type: Font
-c.fonts.monospace = '"M+ 1mn", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.monospace = '"Input Sans Condensed", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 # Font used in the completion widget.
 # Type: Font

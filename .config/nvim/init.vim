@@ -43,6 +43,7 @@ let g:vim_markdown_folding_style_pythonic = 1
 
 " syntax
 Plug 'mboughaba/i3config.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 " enable flow syntax highlight
 "let g:javascript_plugin_flow = 1
@@ -60,10 +61,10 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " linting
-" Plug 'w0rp/ale'
-" let g:ale_linters = {
-"     \ 'javascript': ['eslint'],
-"     \}
+Plug 'w0rp/ale'
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+    \}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " run prettier on save
 " let g:prettier#autoformat = 0
@@ -81,7 +82,7 @@ Plug 'sjl/gundo.vim'
 
 " fzf note taking
 Plug 'https://github.com/Alok/notational-fzf-vim'
-let g:nv_search_paths = ['~/Dropbox (Personal)/Notes']
+let g:nv_search_paths = ['~/Dropbox/Notes']
 let g:nv_use_short_pathnames = 1
 
 call plug#end()
@@ -229,7 +230,7 @@ nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
 
 " open/close folds
-nnoremap <Tab> za
+" nnoremap <Tab> za
 
 " quick open notational notes
 nnoremap <silent> <leader>n :NV<CR>

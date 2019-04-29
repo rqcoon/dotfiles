@@ -11,14 +11,22 @@ set -g -x fish_greeting ''
 # User bin folder
 set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
 
-set -gx GDK_BACKEND wayland
-set -gx QT_SCALE_FACTOR 2
+set -x PKG_CONFIG_PATH /usr/local/lib/pkgconfig:/usr/local/share/pkgconfig
+
+set -gx LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
+set -gx LANGUAGE en_US.UTF-8
+
 set -gx BROWSER firefox
 set -gx EDITOR nvim
+
+set -gx MOZ_ENABLE_WAYLAN 1 
+set -gx GDK_BACKEND wayland
+set -gx CLUTTER_BACKEND wayland
+set -gx QT_AUTO_SCREENSCALE_FACTOR 1
+
+set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 
 # aliases
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim nvim
-alias ci commit
-alias co checkout
-alias st status
