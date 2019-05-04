@@ -1,8 +1,3 @@
-# if [[ $- != *i* ]] ; then
-#     # Shell is non-interactive.  Be done now!
-#     return
-# fi
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -24,10 +19,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
-alias vim=nvim
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias t=todo.sh
-
-if [ -e /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh ]; then
+    . /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh;
+fi 
 
 exec fish
