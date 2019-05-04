@@ -26,10 +26,13 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/seoul256.vim'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 " enable plasticboy's markdown frontmatter
 let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
@@ -76,7 +79,7 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 " undo
 Plug 'sjl/gundo.vim'
@@ -162,7 +165,7 @@ set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 
 " space as leader
 let mapleader = "\<space>"
-let maplocalleader = ','
+let maplocalleader = ","
 
 " use arrows to resize panes in normal mode
 nnoremap <Left> :vertical resize -1<CR>
@@ -204,6 +207,9 @@ nnoremap <leader>so :source $MYVIMRC<cr>
 
 " files
 nnoremap <C-P> :Files<CR>
+
+" buffers
+nnoremap <C-B> :Buffers<CR>
 
 " quick exit and save
 inoremap jk <esc>

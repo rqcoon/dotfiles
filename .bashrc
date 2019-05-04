@@ -5,22 +5,28 @@ export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
 
-export MOZ_ENABLE_WAYLAND=1
-export GDK_BACKEND=wayland
-export CLUTTER_BACKEND=wayland
-export QT_AUTO_SCREENSCALE_FACTOR=1
-export QT_QPA_PLATFORM=wayland-egl
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export QT_WAYLAND_FORCE_DPI=physical
-export ECORE_EVAS_EVAS_ENGINE=wayland_egl
-export ELM_ENGINE=wayland_egl
-export SDL_VIDEODRIVER=wayland
-export _JAVA_AWT_WM_NONREPARENTING=1
+# export MOZ_ENABLE_WAYLAND=1
+# export GDK_BACKEND=wayland
+# export CLUTTER_BACKEND=wayland
+# export QT_AUTO_SCREENSCALE_FACTOR=1
+# export QT_QPA_PLATFORM=wayland-egl
+# export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+# export QT_WAYLAND_FORCE_DPI=physical
+# export ECORE_EVAS_EVAS_ENGINE=wayland_egl
+# export ELM_ENGINE=wayland_egl
+# export SDL_VIDEODRIVER=wayland
+# export _JAVA_AWT_WM_NONREPARENTING=1
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# export TODOTXT_DEFAULT_ACTION=ls
 
 if [ -e /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh ]; then
     . /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh;
 fi 
 
-exec fish
+if [[ $- != *i* ]] ; then
+    # Shell is non-interactive.  Be done now!
+    return
+fi
+
+[ -x /usr/bin/fish ] && SHELL=/usr/bin/fish exec /usr/bin/fish
