@@ -10,5 +10,3 @@ set -g -x fish_greeting ''
 alias vim 'nvim'
 alias t 'todo.sh'
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-
