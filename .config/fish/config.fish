@@ -30,3 +30,4 @@ set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 # aliases
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim nvim
+alias t todo.sh
