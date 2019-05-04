@@ -45,6 +45,7 @@ let g:vim_markdown_folding_style_pythonic = 1
 Plug 'mboughaba/i3config.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
+Plug 'dbeniamine/todo.txt-vim'
 " enable flow syntax highlight
 "let g:javascript_plugin_flow = 1
 
