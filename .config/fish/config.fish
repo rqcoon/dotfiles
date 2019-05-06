@@ -20,10 +20,11 @@ set -gx LANGUAGE en_US.UTF-8
 set -gx BROWSER firefox
 set -gx EDITOR nvim
 
-set -gx MOZ_ENABLE_WAYLAN 1 
+set -gx MOZ_ENABLE_WAYLAND 1 
 set -gx GDK_BACKEND wayland
 set -gx CLUTTER_BACKEND wayland
-set -gx QT_AUTO_SCREENSCALE_FACTOR 1
+# set -gx QT_AUTO_SCREENSCALE_FACTOR 1
+set -gx QT_SCALE_FACTOR 2
 
 set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 
