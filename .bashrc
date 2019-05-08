@@ -29,4 +29,4 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
-[ -x /usr/bin/fish ] && SHELL=/usr/bin/fish exec /usr/bin/fish
+[ -x $(which fish) ] && SHELL=$(which fish) exec $(which fish)
