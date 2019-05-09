@@ -8,6 +8,7 @@ set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
 set -g -x fish_greeting ''
 
 set pure_symbol_prompt '$'
+kitty + complete setup fish | source
 
 alias vim 'nvim'
 alias t 'todo.sh'
