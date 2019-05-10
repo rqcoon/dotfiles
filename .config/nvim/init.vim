@@ -27,6 +27,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'Yggdroot/indentLine'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
