@@ -80,6 +80,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'rg --files'
+Plug 'mhinz/vim-startify'
 
 " undo
 Plug 'sjl/gundo.vim'
@@ -88,6 +89,9 @@ Plug 'sjl/gundo.vim'
 Plug 'https://github.com/Alok/notational-fzf-vim'
 let g:nv_search_paths = ['~/Dropbox/Notes']
 let g:nv_use_short_pathnames = 1
+
+" tags
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 " }}}
