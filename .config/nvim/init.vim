@@ -49,6 +49,7 @@ Plug 'mboughaba/i3config.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 Plug 'dbeniamine/todo.txt-vim'
+Plug 'jiangmiao/auto-pairs'
 " enable flow syntax highlight
 "let g:javascript_plugin_flow = 1
 
@@ -69,7 +70,7 @@ Plug 'w0rp/ale'
 let g:ale_linters = {
     \ 'javascript': ['eslint'],
     \}
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " run prettier on save
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
@@ -88,10 +89,7 @@ Plug 'sjl/gundo.vim'
 " fzf note taking
 Plug 'https://github.com/Alok/notational-fzf-vim'
 let g:nv_search_paths = ['~/Dropbox/Notes']
-let g:nv_use_short_pathnames = 1
-
-" tags
-Plug 'ludovicchabant/vim-gutentags'
+let g:nv_use_short_pathnames = 0
 
 call plug#end()
 " }}}
@@ -209,11 +207,10 @@ nnoremap <leader>s :nohlsearch<CR>
 nnoremap <leader>vr :sp $MYVIMRC<cr>
 nnoremap <leader>so :source $MYVIMRC<cr>
 
-" files
-nnoremap <C-P> :Files<CR>
-
-" buffers
-nnoremap <C-B> :Buffers<CR>
+" fzf mappings
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>rg :Rg<CR>
 
 " quick exit and save
 inoremap jk <esc>
