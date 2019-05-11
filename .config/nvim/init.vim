@@ -34,6 +34,13 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'reedes/vim-pencil'
+" use soft-wrapping by default
+let g:pencil#wrapModeDefault = 'soft'
+" 0=disable, 1=one char, 2=hide char, 3=hide all (def)
+let g:pencil#conceallevel = 0
+" n=normal, v=visual, i=insert, c=command (def)
+let g:pencil#concealcursor = 'c'
 " enable plasticboy's markdown frontmatter
 let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
@@ -90,7 +97,7 @@ Plug 'sjl/gundo.vim'
 " fzf note taking
 Plug 'https://github.com/Alok/notational-fzf-vim'
 let g:nv_search_paths = ['~/Dropbox/Notes']
-let g:nv_use_short_pathnames = 0
+let g:nv_use_short_pathnames = 1
 
 call plug#end()
 " }}}
@@ -170,18 +177,6 @@ set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 let mapleader = "\<space>"
 let maplocalleader = ","
 
-" use arrows to resize panes in normal mode
-nnoremap <Left> :vertical resize -1<CR>
-nnoremap <Right> :vertical resize +1<CR>
-nnoremap <Up> :resize -1<CR>
-nnoremap <Down> :resize +1<CR>
-
-" don't use arrowkeys
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-
 " motion across wrapped lines
 nnoremap j gj
 nnoremap k gk
@@ -189,8 +184,26 @@ vnoremap j gj
 vnoremap k gk
 
 " move to beginning/end of line
-nnoremap B ^
-nnoremap E $
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+
+" move up/down half a screen
+nnoremap J <C-d>
+nnoremap K <C-u>
+
+" use arrows to resize panes in normal mode
+nnoremap <Left> :vertical resize -1<CR>
+nnoremap <Right> :vertical resize +1<CR>
+nnoremap <Up> :resize -1<CR>
+nnoremap <Down> :resize +1<CR>
+
+" don't use arrows for movement in insert mode
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 
 " highlight last inserted text
 nnoremap gV `[v`]<Paste>
@@ -220,8 +233,8 @@ inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> <esc>:w<cr>
 
 " split faster
-nnoremap <Leader>h :split<CR>
-nnoremap <Leader>v :vsplit<CR>
+nnoremap <leader>h :split<CR>
+nnoremap <leader>v :vsplit<CR>
 
 " easy split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -256,5 +269,14 @@ function! ToggleWrap()
 endfunc
 
 command! ToggleWrap call ToggleWrap()
+
+" }}}
+" AUGROUPS {{{
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
 
 " }}}
