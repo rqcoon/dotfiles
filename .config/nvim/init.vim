@@ -29,10 +29,14 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/seoul256.vim'
 
 " markdown
+Plug 'fcpg/vim-waikiki'
+let g:waikiki_wiki_roots = ['~/Dropbox/Notes']
+let g:waikiki_default_maps = 1
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'reedes/vim-pencil'
 " enable plasticboy's markdown frontmatter
 let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
@@ -65,16 +69,18 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " linting
 Plug 'w0rp/ale'
-let g:ale_linters = {
-    \ 'javascript': ['eslint'],
-    \}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint', 'prettier'],
+\   'css': ['prettier'],
+\   'markdown': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" run prettier on save
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 Plug 'editorconfig/editorconfig-vim'
 
 " files
+Plug 'mhinz/vim-startify'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'

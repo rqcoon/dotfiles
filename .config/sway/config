@@ -14,7 +14,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term alacritty
+set $term gnome-terminal
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
@@ -53,7 +53,7 @@ input "2131:308:LEOPOLD_Mini_Keyboard" {
 output * bg $color0 solid_color
 
 # Devices
-output DP-1 pos 0 0 res 3840x2160 scale 2 
+output DP-1 pos 0 0 res 3840x2160 scale 2
 output DP-2 res 3840x2160 scale 2
 
 # Backlight
