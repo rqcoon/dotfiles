@@ -17,9 +17,10 @@ export VISUAL=nvim
 # export SDL_VIDEODRIVER=wayland
 # export _JAVA_AWT_WM_NONREPARENTING=1
 
-# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-# export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_DEFAULT_ACTION=ls
 
+export FZF_DEFAULT_COMMAND='rg --files --follow'
+    
 if [ -e /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh ]; then
     . /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh;
 fi 
@@ -29,4 +30,4 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
-[ -x /usr/bin/fish ] && SHELL=/usr/bin/fish exec /usr/bin/fish
+[ -x $(which fish) ] && SHELL=$(which fish) exec $(which fish)

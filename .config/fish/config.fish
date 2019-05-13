@@ -9,6 +9,9 @@ set -g -x fish_greeting ''
 
 set pure_symbol_prompt '$'
 
+kitty + complete setup fish | source
+thefuck --alias | source
+
 alias vim 'nvim'
 alias t 'todo.sh'
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
