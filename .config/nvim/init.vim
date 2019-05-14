@@ -11,6 +11,11 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 
 " visual
+Plug 'machakann/vim-highlightedyank'
+Plug 'airblade/vim-gitgutter'
+Plug 'romainl/Apprentice'
+Plug 'chriskempson/base16-vim'
+Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
       \ 'colorscheme': 'powerline',
@@ -22,17 +27,8 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
-Plug 'machakann/vim-highlightedyank'
-Plug 'airblade/vim-gitgutter'
-Plug 'romainl/Apprentice'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'Yggdroot/indentLine'
 
 " markdown
-Plug 'fcpg/vim-waikiki'
-let g:waikiki_wiki_roots = ['~/Dropbox/Notes']
-let g:waikiki_default_maps = 1
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
@@ -49,9 +45,8 @@ let g:vim_markdown_edit_url_in = 'vsplit'
 let g:vim_markdown_folding_style_pythonic = 1
 
 " syntax
-Plug 'mboughaba/i3config.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 Plug 'dbeniamine/todo.txt-vim'
 Plug 'jiangmiao/auto-pairs'
 " enable flow syntax highlight
@@ -88,9 +83,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 Plug 'mhinz/vim-startify'
-
-" undo
-Plug 'sjl/gundo.vim'
 
 " fzf note taking
 Plug 'https://github.com/Alok/notational-fzf-vim'
@@ -130,7 +122,7 @@ set noswapfile
 " theme
 set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-colorscheme apprentice          " Set colorscheme
+colorscheme base16-default-dark " Set colorscheme
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
@@ -139,9 +131,7 @@ set tabstop=4                   " # of spaces that a tab counts for
 set softtabstop=4               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
 set wrap                        " Wrap lines
-set textwidth=500
 set autoindent                  " Minimal automatic indenting for any filetype
-set smartindent
 
 " lines and numbers
 set number                      " Show line number
