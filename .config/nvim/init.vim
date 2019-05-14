@@ -37,13 +37,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'reedes/vim-pencil'
-" use soft-wrapping by default
-let g:pencil#wrapModeDefault = 'soft'
-" 0=disable, 1=one char, 2=hide char, 3=hide all (def)
-let g:pencil#conceallevel = 0
-" n=normal, v=visual, i=insert, c=command (def)
-let g:pencil#concealcursor = 'c'
 " enable plasticboy's markdown frontmatter
 let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
@@ -278,10 +271,10 @@ command! ToggleWrap call ToggleWrap()
 " }}}
 " AUGROUPS {{{
 
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init()
-augroup END
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd call pencil#init()
+"   autocmd FileType text         call pencil#init()
+" augroup END
 
 " }}}

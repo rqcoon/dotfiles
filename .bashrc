@@ -20,10 +20,12 @@ export VISUAL=nvim
 export TODOTXT_DEFAULT_ACTION=ls
 
 export FZF_DEFAULT_COMMAND='rg --files --follow'
-    
+
 if [ -e /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh ]; then
     . /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh;
-fi 
+fi
+
+export PATH="$PATH:$HOME/.yarn/bin"
 
 if [[ $- != *i* ]] ; then
     # Shell is non-interactive.  Be done now!
