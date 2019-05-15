@@ -11,6 +11,11 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 
 " visual
+Plug 'machakann/vim-highlightedyank'
+Plug 'airblade/vim-gitgutter'
+Plug 'romainl/Apprentice'
+Plug 'chriskempson/base16-vim'
+Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
       \ 'colorscheme': 'powerline',
@@ -22,25 +27,12 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
-Plug 'machakann/vim-highlightedyank'
-Plug 'airblade/vim-gitgutter'
-Plug 'romainl/Apprentice'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'Yggdroot/indentLine'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'reedes/vim-pencil'
-" use soft-wrapping by default
-let g:pencil#wrapModeDefault = 'soft'
-" 0=disable, 1=one char, 2=hide char, 3=hide all (def)
-let g:pencil#conceallevel = 0
-" n=normal, v=visual, i=insert, c=command (def)
-let g:pencil#concealcursor = 'c'
 " enable plasticboy's markdown frontmatter
 let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
@@ -53,9 +45,8 @@ let g:vim_markdown_edit_url_in = 'vsplit'
 let g:vim_markdown_folding_style_pythonic = 1
 
 " syntax
-Plug 'mboughaba/i3config.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 Plug 'dbeniamine/todo.txt-vim'
 Plug 'jiangmiao/auto-pairs'
 " enable flow syntax highlight
@@ -75,24 +66,23 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " linting
 Plug 'w0rp/ale'
-let g:ale_linters = {
-    \ 'javascript': ['eslint'],
-    \}
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" run prettier on save
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint', 'prettier'],
+\   'css': ['prettier'],
+\   'markdown': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'editorconfig/editorconfig-vim'
 
 " files
+Plug 'mhinz/vim-startify'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 Plug 'mhinz/vim-startify'
-
-" undo
-Plug 'sjl/gundo.vim'
 
 " fzf note taking
 Plug 'https://github.com/Alok/notational-fzf-vim'
@@ -132,7 +122,7 @@ set noswapfile
 " theme
 set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-colorscheme apprentice          " Set colorscheme
+colorscheme base16-default-dark " Set colorscheme
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
@@ -141,9 +131,7 @@ set tabstop=4                   " # of spaces that a tab counts for
 set softtabstop=4               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
 set wrap                        " Wrap lines
-set textwidth=500
 set autoindent                  " Minimal automatic indenting for any filetype
-set smartindent
 
 " lines and numbers
 set number                      " Show line number
@@ -273,10 +261,10 @@ command! ToggleWrap call ToggleWrap()
 " }}}
 " AUGROUPS {{{
 
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init()
-augroup END
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd call pencil#init()
+"   autocmd FileType text         call pencil#init()
+" augroup END
 
 " }}}
