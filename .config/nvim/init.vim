@@ -42,7 +42,7 @@ let g:vim_markdown_autowrite = 1
 " open markdown links in splits
 let g:vim_markdown_edit_url_in = 'vsplit'
 " fold in python style
-" let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_style_pythonic = 1
 
 " syntax
 Plug 'sheerun/vim-polyglot'
