@@ -247,6 +247,10 @@ nnoremap <silent> <S-t> :tabnew<CR>
 
 " quick open notational notes
 nnoremap <silent> <leader>n :NV<CR>
+
+" jump betwee ALE warnings
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " }}}
 " FUNCTIONS {{{
 
