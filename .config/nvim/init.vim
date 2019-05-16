@@ -66,6 +66,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " linting
 Plug 'w0rp/ale'
+let g:ale_lintes = {
+\   'markdown': ['alex']
+\}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint', 'prettier'],
