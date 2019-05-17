@@ -66,6 +66,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " linting
 Plug 'w0rp/ale'
+let g:ale_lintes = {
+\   'markdown': ['alex']
+\}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint', 'prettier'],
@@ -244,6 +247,10 @@ nnoremap <silent> <S-t> :tabnew<CR>
 
 " quick open notational notes
 nnoremap <silent> <leader>n :NV<CR>
+
+" jump betwee ALE warnings
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " }}}
 " FUNCTIONS {{{
 
