@@ -122,7 +122,7 @@ set noswapfile
 " theme
 set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-colorscheme base16-default-dark " Set colorscheme
+colorscheme base16-classic-dark " Set colorscheme
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
