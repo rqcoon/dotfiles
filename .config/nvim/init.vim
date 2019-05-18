@@ -29,23 +29,32 @@ let g:lightline = {
     \ }
 
 " markdown
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-" enable plasticboy's markdown frontmatter
-let g:vim_markdown_frontmatter = 1
-" allow following markdown links without the .md extension
-let g:vim_markdown_no_extensions_in_markdown = 1
-" autosave file when following markdown links
-let g:vim_markdown_autowrite = 1
-" open markdown links in splits
-let g:vim_markdown_edit_url_in = 'vsplit'
-" fold in python style
-let g:vim_markdown_folding_style_pythonic = 1
+Plug 'SidOfc/mkdx'
+let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
+                        \ 'enter': { 'shift': 1 },
+                        \ 'links': { 'external': { 'enable': 1 } },
+                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 1 },
+                        \ 'fold': { 'enable': 2 },
+                        \ 'checkbox': { 'toggles': [' ', 'x'] } }
+
+" " enable plasticboy's markdown frontmatter
+" let g:vim_markdown_frontmatter = 1
+" " allow following markdown links without the .md extension
+" let g:vim_markdown_no_extensions_in_markdown = 1
+" " autosave file when following markdown links
+" let g:vim_markdown_autowrite = 1
+" " open markdown links in splits
+" let g:vim_markdown_edit_url_in = 'vsplit'
+" " fold in python style
+" let g:vim_markdown_folding_style_pythonic = 1
 
 " syntax
 Plug 'sheerun/vim-polyglot'
+let g:polyglot_disabled = ['markdown']
 " Plug 'pangloss/vim-javascript'
 Plug 'dbeniamine/todo.txt-vim'
 Plug 'jiangmiao/auto-pairs'
@@ -115,7 +124,7 @@ set backspace=indent,eol,start  " Allow backspace in insert mode
 set noshowmode                  " Don't show current mode [bc Lightline]
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
-set conceallevel=2              " Conceals markdown syntax
+" set conceallevel=2              " Conceals markdown syntax
 
 " disable backups and swap
 set nobackup
@@ -125,7 +134,7 @@ set noswapfile
 " theme
 set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-colorscheme base16-classic-dark " Set colorscheme
+colorscheme base16-default-dark " Set colorscheme
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
