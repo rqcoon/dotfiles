@@ -5,6 +5,7 @@ export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Wayland stuff
 # export MOZ_ENABLE_WAYLAND=1
 # export GDK_BACKEND=wayland
 # export CLUTTER_BACKEND=wayland
@@ -20,10 +21,6 @@ export VISUAL=nvim
 export TODOTXT_DEFAULT_ACTION=ls
 
 export FZF_DEFAULT_COMMAND='rg --files --follow'
-
-if [ -e /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh ]; then
-    . /Users/gadzhi/.nix-profile/etc/profile.d/nix.sh;
-fi
 
 export PATH="$PATH:$HOME/.yarn/bin"
 
