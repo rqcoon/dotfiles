@@ -8,6 +8,7 @@ export VISUAL=nvim
 # Wayland stuff
 # export MOZ_ENABLE_WAYLAND=1
 # export GDK_BACKEND=wayland
+# export KITTY_ENABLE_WAYLAND=1
 # export CLUTTER_BACKEND=wayland
 # export QT_AUTO_SCREENSCALE_FACTOR=1
 # export QT_QPA_PLATFORM=wayland-egl

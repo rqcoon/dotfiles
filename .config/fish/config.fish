@@ -2,11 +2,11 @@
 #  set PATH $PATH /usr/bin usr/sbin /usr/local/bin /bin /sbin
 #end
 
-# Base16 Shell
-if status --is-interactive
-    set BASE16_SHELL "$HOME/.config/base16-shell/"
-    source "$BASE16_SHELL/profile_helper.fish"
-end
+# # Base16 Shell
+# if status --is-interactive
+#     set BASE16_SHELL "$HOME/.config/base16-shell/"
+#     source "$BASE16_SHELL/profile_helper.fish"
+# end
 
 # User bin folder
 set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
