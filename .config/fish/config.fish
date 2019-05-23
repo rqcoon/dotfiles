@@ -20,4 +20,4 @@ thefuck --alias | source
 
 alias vim 'nvim'
 alias t 'todo.sh'
-alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

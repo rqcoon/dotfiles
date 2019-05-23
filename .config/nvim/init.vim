@@ -14,11 +14,47 @@ Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
-Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
+
+" markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+" syntax
+Plug 'sheerun/vim-polyglot'
+Plug 'dbeniamine/todo.txt-vim'
+Plug 'jiangmiao/auto-pairs'
+
+" autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" linting
+Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'editorconfig/editorconfig-vim'
+
+" files
+Plug 'mhinz/vim-startify'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
+
+" fzf note taking
+Plug 'https://github.com/Alok/notational-fzf-vim'
+
+call plug#end()
+" }}}
+" PLUGIN SETTINGS {{{
+
+" Lightline {{{
 let g:lightline = {
     \ 'colorscheme': 'powerline',
     \ 'active': {
@@ -29,12 +65,8 @@ let g:lightline = {
     \   'gitbranch': 'fugitive#head'
     \ },
     \ }
-
-" markdown
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+" }}}
+" Markdown {{{
 " enable plasticboy's markdown frontmatter
 let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
@@ -45,30 +77,17 @@ let g:vim_markdown_autowrite = 1
 let g:vim_markdown_edit_url_in = 'vsplit'
 " fold in python style
 let g:vim_markdown_folding_style_pythonic = 1
-
-" syntax
-Plug 'sheerun/vim-polyglot'
-let g:polyglot_disabled = ['markdown']
-" Plug 'pangloss/vim-javascript'
-Plug 'dbeniamine/todo.txt-vim'
-Plug 'jiangmiao/auto-pairs'
-" enable flow syntax highlight
-"let g:javascript_plugin_flow = 1
-
-" autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" }}}
+" Deoplete {{{
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-" snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" }}}
+" UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" linting
-Plug 'w0rp/ale'
+" }}}
+" Ale {{{
 let g:ale_lintes = {
 \   'markdown': ['alex']
 \}
@@ -79,23 +98,15 @@ let g:ale_fixers = {
 \   'markdown': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'editorconfig/editorconfig-vim'
-
-" files
-Plug 'mhinz/vim-startify'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+" }}}
+" FZF {{{
 let $FZF_DEFAULT_COMMAND = 'rg --files'
-Plug 'mhinz/vim-startify'
-
-" fzf note taking
-Plug 'https://github.com/Alok/notational-fzf-vim'
+" }}}
+" Notational-fzf {{{
 let g:nv_search_paths = ['~/Dropbox/Notes']
 let g:nv_use_short_pathnames = 1
+" }}}
 
-call plug#end()
 " }}}
 " SETTINGS {{{
 
@@ -118,7 +129,7 @@ set backspace=indent,eol,start  " Allow backspace in insert mode
 set noshowmode                  " Don't show current mode [bc Lightline]
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
-" set conceallevel=2              " Conceals markdown syntax
+set conceallevel=2              " Conceals markdown syntax
 
 " disable backups and swap
 set nobackup
@@ -270,6 +281,11 @@ command! ToggleWrap call ToggleWrap()
 
 " }}}
 " AUGROUPS {{{
+
+augroup FILETYPES
+  autocmd FileType markdown let b:indentLine_enabled = 0
+  " ... other autocmds
+augroup END
 
 " augroup pencil
 "   autocmd!
