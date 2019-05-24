@@ -1,6 +1,3 @@
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
@@ -23,7 +20,7 @@ export TODOTXT_DEFAULT_ACTION=ls
 
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 
-export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.yarn/bin"
 
 if [[ $- != *i* ]] ; then
     # Shell is non-interactive.  Be done now!
