@@ -15,7 +15,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
 Plug 'Yggdroot/indentLine'
-Plug 'itchyny/lightline.vim'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -26,7 +25,7 @@ Plug 'junegunn/limelight.vim'
 " syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'dbeniamine/todo.txt-vim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'tmsvg/pear-tree'
 
 " autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -54,18 +53,6 @@ call plug#end()
 " }}}
 " PLUGIN SETTINGS {{{
 
-" Lightline {{{
-let g:lightline = {
-    \ 'colorscheme': 'powerline',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'fugitive#head'
-    \ },
-    \ }
-" }}}
 " Markdown {{{
 " enable plasticboy's markdown frontmatter
 let g:vim_markdown_frontmatter = 1
@@ -126,7 +113,7 @@ set ruler                       " Shows the current line number at the bottom-ri
 set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 set backspace=indent,eol,start  " Allow backspace in insert mode
-set noshowmode                  " Don't show current mode [bc Lightline]
+" set noshowmode                  " Don't show current mode [bc Lightline]
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
 set conceallevel=2              " Conceals markdown syntax
@@ -175,6 +162,48 @@ set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
+" }}}
+" STATUSLINE {{{
+
+function! ReadOnly()
+  if &readonly || !&modifiable
+    return ''
+  else
+    return ''
+endfunction
+
+function! GitInfo()
+  let git = fugitive#head()
+  if git != ''
+    return ' '.fugitive#head()
+  else
+    return ''
+endfunction
+
+function! LinterStatus() abort
+   let l:counts = ale#statusline#Count(bufnr(''))
+   let l:all_errors = l:counts.error + l:counts.style_error
+   let l:all_non_errors = l:counts.total - l:all_errors
+   return l:counts.total == 0 ? '' : printf(
+   \ ' W:%d E:%d ',
+   \ l:all_non_errors,
+   \ l:all_errors
+   \)
+endfunction
+
+set statusline=
+set statusline+=%*\ %<%F\ %{ReadOnly()}\ %m\ %w
+" switching to right side
+set statusline+=%=
+set statusline+=%#error#
+set statusline+=\%{LinterStatus()}
+set statusline+=%*
+set statusline+=\ %{GitInfo()}
+set statusline+=\ %y
+set statusline+=\ %3p%%\ \ %l:%c
+" set statusline+=\ %l:%c
+set statusline+=\ %*
+
 " }}}
 " MAPPINGS {{{
 
@@ -259,6 +288,9 @@ nnoremap <silent> <S-t> :tabnew<CR>
 " open/close folds
 " nnoremap <Tab> za
 
+" pear-tree: jump after the closed bracket
+imap <Tab> <Plug>(PearTreeJump)
+
 " quick open notational notes
 nnoremap <silent> <leader>n :NV<CR>
 
@@ -283,8 +315,8 @@ command! ToggleWrap call ToggleWrap()
 " AUGROUPS {{{
 
 augroup FILETYPES
-  autocmd FileType markdown let b:indentLine_enabled = 0
-  " ... other autocmds
+    autocmd!
+    autocmd FileType markdown let b:indentLine_enabled = 0
 augroup END
 
 " augroup pencil
