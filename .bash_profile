@@ -4,5 +4,5 @@ if [ -n "$DESKTOP_SESSION" ];then
 fi
 
 [ -f "$HOME/.profile" ] && source "$HOME/.profile"
-[ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
+if [ -e /home/kkga/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kkga/.nix-profile/etc/profile.d/nix.sh; fi

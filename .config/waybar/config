@@ -1,0 +1,93 @@
+{
+    "layer": "top",
+    // "output": "DP-2",
+    "position": "bottom",
+    "height": 20,
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-right": ["custom/vpn", "pulseaudio", "memory", "network", "cpu", "clock", "idle_inhibitor", "tray"],
+    "sway/workspaces": {
+        "pesistant_workspaces": {
+            "1": ["DP-1"],
+            "2": ["DP-2"],
+            "3": ["DP-2"],
+            "4": ["DP-2"]
+        },
+        "disable-scroll": true,
+        //"all-outputs": true,
+        "format": "{name}"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}",
+        "tooltip": false
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "cpu {}%",
+        "max-length": 10,
+        "on-click": "gnome-terminal -e htop"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "memory": {
+        "interval": 30,
+        "format": "mem {}%",
+        "max-length": 10
+    },
+    "network": {
+        // "interface": "wlp2s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "eth {ifname}",
+        "format-disconnected": "no WiFi", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "alacritty -e nmtui"
+    },
+    "pulseaudio": {
+        "format": "vol {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "MUTE",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 12,
+        "spacing": 4
+    },
+    "custom/vpn": {
+        "exec": "nmcli-vpn",
+        "format": "vpn {}"
+    }
+}

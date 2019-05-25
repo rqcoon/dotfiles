@@ -139,7 +139,7 @@ set noswapfile
 " theme
 set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-colorscheme Apprentice          " Set colorscheme
+colorscheme apprentice          " Set colorscheme
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
