@@ -26,6 +26,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'dbeniamine/todo.txt-vim'
 Plug 'tmsvg/pear-tree'
+Plug 'calviken/vim-gdscript3'
 
 " autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -113,8 +114,7 @@ set ruler                       " Shows the current line number at the bottom-ri
 set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
 set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 set backspace=indent,eol,start  " Allow backspace in insert mode
-" set noshowmode                  " Don't show current mode [bc Lightline]
-set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
+set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
 set conceallevel=2              " Conceals markdown syntax
 
@@ -245,8 +245,8 @@ nnoremap gV `[v`]<Paste>
 " disable Ex mode
 nnoremap Q nop
 
-" trim trailing whitespace
-nnoremap <leader>w :%s/\s\+$//<CR>:noh<CR>
+" toggle wrap
+nnoremap <leader>w :ToggleWrap<CR>
 
 " turn off search highlight
 nnoremap <leader>s :nohlsearch<CR>
@@ -281,15 +281,14 @@ nnoremap tn :tabnew<Space>
 nnoremap tk :tabnext<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
-nnoremap <A-Tab> gt
-nnoremap <S-Tab> gT
+nnoremap <S-Tab> gt
 nnoremap <silent> <S-t> :tabnew<CR>
 
 " open/close folds
-" nnoremap <Tab> za
+nnoremap <Tab> za
 
 " pear-tree: jump after the closed bracket
-imap <Tab> <Plug>(PearTreeJump)
+" imap <Tab> <Plug>(PearTreeJump)
 
 " quick open notational notes
 nnoremap <silent> <leader>n :NV<CR>
