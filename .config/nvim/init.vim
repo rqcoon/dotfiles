@@ -197,7 +197,7 @@ set statusline+=%=
 set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
 set statusline+=│\ %Y
-set statusline+=\ │\ %p%%\ │\\ %c
+set statusline+=\ │\\ %c\ │\ %p%%
 set statusline+=\ %*
 
 " }}}
