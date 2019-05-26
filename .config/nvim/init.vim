@@ -175,7 +175,7 @@ endfunction
 function! GitInfo()
   let git = fugitive#head()
   if git != ''
-    return ' '.fugitive#head()
+    return ' '.fugitive#head() . ' '
   else
     return ''
 endfunction
@@ -185,23 +185,19 @@ function! LinterStatus() abort
    let l:all_errors = l:counts.error + l:counts.style_error
    let l:all_non_errors = l:counts.total - l:all_errors
    return l:counts.total == 0 ? '' : printf(
-   \ ' W:%d E:%d ',
+   \ '▏%d⁄%d▕',
    \ l:all_non_errors,
    \ l:all_errors
    \)
 endfunction
 
 set statusline=
-set statusline+=%*\ %<%F\ %{ReadOnly()}\ %m\ %w
-" switching to right side
+set statusline+=%*\ %<%F%M%{ReadOnly()}\ %w
 set statusline+=%=
-set statusline+=%#error#
-set statusline+=\%{LinterStatus()}
-set statusline+=%*
+set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
-set statusline+=\ %y
-set statusline+=\ %3p%%\ \ %l:%c
-" set statusline+=\ %l:%c
+set statusline+=│\ %Y
+set statusline+=\ │\ %p%%\ │\\ %c
 set statusline+=\ %*
 
 " }}}
