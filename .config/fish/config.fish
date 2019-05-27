@@ -19,5 +19,5 @@ kitty + complete setup fish | source
 thefuck --alias | source
 
 alias vim 'nvim'
-alias t 'todo.sh'
+alias t 'topydo'
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

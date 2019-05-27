@@ -192,7 +192,7 @@ function! LinterStatus() abort
 endfunction
 
 set statusline=
-set statusline+=%*\ %<%F%M%{ReadOnly()}\ %w
+set statusline+=\ %<%F\ %M\ %{ReadOnly()}\ %w
 set statusline+=%=
 set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
@@ -289,9 +289,19 @@ nnoremap <Tab> za
 " quick open notational notes
 nnoremap <silent> <leader>n :NV<CR>
 
-" jump betwee ALE warnings
+" jump between ALE warnings
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" replace the word under cursor
+nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
+
+"move lines around
+xnoremap <leader>j :m'>+<cr>gv=gv
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+
 " }}}
 " FUNCTIONS {{{
 
