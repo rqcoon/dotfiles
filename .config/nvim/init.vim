@@ -175,7 +175,7 @@ endfunction
 function! GitInfo()
   let git = fugitive#head()
   if git != ''
-    return ' '.fugitive#head() . ' '
+    return ' '.fugitive#head()
   else
     return ''
 endfunction
@@ -196,8 +196,8 @@ set statusline+=\ %<%F\ %M\ %{ReadOnly()}\ %w
 set statusline+=%=
 set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
-set statusline+=│\ %Y
-set statusline+=\ │\\ %c\ │\ %p%%
+set statusline+=\ %y
+set statusline+=\ %c\ %p%%
 set statusline+=\ %*
 
 " }}}
@@ -318,6 +318,12 @@ command! ToggleWrap call ToggleWrap()
 
 " }}}
 " AUGROUPS {{{
+
+au filetype todo setlocal omnifunc=todo#Complete
+
+au filetype todo imap <buffer> + +<C-X><C-O>
+au filetype todo imap <buffer> @ @<C-X><C-O>
+
 
 augroup FILETYPES
     autocmd!
