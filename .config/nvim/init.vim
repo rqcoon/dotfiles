@@ -15,6 +15,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
 Plug 'Yggdroot/indentLine'
+Plug 'gruvbox-community/gruvbox'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -23,8 +24,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 " syntax
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'dbeniamine/todo.txt-vim'
+Plug 'chemzqm/vim-jsx-improve'
 Plug 'tmsvg/pear-tree'
 Plug 'calviken/vim-gdscript3'
 
