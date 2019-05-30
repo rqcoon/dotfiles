@@ -328,6 +328,7 @@ au filetype todo imap <buffer> @ @<C-X><C-O>
 augroup FILETYPES
     autocmd!
     autocmd FileType markdown let b:indentLine_enabled = 0
+    autocmd FileType markdown setlocal norelativenumber nonumber
 augroup END
 
 " augroup pencil

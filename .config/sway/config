@@ -83,7 +83,7 @@ font pango:Iosevka Term 10
 # window borders
 default_orientation auto
 hide_edge_borders smart
-default_border pixel
+default_border pixel 1
 smart_borders on
 
 # gaps
@@ -102,7 +102,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym $mod+Shift+L exec swaylock -c 000000
+bindsym $mod+Shift+Ctrl+L exec swaylock -c 000000
 
 #bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
 
@@ -144,10 +144,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # _move_ the focused window with the same, but add Shift
-# bindsym $mod+Shift+$left move left
-# bindsym $mod+Shift+$down move down
-# bindsym $mod+Shift+$up move up
-# bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 # ditto, with arrow keys
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -304,5 +304,7 @@ bar {
 exec dropbox start
 exec mako
 # }}}
+
+# xwayland disable
 
 include /etc/sway/config.d/*
