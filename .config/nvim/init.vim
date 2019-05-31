@@ -9,6 +9,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
+Plug 'godlygeek/tabular'
 
 " visual
 Plug 'machakann/vim-highlightedyank'
