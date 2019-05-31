@@ -15,6 +15,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
 Plug 'Yggdroot/indentLine'
+Plug 'gruvbox-community/gruvbox'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -23,8 +24,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 " syntax
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'dbeniamine/todo.txt-vim'
+Plug 'chemzqm/vim-jsx-improve'
 Plug 'tmsvg/pear-tree'
 Plug 'calviken/vim-gdscript3'
 
@@ -175,7 +177,7 @@ endfunction
 function! GitInfo()
   let git = fugitive#head()
   if git != ''
-    return ' '.fugitive#head() . ' '
+    return ' '.fugitive#head()
   else
     return ''
 endfunction
@@ -196,8 +198,8 @@ set statusline+=\ %<%F\ %M\ %{ReadOnly()}\ %w
 set statusline+=%=
 set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
-set statusline+=│\ %Y
-set statusline+=\ │\\ %c\ │\ %p%%
+set statusline+=\ %y
+set statusline+=\ %c\ %p%%
 set statusline+=\ %*
 
 " }}}
@@ -319,9 +321,16 @@ command! ToggleWrap call ToggleWrap()
 " }}}
 " AUGROUPS {{{
 
+au filetype todo setlocal omnifunc=todo#Complete
+
+au filetype todo imap <buffer> + +<C-X><C-O>
+au filetype todo imap <buffer> @ @<C-X><C-O>
+
+
 augroup FILETYPES
     autocmd!
     autocmd FileType markdown let b:indentLine_enabled = 0
+    autocmd FileType markdown setlocal norelativenumber nonumber
 augroup END
 
 " augroup pencil

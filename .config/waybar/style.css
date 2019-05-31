@@ -1,9 +1,10 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Iosevka Term Medium, Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-size: 11px;
   min-height: 0;
+  font-weight: 500;
 }
 
 window#waybar {
@@ -11,11 +12,11 @@ window#waybar {
   color: #bcbcbc;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
   padding: 0 2px;
   background: transparent;
   color: #bcbcbc;
+  font-weight: bold;
 }
 
 #workspaces button:hover {
@@ -35,12 +36,11 @@ window#waybar {
 #mode {
   background: #af5f5f;
   color: #ffffff;
-  /*border-bottom: 3px solid #ffffff;*/
 }
 
 #window {
   color: #bcbcbc;
-  margin: 0 12px;
+  margin: 0 8px;
 }
 
 #clock,
@@ -55,8 +55,8 @@ window#waybar {
 #tray,
 #mode,
 #idle_inhibitor {
-  padding: 0 4px;
-  margin: 0 4px;
+  padding: 0 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /*#clock {

@@ -4,7 +4,7 @@
     "position": "bottom",
     "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["custom/vpn", "pulseaudio", "memory", "network", "cpu", "clock", "idle_inhibitor", "tray"],
+    "modules-right": ["custom/vpn", "pulseaudio", "network", "cpu", "clock", "tray"],
     "sway/workspaces": {
         "pesistant_workspaces": {
             "1": ["DP-1"],
@@ -64,7 +64,7 @@
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "alacritty -e nmtui"
+        "on-click": "KITTY_ENABLE_WAYLAND=1 kitty -e nmtui"
     },
     "pulseaudio": {
         "format": "vol {volume}%",

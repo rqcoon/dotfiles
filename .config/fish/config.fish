@@ -9,7 +9,7 @@
 # end
 
 # User bin folder
-set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
+# set -x -g PATH ~/bin ~/.local/bin $PATH /usr/local/sbin
 
 set -g -x fish_greeting ''
 
@@ -20,4 +20,6 @@ thefuck --alias | source
 
 alias vim 'nvim'
 alias t 'topydo'
+alias d="kitty +kitten diff"
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias icat="kitty +kitten icat"

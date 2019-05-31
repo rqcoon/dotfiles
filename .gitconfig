@@ -3,6 +3,16 @@
 	email = me@kkga.me
 [credential]
 	helper = cache --timeout=999999999
+[diff]
+    tool = kitty
+    guitool = kitty.gui
+[difftool]
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
