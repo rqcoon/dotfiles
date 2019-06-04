@@ -9,6 +9,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
+Plug 'godlygeek/tabular'
 
 " visual
 Plug 'machakann/vim-highlightedyank'
@@ -286,7 +287,7 @@ nnoremap <silent> <S-t> :tabnew<CR>
 nnoremap <Tab> za
 
 " pear-tree: jump after the closed bracket
-" imap <Tab> <Plug>(PearTreeJump)
+imap <S-Tab> <Plug>(PearTreeJump)
 
 " quick open notational notes
 nnoremap <silent> <leader>n :NV<CR>
