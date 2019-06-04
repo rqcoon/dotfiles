@@ -24,7 +24,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 " syntax
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'dbeniamine/todo.txt-vim'
 Plug 'chemzqm/vim-jsx-improve'
 Plug 'tmsvg/pear-tree'
