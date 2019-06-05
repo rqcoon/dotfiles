@@ -4,7 +4,7 @@
     "position": "bottom",
     "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["custom/vpn", "pulseaudio", "network", "cpu", "clock", "tray"],
+    "modules-right": ["custom/nuvola", "custom/vpn", "pulseaudio", "network", "cpu", "clock", "tray"],
     "sway/workspaces": {
         "pesistant_workspaces": {
             "1": ["DP-1"],
@@ -85,6 +85,11 @@
     "tray": {
         "icon-size": 12,
         "spacing": 4
+    },
+    "custom/nuvola": {
+        "exec": "echo $(flatpak run --command=nuvolactl eu.tiliado.Nuvola track-info artist) - $(flatpak run --command=nuvolactl eu.tiliado.Nuvola track-info title)",
+        "format": "{}",
+        "interval": 10
     },
     "custom/vpn": {
         "exec": "nmcli-vpn",
