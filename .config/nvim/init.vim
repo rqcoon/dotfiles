@@ -69,6 +69,9 @@ let g:vim_markdown_edit_url_in = 'vsplit'
 " fold in python style
 let g:vim_markdown_folding_style_pythonic = 1
 " }}}
+" Goyo {{{
+let g:goyo_width = 88
+" }}}
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -85,6 +88,7 @@ let g:ale_lintes = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint', 'prettier'],
+\   'json': ['prettier'],
 \   'css': ['prettier'],
 \   'markdown': ['prettier'],
 \}
@@ -305,6 +309,8 @@ nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
 xnoremap <leader>k :m-2<cr>gv=gv
 
+" open goyo
+nnoremap <leader>g :Goyo<CR>
 " }}}
 " FUNCTIONS {{{
 
