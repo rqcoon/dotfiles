@@ -20,6 +20,7 @@ thefuck --alias | source
 
 alias vim 'nvim'
 alias t 'topydo'
+alias c 'clear'
 alias d="kitty +kitten diff"
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat="kitty +kitten icat"

@@ -32,7 +32,8 @@ Plug 'tmsvg/pear-tree'
 Plug 'calviken/vim-gdscript3'
 
 " autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
 " snippets
 Plug 'SirVer/ultisnips'
@@ -72,14 +73,30 @@ let g:vim_markdown_folding_style_pythonic = 1
 " Goyo {{{
 let g:goyo_width = 88
 " }}}
-" Deoplete {{{
-let g:deoplete#enable_at_startup = 1
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" COC {{{
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
+                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 " }}}
 " UltiSnips {{{
-let g:UltiSnipsExpandTrigger="<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsExpandTrigger="<C-e>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " }}}
 " Ale {{{
 let g:ale_lintes = {
@@ -281,17 +298,18 @@ nnoremap <C-H> <C-W><C-H>
 
 " tabs
 nnoremap tn :tabnew<Space>
-nnoremap tk :tabnext<CR>
+nnoremap tk :tabprevious<CR>
+nnoremap tj :tabnext<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
-nnoremap <S-Tab> gt
-nnoremap <silent> <S-t> :tabnew<CR>
+" nnoremap <S-Tab> gt
+" nnoremap <silent> <S-t> :tabnew<CR>
 
 " open/close folds
 nnoremap <Tab> za
 
 " pear-tree: jump after the closed bracket
-imap <S-Tab> <Plug>(PearTreeJump)
+imap <A-Tab> <Plug>(PearTreeJump)
 
 " quick open notational notes
 nnoremap <silent> <leader>n :NV<CR>
