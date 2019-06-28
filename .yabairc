@@ -3,10 +3,10 @@
 # bar settings
 yabai -m config status_bar                   on
 yabai -m config status_bar_text_font         "SF Pro Display:Medium:12.0"
-yabai -m config status_bar_icon_font         "Font Awesome 5 Free:Solid:12.0"
+yabai -m config status_bar_icon_font         "SF Pro Display:Medium:12.0"
 yabai -m config status_bar_background_color  0xff262626
 yabai -m config status_bar_foreground_color  0xffbcbcbc
-yabai -m config status_bar_space_icon_strip    2 3  
+yabai -m config status_bar_space_icon_strip  1 2 3 4 5 6 7 8 9 0
 yabai -m config status_bar_power_icon_strip
 yabai -m config status_bar_space_icon
 yabai -m config status_bar_clock_icon
@@ -25,8 +25,8 @@ yabai -m config normal_window_border_color   0xff444444
 yabai -m config insert_window_border_color   0xffFFFFAF
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.90
-yabai -m config split_ratio                  0.70
-yabai -m config auto_balance                 on
+yabai -m config split_ratio                  0.60
+yabai -m config auto_balance                 off
 yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                resize
 yabai -m config mouse_action2                move
@@ -39,4 +39,73 @@ yabai -m config left_padding                 8
 yabai -m config right_padding                8
 yabai -m config window_gap                   8
 
+# rules for apps
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Godot$" space=^5
+
 echo "yabai configuration loaded.."
+
+# check for updates and install on load
+# set codesigning certificate name here (default: yabai-cert)
+YABAI_CERT=
+
+function main() {
+    if check_for_updates; then
+        install_updates ${YABAI_CERT}
+    else
+        osascript << EOM
+            display notification "Configuration loaded." ¬
+                with title "$(yabai --version)"
+EOM
+    fi
+}
+
+# Please do not touch the code below unless you absolutely know what you are
+# doing. It's the result of multiple long evenings trying to get this to work
+# and relies on terrible hacks to work around limitations of launchd.
+# For questions please reach out to @dominiklohmann via GitHub.
+
+function check_for_updates() {
+    set -o pipefail
+
+    installed="$(brew info koekeishiya/formulae/yabai | grep 'HEAD-' \
+        | awk '{print substr($1,length($1)-6)}')"
+    remote="$(git ls-remote --head 'https://github.com/koekeishiya/yabai.git' \
+        | awk '{print substr($1,1,7)}')"
+
+    [ ${?} -eq 0 ] && [[ "${installed}" != "${remote}" ]]
+}
+
+function install_updates() {
+    script=$(mktemp)
+
+    cat > ${script} << EOF
+        #! /usr/bin/env sh
+
+        clear
+        printf "\e[3J\e[1mUpdating yabai...\e[0m\n"
+        printf "Authenticate to continue, Ctrl+C to cancel.\n\n"
+
+        if sudo -v; then
+            brew services stop koekeishiya/formulae/yabai
+            brew reinstall koekeishiya/formulae/yabai
+            codesign -fs "${1:-yabai-cert}" "$(brew --prefix yabai)/bin/yabai"
+            sudo yabai --uninstall-sa
+            sudo yabai --install-sa
+            brew services start koekeishiya/formulae/yabai
+            killall Dock
+            sleep 2
+            clear
+            printf "\e[3J"
+        fi
+
+        ps -eo pid,comm | grep -v grep | grep -i Terminal | tail -1 \
+            | awk '{print $1}' | xargs kill
+EOF
+
+    chmod +x ${script}
+    open -FWnb com.apple.Terminal ${script}
+    rm -f ${script}
+}
+
+main &
