@@ -2,18 +2,18 @@
 
 # bar settings
 yabai -m config status_bar                   on
-yabai -m config status_bar_text_font         "SF Pro Display:Medium:12.0"
-yabai -m config status_bar_icon_font         "SF Pro Display:Medium:12.0"
+yabai -m config status_bar_text_font         "Iosevka:Bold:12.0"
+yabai -m config status_bar_icon_font         "Iosevka:Bold:12.0"
 yabai -m config status_bar_background_color  0xff262626
 yabai -m config status_bar_foreground_color  0xffbcbcbc
-yabai -m config status_bar_space_icon_strip  1 2 3 4 5 6 7 8 9 0
-yabai -m config status_bar_power_icon_strip
+yabai -m config status_bar_space_icon_strip  ⠂ ⠅ ⠇ ⠗ ⠟ ⠿ VII VIII IX X
+yabai -m config status_bar_power_icon_strip  ☲ ⚡
 yabai -m config status_bar_space_icon
 yabai -m config status_bar_clock_icon
 
 # global settings
 yabai -m config mouse_follows_focus          on
-yabai -m config focus_follows_mouse          on
+yabai -m config focus_follows_mouse          autofocus
 yabai -m config window_topmost               on
 yabai -m config window_placement             second_child
 yabai -m config window_opacity               off
