@@ -24,9 +24,9 @@ export FZF_DEFAULT_COMMAND='rg --files --follow'
 
 export PATH="$PATH:$HOME/bin/:$HOME/.local/bin:$HOME/.yarn/bin"
 
-if [[ $- != *i* ]] ; then
+#if [[ $- != *i* ]] ; then
     # Shell is non-interactive.  Be done now!
-    return
-fi
+#    return
+#fi
 
 [ -x $(which fish) ] && SHELL=$(which fish) exec $(which fish)
