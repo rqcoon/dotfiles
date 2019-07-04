@@ -19,7 +19,7 @@ yabai -m config window_placement             second_child
 yabai -m config window_opacity               off
 yabai -m config window_shadow                float
 yabai -m config window_border                on
-yabai -m config window_border_width          2
+yabai -m config window_border_width          1
 yabai -m config active_window_border_color   0xff87875F
 yabai -m config normal_window_border_color   0xff444444
 yabai -m config insert_window_border_color   0xffFFFFAF
@@ -57,7 +57,6 @@ yabai -m signal --add event=window_focused \
 yabai -m signal --add event=window_focused \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
 
-echo "yabai configuration loaded.."
 
 # check for updates and install on load
 # set codesigning certificate name here (default: yabai-cert)
