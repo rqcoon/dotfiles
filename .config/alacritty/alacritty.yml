@@ -52,7 +52,7 @@ window:
   decorations: none
 
   # When true, alacritty starts maximized.
-  start_maximized: false
+  # startup_mode: false
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -94,35 +94,35 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: 'Iosevka Term'
+    family: 'Iosevka'
 
     # The `style` can be specified to pick a specific face.
-    # style: Regular
+    style: Regular
 
   # Bold font face
-  # bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: 'Input Mono Narrow'
+    family: 'Iosevka'
 
     # The `style` can be specified to pick a specific face.
-    # style: Medium
+    style: Bold
 
   # Italic font face
-  # italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: 'Input Mono Narrow'
+    family: 'Iosevka'
 
     # The `style` can be specified to pick a specific face.
-    # style: Italic
+    style: Italic
 
   # Point size
-  size: 11.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -135,7 +135,7 @@ font:
   # increasing `y` moves the glyph upwards.
   glyph_offset:
     x: 0
-    y: 2
+    y: 0
 
   # Thin stroke font rendering (macOS only)
   #
@@ -151,7 +151,7 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # Display the time it takes to redraw each frame.
 render_timer: false

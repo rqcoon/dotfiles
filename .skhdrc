@@ -1,15 +1,15 @@
 # open terminal
-cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+ctrl + cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 
 
 # WINDOWS
 
 # navigate windows and spaces
-alt - h : yabai -m window --focus prev
-alt - j : yabai -m space  --focus next
-alt - k : yabai -m space  --focus prev
-alt - l : yabai -m window --focus next
+alt - h : yabai -m window --focus prev && uberrefresh
+alt - j : yabai -m space  --focus next && uberrefresh
+alt - k : yabai -m space  --focus prev && uberrefresh
+alt - l : yabai -m window --focus next && uberrefresh
 
 # move window
 shift + alt - h : yabai -m window --warp prev
@@ -21,13 +21,13 @@ shift + alt - l : yabai -m window --warp next
 shift + alt - 0 : yabai -m space --balance
 
 # make floating window fill screen
-shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+# shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
+# shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
 
 
