@@ -18,7 +18,7 @@ Plug 'romainl/Apprentice'
 Plug 'Yggdroot/indentLine'
 
 " markdown
-" Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -67,7 +67,8 @@ let g:vim_markdown_autowrite = 1
 " open markdown links in splits
 let g:vim_markdown_edit_url_in = 'vsplit'
 " fold in python style
-let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_style_pythonic = 1
 " }}}
 " Goyo {{{
 let g:goyo_width = 88
