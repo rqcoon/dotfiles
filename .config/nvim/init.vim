@@ -16,6 +16,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
 Plug 'Yggdroot/indentLine'
+Plug 'chriskempson/base16-vim'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -148,9 +149,10 @@ set nowb
 set noswapfile
 
 " theme
+let base16colorspace=256        " Access colors present in 256 colorspace
 set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-colorscheme apprentice          " Set colorscheme
+colorscheme base16-tomorrow-night " Set colorscheme
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
