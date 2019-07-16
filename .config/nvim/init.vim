@@ -149,10 +149,9 @@ set nowb
 set noswapfile
 
 " theme
-let base16colorspace=256        " Access colors present in 256 colorspace
-set termguicolors               " Use true colors for colorscheme
+" set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-colorscheme base16-tomorrow-night " Set colorscheme
+colorscheme apprentice          " Set colorscheme
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
