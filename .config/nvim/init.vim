@@ -27,7 +27,7 @@ Plug 'junegunn/limelight.vim'
 " syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'dbeniamine/todo.txt-vim'
-Plug 'chemzqm/vim-jsx-improve'
+" Plug 'chemzqm/vim-jsx-improve'
 Plug 'tmsvg/pear-tree'
 Plug 'calviken/vim-gdscript3'
 
@@ -149,7 +149,7 @@ set nowb
 set noswapfile
 
 " theme
-" set termguicolors               " Use true colors for colorscheme
+set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
 colorscheme apprentice          " Set colorscheme
 
