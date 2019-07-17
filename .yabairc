@@ -41,6 +41,11 @@ yabai -m config window_gap                   8
 
 # rules for apps
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Safari$" space=2
+yabai -m rule --add app="^Brave Browser Beta$" space=3
+yabai -m rule --add app="^Brave Browser$" space=3
+yabai -m rule --add app="^Telegram$" space=6
+yabai -m rule --add app="^DejaLu$" space=6
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Godot$" space=^5 border=off
 # yabai -m rule --add app="^YT Music$" display=^2
@@ -57,4 +62,4 @@ yabai -m signal --add event=window_focused \
 yabai -m signal --add event=window_focused \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
 
-YABAI_CERT=yabai-cert sh -c "$(curl -sSL "https://git.io/update-yabai")" &
+# YABAI_CERT=yabai-cert sh -c "$(curl -sSL "https://git.io/update-yabai")" &

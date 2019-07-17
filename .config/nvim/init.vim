@@ -149,7 +149,7 @@ set nowb
 set noswapfile
 
 " theme
-set termguicolors               " Use true colors for colorscheme
+" set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
 colorscheme apprentice          " Set colorscheme
 
@@ -165,7 +165,7 @@ set autoindent                  " Minimal automatic indenting for any filetype
 " lines and numbers
 set number                      " Show line number
 set relativenumber              " Relative numbers are good
-set numberwidth=6               " Wider linenumbers
+set numberwidth=4               " Wider linenumbers
 set cursorline                  " Show line
 
 " splits
