@@ -15,21 +15,22 @@ Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
-Plug 'Yggdroot/indentLine'
-Plug 'chriskempson/base16-vim'
+Plug 'mbbill/undotree'
+Plug 'junegunn/vim-peekaboo'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'konfekt/fastfold'
 
 " markdown
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+" Plug 'plasticboy/vim-markdown'
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " syntax
-Plug 'sheerun/vim-polyglot'
-Plug 'dbeniamine/todo.txt-vim'
-" Plug 'chemzqm/vim-jsx-improve'
-Plug 'tmsvg/pear-tree'
 Plug 'calviken/vim-gdscript3'
+Plug 'peitalin/vim-jsx-typescript'
+" Plug 'tmsvg/pear-tree'
 
 " autocomplete
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -41,15 +42,15 @@ Plug 'honza/vim-snippets'
 
 " linting
 Plug 'w0rp/ale'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'wsdjeg/vim-todo'
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'editorconfig/editorconfig-vim'
 
 " files
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-startify'
 
 " fzf note taking
 Plug 'https://github.com/Alok/notational-fzf-vim'
@@ -60,6 +61,7 @@ call plug#end()
 
 " Markdown {{{
 " enable plasticboy's markdown frontmatter
+let g:pandoc#folding#fastfolds = 1
 let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
 let g:vim_markdown_no_extensions_in_markdown = 1
@@ -68,8 +70,9 @@ let g:vim_markdown_autowrite = 1
 " open markdown links in splits
 let g:vim_markdown_edit_url_in = 'vsplit'
 " fold in python style
-let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_folding_style_pythonic = 1
+" let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_fenced_languages = []
 " }}}
 " Goyo {{{
 let g:goyo_width = 88
@@ -77,27 +80,27 @@ let g:goyo_width = 88
 " COC {{{
 
 " use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+" inoremap <silent><expr> <Tab>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<Tab>" :
+"       \ coc#refresh()
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " }}}
 " UltiSnips {{{
-" let g:UltiSnipsExpandTrigger="<C-e>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " }}}
 " Ale {{{
 let g:ale_lintes = {
@@ -279,6 +282,7 @@ nnoremap <leader>so :source $MYVIMRC<cr>
 " fzf mappings
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>c :Commands<CR>
 nnoremap <leader>rg :Rg<CR>
 
 " quick exit and save

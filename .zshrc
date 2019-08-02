@@ -1,5 +1,5 @@
 # Add commonly used folders to $PATH
-export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 export BROWSER=firefox
 export EDITOR=nvim
@@ -21,5 +21,4 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 # export ELM_ENGINE=wayland_egl
 # export SDL_VIDEODRIVER=wayland
 # export _JAVA_AWT_WM_NONREPARENTING=1
-
 [ -x $(which fish) ] && SHELL=$(which fish) exec $(which fish)
