@@ -47,7 +47,6 @@ Plug 'w0rp/ale'
 " Plug 'editorconfig/editorconfig-vim'
 
 " files
-Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
