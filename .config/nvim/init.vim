@@ -19,13 +19,13 @@ Plug 'mbbill/undotree'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'konfekt/fastfold'
+Plug 'lifepillar/vim-solarized8'
 
 " markdown
+Plug 'gabrielelana/vim-markdown'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " syntax
 Plug 'calviken/vim-gdscript3'
@@ -54,10 +54,18 @@ Plug 'junegunn/fzf.vim'
 " fzf note taking
 Plug 'https://github.com/Alok/notational-fzf-vim'
 
+" misc
+Plug 'lifepillar/vim-cheat40'
+
 call plug#end()
 " }}}
 " PLUGIN SETTINGS {{{
 
+" Theme {{{
+let g:solarized_termtrans = 0
+" let g:solarized_visibility = "high"
+" let g:solarized_statusline = "flat"
+" }}}
 " Markdown {{{
 " enable plasticboy's markdown frontmatter
 let g:pandoc#folding#fastfolds = 1
@@ -151,9 +159,10 @@ set nowb
 set noswapfile
 
 " theme
-" set termguicolors               " Use true colors for colorscheme
+set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-colorscheme apprentice          " Set colorscheme
+" colorscheme apprentice          " Set colorscheme
+colorscheme solarized8_flat
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
