@@ -1,4 +1,4 @@
-# set fish_greeting ''
+set fish_greeting ''
 
 # set -gx LC_CTYPE en_US.UTF-8
 # set -gx LC_ALL en_US.UTF-8
