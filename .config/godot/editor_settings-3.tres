@@ -1,19 +1,23 @@
-[gd_resource type="EditorSettings" load_steps=19 format=2]
+[gd_resource type="EditorSettings" load_steps=31 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
+command = true
 scancode = 87
 
 [sub_resource type="InputEventKey" id=2]
 control = true
+command = true
 scancode = 68
 
 [sub_resource type="InputEventKey" id=3]
+control = true
 meta = true
 command = true
 scancode = 49
 
 [sub_resource type="InputEventKey" id=4]
+control = true
 meta = true
 command = true
 scancode = 50
@@ -23,6 +27,7 @@ scancode = 16777247
 unicode = 16777247
 
 [sub_resource type="InputEventKey" id=6]
+control = true
 meta = true
 command = true
 scancode = 51
@@ -32,67 +37,138 @@ alt = true
 scancode = 96
 
 [sub_resource type="InputEventKey" id=8]
-alt = true
 control = true
-scancode = 16777233
+command = true
+scancode = 78
+unicode = 78
 
 [sub_resource type="InputEventKey" id=9]
-alt = true
-control = true
-scancode = 16777231
+scancode = 16777224
+unicode = 16777224
 
 [sub_resource type="InputEventKey" id=10]
-alt = true
 control = true
-scancode = 90
+command = true
+scancode = 68
+unicode = 68
 
 [sub_resource type="InputEventKey" id=11]
+alt = true
+scancode = 16777231
+unicode = 16777231
+
+[sub_resource type="InputEventKey" id=12]
+alt = true
+scancode = 16777233
+unicode = 16777233
+
+[sub_resource type="InputEventKey" id=13]
+alt = true
+scancode = 16777232
+unicode = 16777232
+
+[sub_resource type="InputEventKey" id=14]
+control = true
+command = true
+scancode = 16777234
+unicode = 16777234
+
+[sub_resource type="InputEventKey" id=15]
+control = true
+command = true
+scancode = 16777232
+unicode = 16777232
+
+[sub_resource type="InputEventKey" id=16]
+scancode = 16777248
+unicode = 16777248
+
+[sub_resource type="InputEventKey" id=17]
+alt = true
+scancode = 70
+unicode = 70
+
+[sub_resource type="InputEventKey" id=18]
+control = true
+command = true
+scancode = 72
+unicode = 72
+
+[sub_resource type="InputEventKey" id=19]
+alt = true
+scancode = 86
+unicode = 86
+
+[sub_resource type="InputEventKey" id=20]
+alt = true
+control = true
+command = true
+scancode = 16777233
+
+[sub_resource type="InputEventKey" id=21]
+alt = true
+control = true
+command = true
+scancode = 16777231
+
+[sub_resource type="InputEventKey" id=22]
+alt = true
+control = true
+command = true
+scancode = 90
+
+[sub_resource type="InputEventKey" id=23]
 shift = true
+control = true
 meta = true
 command = true
 scancode = 70
 
-[sub_resource type="InputEventKey" id=12]
+[sub_resource type="InputEventKey" id=24]
+control = true
 meta = true
 command = true
 scancode = 47
 
-[sub_resource type="InputEventKey" id=13]
+[sub_resource type="InputEventKey" id=25]
 control = true
+command = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=14]
+[sub_resource type="InputEventKey" id=26]
 alt = true
 shift = true
 control = true
+command = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=15]
+[sub_resource type="InputEventKey" id=27]
 control = true
+command = true
 scancode = 71
 
-[sub_resource type="InputEventKey" id=16]
+[sub_resource type="InputEventKey" id=28]
 control = true
+command = true
 scancode = 16777220
 
-[sub_resource type="InputEventKey" id=17]
+[sub_resource type="InputEventKey" id=29]
 control = true
+command = true
 scancode = 80
 
-[sub_resource type="InputEventKey" id=18]
+[sub_resource type="InputEventKey" id=30]
 control = true
+command = true
 scancode = 66
 
 [resource]
 interface/editor/display_scale = 4
 interface/editor/main_font_size = 16
-interface/editor/main_font = "/Users/gadzhi/Library/Fonts/Inter-Regular.otf"
-interface/editor/main_font_bold = "/Users/gadzhi/Library/Fonts/Inter-Medium.otf"
 interface/editor/code_font_size = 19.3333
-interface/editor/code_font = "/Users/gadzhi/Library/Fonts/iosevka-regular.ttf"
 interface/theme/preset = "Grey"
-interface/theme/base_color = Color( 0.24, 0.24, 0.24, 1 )
-interface/theme/accent_color = Color( 0.72, 0.89, 1, 1 )
+interface/theme/base_color = Color( 0.239216, 0.239216, 0.239216, 1 )
+interface/theme/accent_color = Color( 0.721569, 0.894118, 1, 1 )
 interface/theme/contrast = 0.2
 interface/theme/additional_spacing = 1.0
 interface/scene_tabs/minimum_width = 80
@@ -128,18 +204,18 @@ text_editor/open_scripts/v_scroll_speed = 120
 text_editor/files/trim_trailing_whitespace_on_save = true
 text_editor/cursor/scroll_past_end_of_file = true
 text_editor/completion/add_type_hints = true
-text_editor/help/help_font_size = 20
-text_editor/help/help_source_font_size = 20
-text_editor/help/help_title_font_size = 28
 editors/3d/primary_grid_color = Color( 0.564706, 0.564706, 0.564706, 1 )
 editors/3d/secondary_grid_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 editors/3d/navigation/invert_y_axis = true
 editors/3d/navigation/zoom_style = 1
 editors/3d/navigation/emulate_3_button_mouse = true
 editors/2d/grid_color = Color( 1, 1, 1, 0.16 )
-run/output/font_size = 16
-run/output/always_close_output_on_stop = true
 editors/2d/simple_spacebar_panning = true
+run/output/always_close_output_on_stop = true
+text_editor/help/help_font_size = 20
+text_editor/help/help_source_font_size = 20
+text_editor/help/help_title_font_size = 28
+run/output/font_size = 16
 docks/filesystem/files_display_mode = 1
 interface/editor/hidpi_mode = 1
 filesystem/directories/default_project_export_path = ""
@@ -284,11 +360,10 @@ interface/inspector/horizontal_vector_types_editing = true
 interface/inspector/auto_unfold_edited = true
 interface/inspector/auto_unfold_foreign_scenes = true
 interface/inspector/resources_to_open_in_new_inspector = "SpatialMaterial,Script,MeshLibrary,TileSet"
-projects/::Users::gadzhi::github::godot-metroidvania-2d::hook!-full-game = "/Users/gadzhi/github/godot-metroidvania-2d/hook!-full-game"
-projects/::Users::gadzhi::godot-projects::click = "/Users/gadzhi/godot-projects/click"
 export/android/custom_build_sdk_path = ""
 interface/editor/show_update_spinner = false
 interface/editor/update_continuously = false
 interface/inspector/default_float_step = 0.01
 _default_feature_profile = ""
-shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_3d", SubResource( 4 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 6 ), "editor/next_tab", SubResource( 7 ), "editor/open_scene", null, "script_editor/history_next", SubResource( 8 ), "script_editor/history_previous", SubResource( 9 ), "script_text_editor/fold_all_lines", SubResource( 10 ), "script_text_editor/replace", SubResource( 11 ), "script_text_editor/toggle_comment", SubResource( 12 ), "script_text_editor/toggle_fold_line", SubResource( 13 ), "script_text_editor/unfold_all_lines", SubResource( 14 ), "tile_map_editor/bucket_fill", SubResource( 15 ), "tile_map_editor/erase_selection", SubResource( 16 ), "tile_map_editor/paint_tile", SubResource( 17 ), "tile_map_editor/select", SubResource( 18 ) ]
+projects/::home::kkga::GodotProjects::click = "/home/kkga/GodotProjects/click"
+shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_3d", SubResource( 4 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 6 ), "editor/next_tab", SubResource( 7 ), "editor/open_scene", null, "file_dialog/create_folder", SubResource( 8 ), "file_dialog/delete", SubResource( 9 ), "file_dialog/focus_path", SubResource( 10 ), "file_dialog/go_back", SubResource( 11 ), "file_dialog/go_forward", SubResource( 12 ), "file_dialog/go_up", SubResource( 13 ), "file_dialog/move_favorite_down", SubResource( 14 ), "file_dialog/move_favorite_up", SubResource( 15 ), "file_dialog/refresh", SubResource( 16 ), "file_dialog/toggle_favorite", SubResource( 17 ), "file_dialog/toggle_hidden_files", SubResource( 18 ), "file_dialog/toggle_mode", SubResource( 19 ), "script_editor/history_next", SubResource( 20 ), "script_editor/history_previous", SubResource( 21 ), "script_text_editor/fold_all_lines", SubResource( 22 ), "script_text_editor/replace", SubResource( 23 ), "script_text_editor/toggle_comment", SubResource( 24 ), "script_text_editor/toggle_fold_line", SubResource( 25 ), "script_text_editor/unfold_all_lines", SubResource( 26 ), "tile_map_editor/bucket_fill", SubResource( 27 ), "tile_map_editor/erase_selection", SubResource( 28 ), "tile_map_editor/paint_tile", SubResource( 29 ), "tile_map_editor/select", SubResource( 30 ) ]
