@@ -19,13 +19,13 @@ Plug 'mbbill/undotree'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'konfekt/fastfold'
-Plug 'lifepillar/vim-solarized8'
 
 " markdown
 Plug 'gabrielelana/vim-markdown'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
+Plug 'lifepillar/vim-outlaw'
 
 " syntax
 Plug 'calviken/vim-gdscript3'
@@ -62,9 +62,6 @@ call plug#end()
 " PLUGIN SETTINGS {{{
 
 " Theme {{{
-let g:solarized_termtrans = 0
-" let g:solarized_visibility = "high"
-" let g:solarized_statusline = "flat"
 " }}}
 " Markdown {{{
 " enable plasticboy's markdown frontmatter
@@ -159,10 +156,9 @@ set nowb
 set noswapfile
 
 " theme
-set termguicolors               " Use true colors for colorscheme
+" set termguicolors               " Use true colors for colorscheme
 set background=dark             " Use dark scheme
-" colorscheme apprentice          " Set colorscheme
-colorscheme solarized8_flat
+colorscheme apprentice          " Set colorscheme
 
 " text, tabs and indents
 set expandtab                   " Tabs are spaces
@@ -184,7 +180,7 @@ set splitright                  " Splitting will put the new window right
 set splitbelow                  " Splitting will put the new window below
 
 " clipboard
-set clipboard+=unnamedplus      " Always use system clipboard
+" set clipboard+=unnamedplus      " Always use system clipboard
 
 " columns
 set nojoinspaces                " Set 1 space btwn lines/periods to be joined
