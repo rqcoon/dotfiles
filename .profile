@@ -1,9 +1,14 @@
 export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/var/lib/flatpak/exports/bin:$PATH"
 
+if [ "$HOSTNAME" = silverblue ]; then
+    EDITOR=io.neovim.nvim
+else
+    EDITOR=nvim
+fi
+export EDITOR
 export BROWSER=firefox
-export EDITOR=nvim
-export VISUAL=nvim
+export VISUAL=EDITOR
 
 export TODOTXT_DEFAULT_ACTION=ls
 export FZF_DEFAULT_COMMAND='rg --files --follow'

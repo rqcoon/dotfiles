@@ -23,7 +23,7 @@ set fish_greeting ''
 # set -gx TODOTXT_DEFAULT_ACTION ls
 # set -gx FZF_DEFAULT_COMMAND 'rg --files --follow'
 
-alias vim 'nvim'
+alias vim '$EDITOR'
 alias t 'topydo'
 alias c 'clear'
 alias d "kitty +kitten diff"

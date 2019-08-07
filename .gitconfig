@@ -15,7 +15,7 @@
     cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [core]
 	excludesfile = ~/.gitignore
-	editor = nvim
+	editor = $EDITOR
 [alias]
 	ci = commit
     co = checkout
@@ -29,6 +29,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [color]
-	ui = true
+	ui = auto
 [push]
 	default = simple
