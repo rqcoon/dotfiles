@@ -9,13 +9,12 @@ set $up k
 set $down j
 
 # launcher
-set $menu rofi
+set $menu dmenu_run
 # terminal
-#set $term alacritty
-set $term i3-sensible-terminal
+set $term kitty
 
 # font
-font pango:Pragmata Pro 9
+font pango:Iosevka 11
 
 # remove fullscreen borders and titles
 hide_edge_borders vertical
@@ -36,7 +35,7 @@ bindsym $mod+F2 exec --no-startup-id subl
 bindsym $mod+Ctrl+m exec pavucontrol
 
 # start rofi (a program launcher)
-bindsym $mod+d exec $menu -show drun
+bindsym $mod+d exec $menu
 
 # rofi clipboard
 bindsym $mod+$alt+c exec $menu -modi "clipboard:greenclip print" -show clipboard
@@ -85,7 +84,7 @@ bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace bac
 bindsym $mod+v split toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+w layout toggle tabbed split 
+#bindsym $mod+w layout toggle tabbed split
 
 # split toggle
 #bindsym $mod+q split toggle
@@ -205,7 +204,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -f 'pango:System Font Medium 11' -t warning -m 'Exit?' -b 'Yes, exit i3' 'i3-msg exit'r/"
+bindsym $mod+Shift+e exec "i3-nagbar -f 'pango:Iosevka 10' -t warning -m 'Exit?' -b 'Yes, exit i3' 'i3-msg exit'r/"
 # lock
 bindsym $mod+Shift+l exec i3lock --color=$bg
 
@@ -273,15 +272,14 @@ client.background       #ffffff
 
 # bar
 bar {
+        font pango:Iosevka 9
         status_command ~/bin/i3status-rs ~/.config/i3status-rust/config.toml
-        #status_command SCRIPT_DIR=~/.config/i3blocks i3blocks
         position top
         #tray_padding 0
 		#mode hide
         separator_symbol " · "
     	workspace_buttons yes
 		strip_workspace_numbers yes
-        font pango:PragmataPro 9
         colors {
                 background $bg
                 statusline $text-dim
@@ -302,7 +300,7 @@ bar {
 exec --no-startup-id dropbox start
 exec --no-startup-id redshift
 exec --no-startup-id xautolock -time 10 -locker "i3lock"
-#exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id compton
 exec --no-startup-id greenclip daemon
 exec --no-startup-id pulseaudio --start

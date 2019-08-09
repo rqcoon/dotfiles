@@ -48,7 +48,7 @@ Plug 'w0rp/ale'
 
 " files
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug '/usr/local/opt/fzf'
+" Plug '~/.local/bin/fzf'
 Plug 'junegunn/fzf.vim'
 
 " fzf note taking
@@ -161,13 +161,15 @@ set background=dark             " Use dark scheme
 colorscheme apprentice          " Set colorscheme
 
 " text, tabs and indents
-set expandtab                   " Tabs are spaces
+" set expandtab                   " Tabs are spaces
 set shiftwidth=4                " # of spaces to use for autoindent
 set tabstop=4                   " # of spaces that a tab counts for
 set softtabstop=4               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
 set wrap                        " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
+set listchars=tab:▸\ ,eol:¬,
+" set list
 
 " lines and numbers
 set number                      " Show line number
