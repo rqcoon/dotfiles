@@ -254,12 +254,12 @@ bindsym $mod+r mode "resize"
 
 
 # colors
-set_from_resource $text color15
-set_from_resource $text-dim cursorColor
-set_from_resource $bg background
-set_from_resource $bg-dim pointerColorBackground
-set_from_resource $accent color4
-set_from_resource $urgent color5
+set_from_resource $text color15 #ffffff
+set_from_resource $text-dim cursorColor #bcbcbc
+set_from_resource $bg background #262626
+set_from_resource $bg-dim pointerColorBackground #444444
+set_from_resource $accent color4 #5f87af
+set_from_resource $urgent color5 #5f5f87
 
 # class                 border      backgr.     text      indicator child_border
 client.focused          $accent     $accent     $text     $accent   $accent
@@ -272,8 +272,8 @@ client.background       #ffffff
 
 # bar
 bar {
-        font pango:Iosevka 9
-        status_command ~/bin/i3status-rs ~/.config/i3status-rust/config.toml
+        font pango:Inter Semibold 8
+        status_command ~/.local/bin/i3status-rs ~/.config/i3status-rust/config.toml
         position top
         #tray_padding 0
 		#mode hide

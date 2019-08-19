@@ -33,7 +33,7 @@ Plug 'peitalin/vim-jsx-typescript'
 " Plug 'tmsvg/pear-tree'
 
 " autocomplete
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
 " snippets
@@ -61,8 +61,6 @@ call plug#end()
 " }}}
 " PLUGIN SETTINGS {{{
 
-" Theme {{{
-" }}}
 " Markdown {{{
 " enable plasticboy's markdown frontmatter
 let g:pandoc#folding#fastfolds = 1
@@ -81,26 +79,17 @@ let g:vim_markdown_fenced_languages = []
 " Goyo {{{
 let g:goyo_width = 88
 " }}}
-" COC {{{
+" AUTOCOMPLETE {{{
+let g:deoplete#enable_at_startup = 1
 
-" use <tab> for trigger completion and navigate to the next complete item
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction
-
-" inoremap <silent><expr> <Tab>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<Tab>" :
-"       \ coc#refresh()
-
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+imap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
+smap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
+smap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
-                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" }}}
+"                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"}}}
 " UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
