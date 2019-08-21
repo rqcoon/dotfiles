@@ -1,13 +1,14 @@
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
-export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/var/lib/flatpak/exports/bin:$PATH"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 if [ "$HOSTNAME" = silverblue ]; then
     EDITOR=io.neovim.nvim
+    PATH="/var/lib/flatpak/exports/bin:$PATH"
 else
     EDITOR=nvim
 fi
+export PATH
 export EDITOR
 export BROWSER=firefox
 export VISUAL=EDITOR
