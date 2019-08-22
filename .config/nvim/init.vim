@@ -81,6 +81,8 @@ let g:vim_markdown_edit_url_in = 'vsplit'
 " let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_fenced_languages = []
+let g:markdown_enable_folding = 0
+let g:markdown_enable_spell_checking = 0
 " }}}
 " Goyo {{{
 let g:goyo_width = 88
