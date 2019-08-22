@@ -48,7 +48,7 @@ Plug 'w0rp/ale'
 
 " files
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug '~/.local/bin/fzf'
+" Plug '/usr/local/opt/fzf/bin/fzf'
 Plug 'junegunn/fzf.vim'
 
 " fzf note taking
@@ -56,11 +56,17 @@ Plug 'https://github.com/Alok/notational-fzf-vim'
 
 " misc
 Plug 'lifepillar/vim-cheat40'
+Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
 call plug#end()
 " }}}
 " PLUGIN SETTINGS {{{
 
+" Codestats {{{
+let g:codestats_api_key = 'SFMyNTY.YTJ0bllRPT0jI056QXhOUT09.QDQFJv-H2BKlJpmf-mH89LUCxRXSAEgFa_h3Ko5C23g'
+" }}}
+" Theme {{{
+" }}}
 " Markdown {{{
 " enable plasticboy's markdown frontmatter
 let g:pandoc#folding#fastfolds = 1

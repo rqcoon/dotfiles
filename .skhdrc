@@ -92,10 +92,10 @@ ctrl + alt + shift - tab  : yabai -m window --display recent; yabai -m display -
 # WINDOW MOVEMENT
 
 # move window
-shift + ctrl - a : yabai -m window --move -60:0
-shift + ctrl - s : yabai -m window --move 0:60
-shift + ctrl - w : yabai -m window --move 0:-60
-shift + ctrl - d : yabai -m window --move 60:0
+# shift + ctrl - a : yabai -m window --move -60:0
+# shift + ctrl - s : yabai -m window --move 0:60
+# shift + ctrl - w : yabai -m window --move 0:-60
+# shift + ctrl - d : yabai -m window --move 60:0
 
 # increase window size
 shift + alt - a : yabai -m window --resize left:-60:0
@@ -122,7 +122,7 @@ alt - r : yabai -m space --rotate 90
 alt - x : yabai -m space --mirror y-axis
 
 # toggle desktop offset
-alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
+# alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window parent zoom
 alt - d : yabai -m window --toggle zoom-parent
@@ -151,5 +151,5 @@ alt - p : yabai -m window --toggle sticky;\
           yabai -m window --grid 5:5:4:0:1:1
 
 # change layout of desktop
-ctrl + alt - a : yabai -m space --layout bsp
-ctrl + alt - d : yabai -m space --layout float
+ctrl + alt - b : yabai -m space --layout bsp
+ctrl + alt - f : yabai -m space --layout float
