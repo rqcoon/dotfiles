@@ -14,7 +14,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term KITTY_ENABLE_WAYLAND=1 kitty
+set $term /var/home/kkga/.local/kitty.app/bin/kitty
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
@@ -50,7 +50,7 @@ input "2131:308:LEOPOLD_Mini_Keyboard" {
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output * bg $color0 solid_color
+# output * bg $color0 solid_color
 
 # Devices
 output DP-1 pos 0 0 res 3840x2160 scale 2
@@ -96,7 +96,7 @@ smart_gaps on
 # Key bindings {{{
 
 # start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+d exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -106,7 +106,7 @@ bindsym $mod+Shift+Ctrl+L exec swaylock -c 000000
 
 #bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
 
-bindsym $mod+d exec alacritty --config-file ~/.config/alacritty/launcher.yml --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
+# bindsym $mod+d exec alacritty --config-file ~/.config/alacritty/launcher.yml --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
 # bindsym $mod+d exec $term --class=launcher -T=launcher -e "sway-launcher"
 for_window [title="^launcher$"] floating enable, border pixel
 for_window [floating] border csd
@@ -266,6 +266,8 @@ set $color14     #5FAFAF
 set $color7      #6C6C6C
 set $color15     #FFFFFF
 
+output * bg $color0 solid_color
+
 # class                 border  backgr. text     indicat child_border
 client.focused          $color4 $color4 $color15 $bg     $color4
 client.focused_inactive $bg     $bg     $fg      $bg     $bg
@@ -282,7 +284,7 @@ bar {
     # position top
     # height 20
     # tray_output DP-1
-    # status_command ~/bin/i3status-rs ~/.config/i3status-rust/config.toml
+    # status_command ~/.local/bin/i3status-rs ~/.config/i3status-rust/config.toml
     # font pango:Iosevka Term 9
     # separator_symbol ""
     # colors {
