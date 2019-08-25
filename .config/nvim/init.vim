@@ -18,22 +18,25 @@ Plug 'romainl/Apprentice'
 Plug 'mbbill/undotree'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'konfekt/fastfold'
+Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-gruvbox8'
 
 " markdown
-Plug 'gabrielelana/vim-markdown'
+" Plug 'gabrielelana/vim-markdown'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'lifepillar/vim-outlaw'
+Plug 'tomtom/ttodo_vim/'
 
 " syntax
 Plug 'calviken/vim-gdscript3'
-Plug 'peitalin/vim-jsx-typescript'
-" Plug 'tmsvg/pear-tree'
+" Plug 'peitalin/vim-jsx-typescript'
+Plug 'mxw/vim-jsx'
+Plug 'tmsvg/pear-tree'
 
 " autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
 " snippets

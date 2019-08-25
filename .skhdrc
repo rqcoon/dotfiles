@@ -31,23 +31,26 @@ shift + alt - 0 : yabai -m space --balance
 
 
 
-# DESKTOPS
+# SPACES
 
-# create desktop, move window and follow focus
+# create spaces, move window and follow focus
 shift + cmd - n : yabai -m space --create;\
                   id=$(yabai -m query --displays --display | grep "spaces");\
                   yabai -m window --space $(echo ${id:10:${#id}-10});\
                   yabai -m space --focus $(echo ${id:10:${#id}-10})
 
-# create desktop and follow focus
+# create spaces and follow focus
 cmd + alt - n : yabai -m space --create;\
                 id=$(yabai -m query --displays --display | grep "spaces");\
                 yabai -m space --focus $(echo ${id:10:${#id}-10})
 
-# destroy desktop
+# destroy space
 cmd + alt - w : yabai -m space --destroy
 
-# move desktop
+# move spaces
+shift + cmd - j : yabai -m space --move next
+shift + cmd - k : yabai -m space --move prev
+# cmd + alt + shift + j : yabai -m space --move next
 
 
 
@@ -79,12 +82,12 @@ shift + alt - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 
 
-# MONITORS
+# DISPLAYS
 
-# focus monitor
+# focus display
 ctrl + alt - tab  : yabai -m display --focus recent
 
-# send window to monitor and follow focus
+# send window to display and follow focus
 ctrl + alt + shift - tab  : yabai -m window --display recent; yabai -m display --focus recent
 
 
@@ -122,7 +125,7 @@ alt - r : yabai -m space --rotate 90
 alt - x : yabai -m space --mirror y-axis
 
 # toggle desktop offset
-# alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
+alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window parent zoom
 alt - d : yabai -m window --toggle zoom-parent
