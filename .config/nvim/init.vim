@@ -22,8 +22,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-gruvbox8'
 
 " markdown
-" Plug 'gabrielelana/vim-markdown'
-" Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'lifepillar/vim-outlaw'
@@ -31,7 +30,6 @@ Plug 'tomtom/ttodo_vim/'
 
 " syntax
 Plug 'calviken/vim-gdscript3'
-" Plug 'peitalin/vim-jsx-typescript'
 Plug 'mxw/vim-jsx'
 Plug 'tmsvg/pear-tree'
 
@@ -45,9 +43,9 @@ Plug 'honza/vim-snippets'
 
 " linting
 Plug 'w0rp/ale'
-" Plug 'wsdjeg/vim-todo'
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" Plug 'editorconfig/editorconfig-vim'
+Plug 'wsdjeg/vim-todo'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'editorconfig/editorconfig-vim'
 
 " files
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -72,7 +70,6 @@ let g:codestats_api_key = 'SFMyNTY.YTJ0bllRPT0jI056QXhOUT09.QDQFJv-H2BKlJpmf-mH8
 " }}}
 " Markdown {{{
 " enable plasticboy's markdown frontmatter
-let g:pandoc#folding#fastfolds = 1
 let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
 let g:vim_markdown_no_extensions_in_markdown = 1
@@ -84,13 +81,11 @@ let g:vim_markdown_edit_url_in = 'vsplit'
 " let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_fenced_languages = []
-let g:markdown_enable_folding = 0
-let g:markdown_enable_spell_checking = 0
 " }}}
 " Goyo {{{
 let g:goyo_width = 88
 " }}}
-" AUTOCOMPLETE {{{
+" Autocomplete {{{
 let g:deoplete#enable_at_startup = 1
 
 imap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
