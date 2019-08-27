@@ -20,6 +20,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-gruvbox8'
+Plug 'chriskempson/base16-vim'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -153,8 +154,12 @@ set noswapfile
 
 " theme
 " set termguicolors               " Use true colors for colorscheme
-set background=dark             " Use dark scheme
-colorscheme apprentice          " Set colorscheme
+" set background=dark             " Use dark scheme
+" colorscheme apprentice          " Set colorscheme
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " text, tabs and indents
 " set expandtab                   " Tabs are spaces
