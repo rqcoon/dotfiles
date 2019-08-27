@@ -25,6 +25,7 @@ Plug 'lifepillar/vim-gruvbox8'
 Plug 'plasticboy/vim-markdown'
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'lifepillar/vim-outlaw'
 Plug 'tomtom/ttodo_vim/'
 
@@ -335,6 +336,10 @@ xnoremap <leader>k :m-2<cr>gv=gv
 
 " open goyo
 nnoremap <leader>g :Goyo<CR>
+
+" limelight
+nmap <Leader>l <Plug>(Limelight)
+xmap <Leader>l <Plug>(Limelight)
 " }}}
 " FUNCTIONS {{{
 
@@ -357,6 +362,10 @@ au filetype todo setlocal omnifunc=todo#Complete
 au filetype todo imap <buffer> + +<C-X><C-O>
 au filetype todo imap <buffer> @ @<C-X><C-O>
 
+augroup GOYO
+	autocmd! User GoyoEnter Limelight
+	autocmd! User GoyoLeave Limelight!
+augroup END
 
 augroup FILETYPES
     autocmd!
