@@ -16,19 +16,23 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
 Plug 'mbbill/undotree'
+Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'lifepillar/vim-solarized8'
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'chriskempson/base16-vim'
 
 " markdown
-Plug 'plasticboy/vim-markdown'
-" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'SidOfc/mkdx'
+" Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'lifepillar/vim-outlaw'
-Plug 'tomtom/ttodo_vim/'
+Plug 'Konfekt/FastFold'
+" Plug 'lervag/wiki.vim'
+Plug 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
+" Plug 'plasticboy/vim-markdown'
+" Plug 'lifepillar/vim-outlaw'
+" Plug 'davidoc/taskpaper.vim'
+" Plug 'lervag/wiki-ft.vim'
 
 " syntax
 Plug 'calviken/vim-gdscript3'
@@ -51,7 +55,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 " files
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug '/usr/local/opt/fzf/bin/fzf'
 Plug 'junegunn/fzf.vim'
 
 " fzf note taking
@@ -59,44 +62,72 @@ Plug 'https://github.com/Alok/notational-fzf-vim'
 
 " misc
 Plug 'lifepillar/vim-cheat40'
-Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
 call plug#end()
 " }}}
+
 " PLUGIN SETTINGS {{{
 
-" Codestats {{{
-let g:codestats_api_key = 'SFMyNTY.YTJ0bllRPT0jI056QXhOUT09.QDQFJv-H2BKlJpmf-mH89LUCxRXSAEgFa_h3Ko5C23g'
+" {{{ Wiki
+let g:wiki_root = '~/Dropbox/Notes/'
+let g:wiki_filetypes = ['wiki', 'md', 'txt']
+let g:wiki_link_extension = '.md'
+let g:wiki_list_todos = ['[ ]', '[x]']
+let g:wiki_link_target_type = 'md'
+" let g:wiki_mappings_use_defaults = 0
+let g:wiki_mappings_global = {
+	\ '<plug>(wiki-list-toggle)' : '<c-t>',
+	\ '<plug>(wiki-link-next)' : '<c-j>',
+	\ '<plug>(wiki-link-prev)' : '<c-k>',
+	\ '<plug>(wiki-link-open)' : '<c-cr>',
+	\ '<plug>(wiki-link-open-split)' : '<c-cr>',
+	\}
 " }}}
 " Theme {{{
 " }}}
 " Markdown {{{
+
+let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
+                        \ 'enter': { 'enable': 1, 'shift': 1 },
+						\ 'checkbox': { 'toggles': [' ', 'x'] },
+                        \ 'links': { 'external': { 'enable': 1 } },
+                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 1 },
+                        \ 'fold': { 'enable': 0 } }
 " enable plasticboy's markdown frontmatter
-let g:vim_markdown_frontmatter = 1
+" let g:vim_markdown_frontmatter = 1
 " allow following markdown links without the .md extension
-let g:vim_markdown_no_extensions_in_markdown = 1
+" let g:vim_markdown_no_extensions_in_markdown = 1
 " autosave file when following markdown links
-let g:vim_markdown_autowrite = 1
+" let g:vim_markdown_autowrite = 1
 " open markdown links in splits
-let g:vim_markdown_edit_url_in = 'vsplit'
+" let g:vim_markdown_edit_url_in = 'vsplit'
 " fold in python style
 " let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_fenced_languages = []
+" let g:vim_markdown_folding_style_pythonic = 1
+" let g:vim_markdown_fenced_languages = []
+" let g:vim_markdown_toc_autofit = 1
+" let g:pandoc#syntax#conceal#urls = 1
+" let g:pandoc#modules#disabled = ["folding"]
+" let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+" let g:pandoc#filetypes#pandoc_markdown = 0
+
 " }}}
 " Goyo {{{
 let g:goyo_width = 88
 " }}}
 " Autocomplete {{{
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
-imap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
-smap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
-imap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
-smap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
-"                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" imap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
+" smap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
+" imap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
+" smap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" enable deoplete for pandoc
+" call deoplete#custom#var('omni', 'input_patterns', {
+" \ 'pandoc': '@'
+" \})
 "}}}
 " UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<C-e>"
@@ -125,6 +156,7 @@ let g:nv_use_short_pathnames = 1
 " }}}
 
 " }}}
+
 " SETTINGS {{{
 
 filetype plugin indent on       " no idea
@@ -146,6 +178,7 @@ set backspace=indent,eol,start  " Allow backspace in insert mode
 set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
 set conceallevel=2              " Conceals markdown syntax
+" set foldlevel=1
 
 " disable backups and swap
 set nobackup
@@ -154,12 +187,8 @@ set noswapfile
 
 " theme
 " set termguicolors               " Use true colors for colorscheme
-" set background=dark             " Use dark scheme
-" colorscheme apprentice          " Set colorscheme
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+set background=dark             " Use dark scheme
+colorscheme apprentice          " Set colorscheme
 
 " text, tabs and indents
 " set expandtab                   " Tabs are spaces
@@ -173,8 +202,8 @@ set listchars=tab:▸\ ,eol:¬,
 " set list
 
 " lines and numbers
-set number                      " Show line number
-set relativenumber              " Relative numbers are good
+set nonumber                      " Show line number
+set norelativenumber              " Relative numbers are good
 set numberwidth=4               " Wider linenumbers
 set cursorline                  " Show line
 
@@ -198,6 +227,7 @@ set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 " }}}
+
 " STATUSLINE {{{
 
 function! ReadOnly()
@@ -227,20 +257,29 @@ function! LinterStatus() abort
 endfunction
 
 set statusline=
-set statusline+=\ %<%F\ %M\ %{ReadOnly()}\ %w
+set statusline+=%<%F\ %M\ %{ReadOnly()}\ %w
 set statusline+=%=
 set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
 set statusline+=\ %y
-set statusline+=\ %c\ %p%%
+set statusline+=\ %3l:%-2.2c\ %P
 set statusline+=\ %*
 
 " }}}
+
 " MAPPINGS {{{
 
 " space as leader
 let mapleader = "\<space>"
 let maplocalleader = ","
+
+
+map <silent> q: :q<Cr>
+map <silent> Q: :q<Cr>
+map <silent> :Q :q<Cr>
+
+" yank to system clipboard in visual mode
+vnoremap y "+y
 
 " motion across wrapped lines
 nnoremap j gj
@@ -254,15 +293,22 @@ nnoremap L $
 vnoremap H ^
 vnoremap L $
 
-" move up/down half a screen
-nnoremap J <C-d>
-nnoremap K <C-u>
+" move up/down across empty lines
+nnoremap J }
+nnoremap K {
+vnoremap J }
+vnoremap K {
+
+" easier one-off navigation in insert mode
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 " use arrows to resize panes in normal mode
 nnoremap <Left> :vertical resize -1<CR>
 nnoremap <Right> :vertical resize +1<CR>
 nnoremap <Up> :resize -1<CR>
-nnoremap <Down> :resize +1<CR>
 
 " don't use arrows for movement in insert mode
 inoremap <Up> <NOP>
@@ -287,9 +333,9 @@ nnoremap <leader>vr :sp $MYVIMRC<cr>
 nnoremap <leader>so :source $MYVIMRC<cr>
 
 " fzf mappings
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>c :Commands<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>bb :Buffers<CR>
+nnoremap <leader>cc :Commands<CR>
 nnoremap <leader>rg :Rg<CR>
 
 " quick exit and save
@@ -324,11 +370,11 @@ nnoremap <Tab> za
 imap <A-Tab> <Plug>(PearTreeJump)
 
 " quick open notational notes
-nnoremap <silent> <leader>n :NV<CR>
+nnoremap <silent> <leader>nn :NV<CR>
 
 " jump between ALE warnings
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 " replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
@@ -342,10 +388,8 @@ xnoremap <leader>k :m-2<cr>gv=gv
 " open goyo
 nnoremap <leader>g :Goyo<CR>
 
-" limelight
-nmap <Leader>l <Plug>(Limelight)
-xmap <Leader>l <Plug>(Limelight)
-" }}}
+"}}}
+
 " FUNCTIONS {{{
 
 " toggle wrap
@@ -360,6 +404,7 @@ endfunc
 command! ToggleWrap call ToggleWrap()
 
 " }}}
+
 " AUGROUPS {{{
 
 au filetype todo setlocal omnifunc=todo#Complete
@@ -367,17 +412,16 @@ au filetype todo setlocal omnifunc=todo#Complete
 au filetype todo imap <buffer> + +<C-X><C-O>
 au filetype todo imap <buffer> @ @<C-X><C-O>
 
-augroup GOYO
-	autocmd! User GoyoEnter Limelight
-	autocmd! User GoyoLeave Limelight!
-augroup END
-
 augroup FILETYPES
     autocmd!
     autocmd FileType markdown let b:indentLine_enabled = 0
-    autocmd FileType markdown setlocal norelativenumber nonumber
+    autocmd FileType markdown setlocal norelativenumber nonumber nospell
 augroup END
 
+" use pandoc highlighting for markdown files
+augroup pandoc_syntax
+	au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END
 " augroup pencil
 "   autocmd!
 "   autocmd FileType markdown,mkd call pencil#init()
