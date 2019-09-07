@@ -35,6 +35,9 @@ function! MyHighlights() abort
     hi TabLineFill ctermbg=238 ctermfg=238 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
     hi TabLineSel ctermbg=101 ctermfg=235 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=underline
     hi Title ctermbg=NONE ctermfg=231 cterm=NONE guibg=NONE guifg=#ffffff gui=bold
+    hi EndOfBuffer ctermbg=NONE ctermfg=240 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
+    hi VertSplit ctermbg=238 ctermfg=238 cterm=NONE guibg=#262626 guifg=#444444 gui=NONE
+    hi ModeMsg ctermbg=108 ctermfg=235 cterm=NONE guibg=#262626 guifg=#5FAFAF gui=bold
 endfunction
 
 augroup MyColors
@@ -58,7 +61,7 @@ let g:wiki_filetypes = ['md']
 let g:wiki_link_extension = '.md'
 let g:wiki_list_todos = ['[ ]', '[x]']
 let g:wiki_link_target_type = 'md'
-let g:wiki_mappings_use_defaults = 1
+let g:wiki_mappings_use_defaults = 0
 let g:wiki_mappings_global = {
 	\ '<plug>(wiki-list-toggle)' : '<c-t>',
 	\ '<plug>(wiki-link-next)' : '<c-j>',
