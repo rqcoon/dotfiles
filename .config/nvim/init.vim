@@ -30,7 +30,7 @@ function! MyHighlights() abort
     hi FoldColumn ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
     hi LineNr ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
     hi StatusLine ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
-    hi StatusLineNC ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
+    hi StatusLineNC ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#444444 gui=underline
     hi TabLine ctermbg=238 ctermfg=101 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
     hi TabLineFill ctermbg=238 ctermfg=238 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
     hi TabLineSel ctermbg=101 ctermfg=235 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=underline
@@ -55,41 +55,38 @@ call minpac#add('mbbill/undotree')
 call minpac#add('junegunn/vim-peekaboo')
 call minpac#add('nelstrom/vim-visual-star-search')
 
-call minpac#add('lervag/wiki.vim')
-let g:wiki_root = '~/Dropbox/Notes/'
-let g:wiki_filetypes = ['md']
-let g:wiki_link_extension = '.md'
-let g:wiki_list_todos = ['[ ]', '[x]']
-let g:wiki_link_target_type = 'md'
-let g:wiki_mappings_use_defaults = 0
-let g:wiki_mappings_global = {
-	\ '<plug>(wiki-list-toggle)' : '<c-t>',
-	\ '<plug>(wiki-link-next)' : '<c-j>',
-	\ '<plug>(wiki-link-prev)' : '<c-k>',
-	\}
-
-call minpac#add('plasticboy/vim-markdown')
-" let g:vim_markdown_frontmatter = 1
-" let g:vim_markdown_no_extensions_in_markdown = 1
-" let g:vim_markdown_autowrite = 1
-" let g:vim_markdown_edit_url_in = 'vsplit'
-" let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_new_list_item_indent = 0
-" let g:vim_markdown_fenced_languages = []
-" let g:vim_markdown_no_default_key_mappings = 1
-
 call minpac#add('sidofc/mkdx')
-let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
+let g:mkdx#settings     = { 'highlight': { 'enable': 0 },
                         \ 'enter': { 'enable': 1, 'shift': 1 },
 			\ 'checkbox': { 'toggles': [' ', 'x'] },
                         \ 'links': { 'external': { 'enable': 1 } },
                         \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 0 },
                         \ 'fold': { 'enable': 0 } }
+
+" call minpac#add('lervag/wiki.vim')
+" let g:wiki_root = '~/Dropbox/Notes/'
+" let g:wiki_filetypes = ['md']
+" let g:wiki_link_extension = '.md'
+" let g:wiki_list_todos = ['[ ]', '[x]']
+" let g:wiki_link_target_type = 'md'
+" let g:wiki_mappings_use_defaults = 0
+" let g:wiki_mappings_global = {
+" 	\ '<plug>(wiki-list-toggle)' : '<c-t>',
+" 	\ '<plug>(wiki-link-next)' : '<c-j>',
+" 	\ '<plug>(wiki-link-prev)' : '<c-k>',
+" 	\}
+
+" call minpac#add('plasticboy/vim-markdown')
+" let g:vim_markdown_frontmatter = 1
+" let g:vim_markdown_no_extensions_in_markdown = 1
+" let g:vim_markdown_autowrite = 1
+" let g:vim_markdown_edit_url_in = 'vsplit'
+" let g:vim_markdown_auto_insert_bullets = 0
+" let g:vim_markdown_folding_style_pythonic = 1
+" let g:vim_markdown_no_default_key_mappings = 1
+" let g:vim_markdown_toc_autofit = 1
+" let g:vim_markdown_auto_insert_bullets = 0
+" let g:vim_markdown_new_list_item_indent = 0
 
 call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  })
 
@@ -103,7 +100,7 @@ let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 let g:markdown_folding = 1
 
-" call minpac#add('masukomi/vim-markdown-folding', { 'for': 'markdown' })
+call minpac#add('masukomi/vim-markdown-folding', { 'for': 'markdown' })
 " let g:markdown_fold_style = 'nested'
 
 call minpac#add('calviken/vim-gdscript3')
@@ -116,8 +113,14 @@ let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+call minpac#add('lifepillar/vim-mucomplete')
+set completeopt+=menuone
+set completeopt+=noselect
+set shortmess+=c
+set belloff+=ctrlg
+let g:mucomplete#enable_auto_at_startup = 1
+
 call minpac#add('reedes/vim-pencil')
-call minpac#add('reedes/vim-colors-pencil')
 
 call minpac#add('w0rp/ale')
 let g:ale_lintes = {
@@ -360,10 +363,10 @@ nnoremap gV `[v`]<Paste>
 nnoremap Q nop
 
 " toggle wrap
-nnoremap <leader>w :ToggleWrap<CR>
+nnoremap <leader>ww :ToggleWrap<CR>
 
 " turn off highlight
-nnoremap <leader>c :nohl<CR>
+nnoremap <leader>cc :nohl<CR>
 
 " change/source config
 nnoremap <leader>vr :vsp $MYVIMRC<cr>
@@ -372,12 +375,15 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 " fzf mappings
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
-nnoremap <leader>cc :Commands<CR>
+nnoremap <leader>cm :Commands<CR>
+nnoremap <leader>nn :NV<CR>
 nnoremap <leader>rg :Rg<CR>
 
-" quick exit and save
+" quick save
 inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> <esc>:w<cr>
+inoremap <D-s> <esc>:w<cr>
+nnoremap <D-s> <esc>:w<cr>
 
 " split faster
 nnoremap <leader>h :split<CR>
@@ -405,7 +411,6 @@ nnoremap <Tab> za
 imap <A-Tab> <Plug>(PearTreeJump)
 
 " quick open notational notes
-nnoremap <silent> <leader>nn :NV<CR>
 
 " jump between ALE warnings
 " nmap <silent> <C-j> <Plug>(ale_next_wrap)
