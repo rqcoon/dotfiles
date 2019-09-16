@@ -76,17 +76,18 @@ let g:mkdx#settings     = { 'highlight': { 'enable': 0 },
 " 	\ '<plug>(wiki-link-prev)' : '<c-k>',
 " 	\}
 
-" call minpac#add('plasticboy/vim-markdown')
-" let g:vim_markdown_frontmatter = 1
-" let g:vim_markdown_no_extensions_in_markdown = 1
-" let g:vim_markdown_autowrite = 1
-" let g:vim_markdown_edit_url_in = 'vsplit'
-" let g:vim_markdown_auto_insert_bullets = 0
-" let g:vim_markdown_folding_style_pythonic = 1
-" let g:vim_markdown_no_default_key_mappings = 1
-" let g:vim_markdown_toc_autofit = 1
-" let g:vim_markdown_auto_insert_bullets = 0
-" let g:vim_markdown_new_list_item_indent = 0
+call minpac#add('plasticboy/vim-markdown')
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'vsplit'
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
 
 call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  })
 
@@ -105,7 +106,7 @@ call minpac#add('masukomi/vim-markdown-folding', { 'for': 'markdown' })
 
 call minpac#add('calviken/vim-gdscript3')
 call minpac#add('mxw/vim-jsx')
-" call minpac#add('tmsvg/pear-tree')
+call minpac#add('tmsvg/pear-tree')
 
 call minpac#add('SirVer/ultisnips', { 'for': 'markdown' })
 call minpac#add('honza/vim-snippets')
@@ -408,7 +409,7 @@ nnoremap <silent> <S-t> :tabnew<CR>
 nnoremap <Tab> za
 
 " pear-tree: jump after the closed bracket
-imap <A-Tab> <Plug>(PearTreeJump)
+imap <C-Tab> <Plug>(PearTreeJump)
 
 " quick open notational notes
 

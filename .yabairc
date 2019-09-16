@@ -2,8 +2,8 @@
 
 # bar settings
 yabai -m config status_bar                   off
-yabai -m config status_bar_text_font         "Sudo:Bold:14.0"
-yabai -m config status_bar_icon_font         "Sudo:Bold:14.0"
+yabai -m config status_bar_text_font         "PragmataPro:Regular:12.0"
+yabai -m config status_bar_icon_font         "PragmataPro:Regular:12.0"
 yabai -m config status_bar_background_color  0xff1C1C1C
 yabai -m config status_bar_foreground_color  0xffbcbcbc
 yabai -m config status_bar_space_icon_strip  1 2 3 4 5 6 7 8 9 0
@@ -27,7 +27,7 @@ yabai -m config insert_window_border_color   0xffFFFFAF
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.80
 yabai -m config split_ratio                  0.66
-yabai -m config auto_balance                 on
+yabai -m config auto_balance                 off
 yabai -m config mouse_modifier               ctrl
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
@@ -75,4 +75,4 @@ yabai -m signal --add event=space_changed \
 yabai -m signal --add event=window_focused \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
 
-YABAI_CERT=yabai-cert sh -c "$(curl -sSL "https://git.io/update-yabai")" &
+# YABAI_CERT=yabai-cert sh -c "$(curl -sSL "https://git.io/update-yabai")" &
