@@ -29,8 +29,8 @@ function! MyHighlights() abort
     hi Folded ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
     hi FoldColumn ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
     hi LineNr ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
-    hi StatusLine ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
-    hi StatusLineNC ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#444444 gui=underline
+    hi StatusLine ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=NONE
+    hi StatusLineNC ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#444444 gui=NONE
     hi TabLine ctermbg=238 ctermfg=101 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
     hi TabLineFill ctermbg=238 ctermfg=238 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
     hi TabLineSel ctermbg=101 ctermfg=235 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=underline
@@ -89,7 +89,12 @@ let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
 
-call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  })
+call minpac#add('freitass/todo.txt-vim')
+
+" call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' })
+" let g:mkdp_browser = 'Safari'
+call minpac#add('previm/previm')
+let g:previm_open_cmd = 'open -a Safari'
 
 call minpac#add('junegunn/goyo.vim')
 let g:goyo_width = 88
