@@ -26,7 +26,8 @@ set termguicolors
 set background=dark
 
 function! MyHighlights() abort
-    hi Folded ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
+    hi Normal ctermbg=234 ctermfg=242 cterm=NONE guibg=NONE guifg=#bcbcbc gui=NONE
+    hi Folded ctermbg=234 ctermfg=242 cterm=NONE guibg=NONE guifg=#6c6c6c gui=NONE
     hi FoldColumn ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
     hi LineNr ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
     hi StatusLine ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=NONE
