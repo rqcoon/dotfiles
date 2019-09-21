@@ -30,8 +30,8 @@ function! MyHighlights() abort
     hi Folded ctermbg=234 ctermfg=242 cterm=NONE guibg=NONE guifg=#6c6c6c gui=NONE
     hi FoldColumn ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
     hi LineNr ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
-    hi StatusLine ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=NONE
-    hi StatusLineNC ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#444444 gui=NONE
+    hi StatusLine ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=UNDERLINE
+    hi StatusLineNC ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#444444 gui=UNDERLINE
     hi TabLine ctermbg=238 ctermfg=101 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
     hi TabLineFill ctermbg=238 ctermfg=238 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
     hi TabLineSel ctermbg=101 ctermfg=235 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=underline
