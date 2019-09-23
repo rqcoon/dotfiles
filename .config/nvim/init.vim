@@ -21,6 +21,8 @@ call minpac#add('airblade/vim-gitgutter')
 call minpac#add('romainl/Apprentice')
 call minpac#add('andreypopp/vim-colors-plain')
 call minpac#add('lifepillar/vim-colortemplate')
+call minpac#add('lifepillar/vim-solarized8')
+call minpac#add('danishprakash/vim-yami')
 
 set termguicolors
 set background=dark
@@ -30,7 +32,7 @@ function! MyHighlights() abort
     hi Folded ctermbg=234 ctermfg=242 cterm=NONE guibg=NONE guifg=#6c6c6c gui=NONE
     hi FoldColumn ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
     hi LineNr ctermbg=234 ctermfg=242 cterm=NONE guibg=#262626 guifg=#6c6c6c gui=NONE
-    hi StatusLine ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=UNDERLINE
+    hi StatusLine ctermbg=231 ctermfg=160 cterm=NONE guibg=#444444 guifg=#bcbcbc gui=NONE
     hi StatusLineNC ctermbg=231 ctermfg=160 cterm=NONE guibg=#262626 guifg=#444444 gui=UNDERLINE
     hi TabLine ctermbg=238 ctermfg=101 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
     hi TabLineFill ctermbg=238 ctermfg=238 cterm=NONE guibg=#262626 guifg=#6C6C6C gui=underline
@@ -50,8 +52,6 @@ colorscheme apprentice
 
 
 call minpac#add('mbbill/undotree')
-
-" call minpac#add('majutsushi/tagbar')
 
 call minpac#add('junegunn/vim-peekaboo')
 call minpac#add('nelstrom/vim-visual-star-search')
@@ -94,8 +94,8 @@ call minpac#add('freitass/todo.txt-vim')
 
 " call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' })
 " let g:mkdp_browser = 'Safari'
-call minpac#add('previm/previm')
-let g:previm_open_cmd = 'open -a Safari'
+" call minpac#add('previm/previm')
+" let g:previm_open_cmd = 'open -a Safari'
 
 call minpac#add('junegunn/goyo.vim')
 let g:goyo_width = 88
