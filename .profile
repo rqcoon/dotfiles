@@ -16,7 +16,10 @@ export VISUAL=EDITOR
 export TODOTXT_DEFAULT_ACTION=ls
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 
-# Wayland stuff
+# NNN
+export NNN_USE_EDITOR=1
+
+# Wayland
 export MOZ_ENABLE_WAYLAND=1
 export KITTY_ENABLE_WAYLAND=1
 # export GDK_BACKEND=wayland

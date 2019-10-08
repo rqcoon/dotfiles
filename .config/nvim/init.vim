@@ -1,84 +1,82 @@
 " vim:foldmethod=marker:foldlevel=0
 
-" MINPAC {{{
-packadd minpac
-call minpac#init()
-
-" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-repeat')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-sensible')
-call minpac#add('tpope/vim-commentary')
-call minpac#add('tpope/vim-sleuth')
-
-call minpac#add('machakann/vim-highlightedyank')
-call minpac#add('airblade/vim-gitgutter')
-
-" colorscheme
-call minpac#add('romainl/Apprentice')
-call minpac#add('andreypopp/vim-colors-plain')
-call minpac#add('lifepillar/vim-colortemplate')
-call minpac#add('lifepillar/vim-solarized8')
-call minpac#add('sjl/badwolf')
-
-" set termguicolors
+" PLUGINS {{{
+call plug#begin('~/.config/nvim/plugged')
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sleuth'
+Plug 'machakann/vim-highlightedyank'
+Plug 'airblade/vim-gitgutter'
+Plug 'romainl/Apprentice'
+Plug 'mbbill/undotree'
+Plug 'justinmk/vim-dirvish'
+Plug 'junegunn/vim-peekaboo'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'lervag/wiki.vim'
+Plug 'lervag/wiki-ft.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'reedes/vim-pencil'
+Plug 'sidofc/mkdx'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'junegunn/goyo.vim'
+Plug 'konfekt/fastfold'
+Plug 'lifepillar/vim-outlaw'
+Plug 'lifepillar/vim-mucomplete'
+Plug 'lifepillar/vim-cheat40'
+Plug 'mxw/vim-jsx'
+" Plug 'tmsvg/pear-tree'
+Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
+Plug 'dense-analysis/ale'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'editorconfig/editorconfig-vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/Alok/notational-fzf-vim'
+call plug#end()
+"}}}
+" PLUGIN SETTINGS {{{
+" Apprentice tweaks {{{
 set background=dark
-
 function! MyHighlights() abort
     hi Normal ctermbg=NONE ctermfg=250 cterm=NONE guibg=NONE guifg=#BCBCBC gui=NONE
+    " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
     hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
     hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
     hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi StatusLine ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
-    hi StatusLineNC ctermbg=NONE ctermfg=240 cterm=UNDERLINE guibg=NONE guifg=#585858 gui=UNDERLINE
-    hi TabLine ctermbg=NONE ctermfg=240 cterm=UNDERLINE guibg=NONE guifg=#585858 gui=UNDERLINE
-    hi TabLineFill ctermbg=NONE ctermfg=240 cterm=UNDERLINE guibg=NONE guifg=#585858 gui=UNDERLINE
-    hi TabLineSel ctermbg=238 ctermfg=250 cterm=UNDERLINE guibg=#444444 guifg=#BCBCBC gui=UNDERLINE
+    hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
+    hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
     hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
     hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
-    hi VertSplit ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
+    hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
     hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
 endfunction
-
 augroup MyColors
     autocmd!
     autocmd ColorScheme * call MyHighlights()
 augroup END
-
 colorscheme apprentice
-
-
-call minpac#add('mbbill/undotree')
-call minpac#add('justinmk/vim-dirvish')
-
-call minpac#add('junegunn/vim-peekaboo')
-call minpac#add('nelstrom/vim-visual-star-search')
-
-call minpac#add('sidofc/mkdx')
-let g:mkdx#settings     = { 'highlight': { 'enable': 0 },
-                        \ 'enter': { 'enable': 1, 'shift': 1 },
-			\ 'checkbox': { 'toggles': [' ', 'x'] },
-                        \ 'links': { 'external': { 'enable': 1 } },
-                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 0 },
-                        \ 'fold': { 'enable': 0 } }
-
-" call minpac#add('lervag/wiki.vim')
-" let g:wiki_root = '~/Dropbox/Notes/'
-" let g:wiki_filetypes = ['md']
-" let g:wiki_link_extension = '.md'
-" let g:wiki_list_todos = ['[ ]', '[x]']
-" let g:wiki_link_target_type = 'md'
-" let g:wiki_mappings_use_defaults = 0
-" let g:wiki_mappings_global = {
-" 	\ '<plug>(wiki-list-toggle)' : '<c-t>',
-" 	\ '<plug>(wiki-link-next)' : '<c-j>',
-" 	\ '<plug>(wiki-link-prev)' : '<c-k>',
-" 	\}
-
-call minpac#add('plasticboy/vim-markdown')
+" }}}
+" Wiki {{{
+let g:wiki_root = '~/Dropbox/Notes/'
+let g:wiki_filetypes = ['md']
+let g:wiki_link_extension = '.md'
+let g:wiki_list_todos = ['[ ]', '[x]']
+let g:wiki_link_target_type = 'md'
+let g:wiki_mappings_use_defaults = 1
+let g:wiki_mappings_global = {
+	\ '<plug>(wiki-list-toggle)' : '<c-t>',
+	\ '<plug>(wiki-link-next)' : '<c-j>',
+	\ '<plug>(wiki-link-prev)' : '<c-k>',
+	\}
+" }}}
+" Markdown {{{
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
 let g:vim_markdown_autowrite = 1
@@ -90,69 +88,31 @@ let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
-
-call minpac#add('freitass/todo.txt-vim')
-
-" call minpac#add('iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' })
-" let g:mkdp_browser = 'Safari'
-" call minpac#add('previm/previm')
-" let g:previm_open_cmd = 'open -a Safari'
-
-call minpac#add('junegunn/goyo.vim')
-let g:goyo_width = 88
-
-call minpac#add('konfekt/fastfold')
-nmap zz <Plug>(FastFoldUpdate)
-let g:fastfold_savehook = 1
-let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
-let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
-let g:markdown_folding = 1
-
-call minpac#add('masukomi/vim-markdown-folding', { 'for': 'markdown' })
-" let g:markdown_fold_style = 'nested'
-
-call minpac#add('calviken/vim-gdscript3')
-call minpac#add('mxw/vim-jsx')
-call minpac#add('tmsvg/pear-tree')
-
-call minpac#add('SirVer/ultisnips', { 'for': 'markdown' })
-call minpac#add('honza/vim-snippets')
-let g:UltiSnipsExpandTrigger="<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-call minpac#add('lifepillar/vim-mucomplete')
-set completeopt+=menuone
-set completeopt+=noselect
-set shortmess+=c
-set belloff+=ctrlg
-let g:mucomplete#enable_auto_at_startup = 1
-
-call minpac#add('reedes/vim-pencil')
-
-call minpac#add('w0rp/ale')
+" }}}
+" MKDX {{{
+let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
+                        \ 'enter': { 'enable': 1, 'shift': 1 },
+			\ 'checkbox': { 'toggles': [' ', 'x'] },
+                        \ 'links': { 'external': { 'enable': 1 } },
+                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 0 },
+                        \ 'fold': { 'enable': 0 } }
+" }}}
+" ALE {{{
 let g:ale_lintes = {
-\   'markdown': ['alex']
+\   'markdown': [],
+\   'lua': ['luac']
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint', 'prettier'],
 \   'json': ['prettier'],
 \   'css': ['prettier'],
-\   'markdown': ['prettier'],
+\   'markdown': ['prettier']
 \}
 let g:ale_fix_on_save = 1
-
-call minpac#add('dbmrq/vim-ditto')
-nmap <leader>di <Plug>ToggleDitto
-
-call minpac#add('ludovicchabant/vim-gutentags')
-
-call minpac#add('prettier/vim-prettier', { 'do': 'yarn install' })
-call minpac#add('editorconfig/editorconfig-vim')
-
-call minpac#add('junegunn/fzf.vim')
-set rtp+=/usr/local/opt/fzf
+let g:ale_lint_on_save = 1
+" }}}
+" FZF {{{
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -195,17 +155,31 @@ augroup fzf_statusline
     autocmd  FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
-
-call minpac#add('https://github.com/Alok/notational-fzf-vim')
+" }}}
+" Mucomplete {{{
+set completeopt+=menuone
+set completeopt+=noselect
+set shortmess+=c
+set belloff+=ctrlg
+let g:mucomplete#enable_auto_at_startup = 1
+" }}}
+" Fastfold {{{
+nmap zz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+let g:markdown_folding = 1
+" }}}
+" Ultisnips {{{
+let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" }}}
+" NV {{{
 let g:nv_search_paths = ['~/Dropbox/Notes/']
 let g:nv_use_short_pathnames = 1
-
-call minpac#add('lifepillar/vim-cheat40')
-
-command! Pu call minpac#update()
-command! Pc call minpac#clean()
-command! Ps call minpac#status()
-"}}}
+" }}}
+" }}}
 " SETTINGS {{{
 
 filetype plugin indent on       " no idea
@@ -248,7 +222,7 @@ set noswapfile
 " set nonumber                      " Show line number
 " set norelativenumber              " Relative numbers are good
 " set numberwidth=4               " Wider linenumbers
-set cursorline                  " Show line
+set nocursorline                  " Show line
 set nocursorcolumn
 set norelativenumber
 set synmaxcol=200
@@ -300,13 +274,13 @@ function! LinterStatus() abort
 endfunction
 
 set statusline=
-set statusline+=%<%F\ %M\ %{ReadOnly()}\ %w
+set statusline+=%t\ %M\ %{ReadOnly()}\ %w
 set statusline+=%=
 set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
 set statusline+=\ %y
 set statusline+=\ %3l:%-2.2c\ %P
-set statusline+=\ %*
+" set statusline+=\ %*
 
 " }}}
 " MAPPINGS {{{
@@ -372,7 +346,7 @@ nnoremap gV `[v`]<Paste>
 nnoremap Q nop
 
 " toggle wrap
-nnoremap <leader>ww :ToggleWrap<CR>
+nnoremap <leader>wr :ToggleWrap<CR>
 
 " turn off highlight
 nnoremap <leader>cc :nohl<CR>
@@ -422,8 +396,8 @@ imap <C-Tab> <Plug>(PearTreeJump)
 " quick open notational notes
 
 " jump between ALE warnings
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-n> <Plug>(ale_next_wrap)
+nmap <silent> <C-p> <Plug>(ale_previous_wrap)
 
 " replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
@@ -453,5 +427,10 @@ command! ToggleWrap call ToggleWrap()
 
 " }}}
 " AUGROUPS {{{
-
+" outlaw {{{
+augroup Outlaw
+  autocmd!
+  autocmd FileType outlaw setlocal tw=80 sw=4 ts=4 sts=0 et
+augroup END
+" }}}
 " }}}

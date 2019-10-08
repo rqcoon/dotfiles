@@ -2,10 +2,10 @@
 ctrl + cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # quick restart
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # screenshot
-ctrl + alt + cmd - s : ~/bin/screenshot
+alt + cmd - s : ~/bin/screenshot
 
 # WINDOWS
 
