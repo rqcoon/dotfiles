@@ -387,14 +387,6 @@ nnoremap tl :tablast<CR>
 nnoremap <S-Tab> gt
 nnoremap <silent> <S-t> :tabnew<CR>
 
-" open/close folds
-nnoremap <Tab> za
-
-" pear-tree: jump after the closed bracket
-imap <C-Tab> <Plug>(PearTreeJump)
-
-" quick open notational notes
-
 " jump between ALE warnings
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
 nmap <silent> <C-p> <Plug>(ale_previous_wrap)
