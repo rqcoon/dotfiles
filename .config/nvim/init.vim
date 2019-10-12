@@ -17,10 +17,10 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lervag/wiki.vim'
 Plug 'lervag/wiki-ft.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'reedes/vim-pencil'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'sidofc/mkdx'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
 Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-outlaw'
@@ -164,7 +164,7 @@ set belloff+=ctrlg
 let g:mucomplete#enable_auto_at_startup = 1
 " }}}
 " Fastfold {{{
-nmap zz <Plug>(FastFoldUpdate)
+" nmap zz <Plug>(FastFoldUpdate)
 let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
@@ -285,9 +285,9 @@ set statusline+=\ %3l:%-2.2c\ %P
 " }}}
 " MAPPINGS {{{
 
-" space as leader
-let mapleader = "\<space>"
-let maplocalleader = ","
+" leader
+let mapleader = ","
+let maplocalleader = "\\"
 
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
@@ -402,6 +402,9 @@ xnoremap <leader>k :m-2<cr>gv=gv
 
 " open goyo
 nnoremap <leader>g :Goyo<CR>
+
+" quick folding
+nnoremap <space> za
 
 "}}}
 " FUNCTIONS {{{
