@@ -2,13 +2,13 @@
 
 # bar settings
 yabai -m config status_bar                   on
-yabai -m config status_bar_text_font         "SF Pro Text:Medium:11.0"
-yabai -m config status_bar_icon_font         "SF Pro Text:Medium:11.0"
+yabai -m config status_bar_text_font         "SF Compact Text:Medium:11.0"
+yabai -m config status_bar_icon_font         "SF Compact Text:Medium:11.0"
 yabai -m config status_bar_background_color  0x00262626
-yabai -m config status_bar_foreground_color  0xff6c6c6c
+yabai -m config status_bar_foreground_color  0xffBCBCBC
 yabai -m config status_bar_space_icon_strip  1 2 3 4 5 6 7 8 9 0
 yabai -m config status_bar_power_icon_strip  - +
-yabai -m config status_bar_space_icon        *
+yabai -m config status_bar_space_icon        #
 yabai -m config status_bar_clock_icon
 
 # global settings
@@ -39,7 +39,7 @@ yabai -m config top_padding                  0
 yabai -m config bottom_padding               0
 yabai -m config left_padding                 0
 yabai -m config right_padding                0
-yabai -m config window_gap                   4
+yabai -m config window_gap                   2
 
 # rules for apps
 yabai -m rule --add app="^System Preferences$" manage=off

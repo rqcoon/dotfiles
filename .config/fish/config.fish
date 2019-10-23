@@ -29,6 +29,9 @@ set fish_greeting ''
 #     source "$BASE16_SHELL/profile_helper.fish"
 # end
 
+set pure_symbol_prompt '>'
+set pure_symbol_reverse_prompt '<'
+
 alias vim '$EDITOR'
 alias t 'topydo'
 alias c 'clear'

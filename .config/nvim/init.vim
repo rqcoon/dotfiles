@@ -8,9 +8,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-eunuch'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
+Plug 'junegunn/seoul256.vim'
+Plug 'reedes/vim-colors-pencil'
+Plug 'chriskempson/base16-vim'
+Plug 'andreypopp/vim-colors-plain'
 Plug 'mbbill/undotree'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/vim-peekaboo'
@@ -39,29 +44,38 @@ Plug 'https://github.com/Alok/notational-fzf-vim'
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
-" Apprentice tweaks {{{
-set background=dark
-function! MyHighlights() abort
-    hi Normal ctermbg=NONE ctermfg=250 cterm=NONE guibg=NONE guifg=#BCBCBC gui=NONE
-    " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
-    hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
-    hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
-    hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
-    hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
-    hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
-endfunction
-augroup MyColors
-    autocmd!
-    autocmd ColorScheme * call MyHighlights()
-augroup END
-colorscheme apprentice
+" Theme tweaks {{{
+" set background=dark
+colorscheme pencil
+let hr = (strftime('%H'))
+if hr >= 19
+  set background=dark
+elseif hr >= 8
+  set background=light
+elseif hr >= 0
+  set background=dark
+endif
+" function! MyHighlights() abort
+"     hi Normal ctermbg=NONE ctermfg=250 cterm=NONE guibg=NONE guifg=#BCBCBC gui=NONE
+"     " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+"     hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+"     hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+"     hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+"     hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
+"     hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+"     hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+"     hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+"     hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
+"     hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
+"     hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
+"     hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
+"     hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
+" endfunction
+" augroup MyColors
+"     autocmd!
+"     autocmd ColorScheme * call MyHighlights()
+" augroup END
+" colorscheme apprentice
 " }}}
 " Wiki {{{
 let g:wiki_root = '~/Dropbox/Notes/'
@@ -99,8 +113,6 @@ let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
 " }}}
 " ALE {{{
 let g:ale_lintes = {
-\   'markdown': [],
-\   'lua': ['luac']
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],

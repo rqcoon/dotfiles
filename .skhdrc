@@ -56,8 +56,6 @@ shift + cmd - j : yabai -m space --move next
 shift + cmd - k : yabai -m space --move prev
 # cmd + alt + shift + j : yabai -m space --move next
 
-
-
 # fast focus desktop
 alt - tab : yabai -m space --focus recent
 alt - 1 : yabai -m space --focus 1
