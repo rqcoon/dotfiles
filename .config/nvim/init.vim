@@ -22,6 +22,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lervag/wiki.vim'
 Plug 'lervag/wiki-ft.vim'
+Plug 'davidoc/taskpaper.vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'sidofc/mkdx'
@@ -29,7 +30,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn i
 Plug 'junegunn/goyo.vim'
 Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-outlaw'
-Plug 'lifepillar/vim-mucomplete'
+" Plug 'lifepillar/vim-mucomplete'
 Plug 'lifepillar/vim-cheat40'
 Plug 'mxw/vim-jsx'
 " Plug 'tmsvg/pear-tree'
@@ -76,6 +77,9 @@ endif
 "     autocmd ColorScheme * call MyHighlights()
 " augroup END
 " colorscheme apprentice
+" }}}
+" Taskpaper {{{
+
 " }}}
 " Wiki {{{
 let g:wiki_root = '~/Dropbox/Notes/'
