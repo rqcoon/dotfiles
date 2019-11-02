@@ -12,17 +12,14 @@ Plug 'tpope/vim-eunuch'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
-Plug 'junegunn/seoul256.vim'
-Plug 'reedes/vim-colors-pencil'
-Plug 'chriskempson/base16-vim'
-Plug 'andreypopp/vim-colors-plain'
+Plug 'reedes/vim-thematic'
 Plug 'mbbill/undotree'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lervag/wiki.vim'
-Plug 'lervag/wiki-ft.vim'
 Plug 'davidoc/taskpaper.vim'
+Plug 'freitass/todo.txt-vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'sidofc/mkdx'
@@ -41,52 +38,59 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 Plug 'https://github.com/Alok/notational-fzf-vim'
+Plug 'glacambre/firenvim', { 'do': function('firenvim#install') }
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
 " Theme tweaks {{{
-" set background=dark
-colorscheme pencil
-let hr = (strftime('%H'))
-if hr >= 19
-  set background=dark
-elseif hr >= 8
-  set background=light
-elseif hr >= 0
-  set background=dark
-endif
-" function! MyHighlights() abort
-"     hi Normal ctermbg=NONE ctermfg=250 cterm=NONE guibg=NONE guifg=#BCBCBC gui=NONE
-"     " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-"     hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-"     hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-"     hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-"     hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
-"     hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-"     hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-"     hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-"     hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
-"     hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
-"     hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
-"     hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
-"     hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
-" endfunction
-" augroup MyColors
-"     autocmd!
-"     autocmd ColorScheme * call MyHighlights()
-" augroup END
-" colorscheme apprentice
+" if system("osascript -e 'tell application \"System Events\" to tell appearance preferences to return (get dark mode as text)'") == "true\n"
+"   set background=dark
+" else
+"   set background=light
+" endif
+function! MyHighlights() abort
+    hi Normal ctermbg=NONE ctermfg=250 cterm=NONE guibg=NONE guifg=#BCBCBC gui=NONE
+    " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
+    hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
+    hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
+    hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
+    hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
+    hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
+endfunction
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
+colorscheme apprentice
+" }}}
+" Thematic {{{
+let g:thematic#themes = {
+\ 'pencil_dark' :{'colorscheme': 'pencil',
+\                 'background': 'dark',
+\                },
+\ 'pencil_lite' :{'colorscheme': 'pencil',
+\                 'background': 'light',
+\                },
+\ }
 " }}}
 " Taskpaper {{{
 
 " }}}
 " Wiki {{{
 let g:wiki_root = '~/Dropbox/Notes/'
-let g:wiki_filetypes = ['md']
-let g:wiki_link_extension = '.md'
+let g:wiki_filetypes = ['txt']
+let g:wiki_link_extension = '.txt'
 let g:wiki_list_todos = ['[ ]', '[x]']
-let g:wiki_link_target_type = 'md'
+let g:wiki_link_target_type = 'txt'
 let g:wiki_mappings_use_defaults = 1
 let g:wiki_mappings_global = {
 	\ '<plug>(wiki-list-toggle)' : '<c-t>',
@@ -97,6 +101,7 @@ let g:wiki_mappings_global = {
 " Markdown {{{
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_auto_extension_ext = 'txt'
 let g:vim_markdown_autowrite = 1
 let g:vim_markdown_edit_url_in = 'vsplit'
 let g:vim_markdown_auto_insert_bullets = 0
@@ -117,6 +122,7 @@ let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
 " }}}
 " ALE {{{
 let g:ale_lintes = {
+\   'markdown': ['']
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -302,8 +308,12 @@ set statusline+=\ %3l:%-2.2c\ %P
 " MAPPINGS {{{
 
 " leader
-let mapleader = ","
-let maplocalleader = "\\"
+let mapleader = "\\"
+let maplocalleader = ","
+
+" theme switcher
+nnoremap <Leader>d :Thematic pencil_dark<CR>
+nnoremap <Leader>l :Thematic pencil_lite<CR>
 
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
@@ -438,6 +448,12 @@ command! ToggleWrap call ToggleWrap()
 
 " }}}
 " AUGROUPS {{{
+" markdown {{{
+augroup Markdown
+  autocmd!
+  autocmd BufRead *.txt set filetype=markdown
+augroup END
+" }}}
 " outlaw {{{
 augroup Outlaw
   autocmd!

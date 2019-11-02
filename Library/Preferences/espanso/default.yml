@@ -7,6 +7,11 @@
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # Dates
   - trigger: ":date"
     replace: "{{mydate}}"
     vars:
@@ -14,12 +19,6 @@ matches:
         type: date
         params:
           format: "%m/%d/%Y"
-
-  - trigger: ":@"
-    replace: "me@kkga.me"
-
-  - trigger: ":idk"
-    replace: "¯\_(ツ)_/¯"
 
   # Shell commands
   - trigger: ":shell"
