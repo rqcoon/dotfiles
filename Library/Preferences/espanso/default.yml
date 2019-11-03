@@ -20,14 +20,6 @@ matches:
         params:
           format: "%m/%d/%Y"
 
-  - trigger: ":fdate"
-    replace: "{{myfulldate}}"
-    vars:
-      - name: myfulldate
-        type: date
-        params:
-          format: "%m/%d/%Y"
-
   # Shell commands
   - trigger: ":shell"
     replace: "{{output}}"

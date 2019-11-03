@@ -215,7 +215,7 @@
                         "key_code": "f11"
                     },
                     "to": {
-                        "key_code": "f11"
+                        "consumer_key_code": "volume_decrement"
                     }
                 },
                 {
@@ -223,7 +223,7 @@
                         "key_code": "f12"
                     },
                     "to": {
-                        "key_code": "f12"
+                        "consumer_key_code": "volume_increment"
                     }
                 }
             ],
