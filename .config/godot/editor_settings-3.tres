@@ -1,14 +1,17 @@
-[gd_resource type="EditorSettings" load_steps=18 format=2]
+[gd_resource type="EditorSettings" load_steps=17 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
+command = true
 scancode = 87
 
 [sub_resource type="InputEventKey" id=2]
 control = true
+command = true
 scancode = 32
 
 [sub_resource type="InputEventKey" id=3]
+control = true
 meta = true
 command = true
 scancode = 49
@@ -18,6 +21,7 @@ scancode = 16777247
 unicode = 16777247
 
 [sub_resource type="InputEventKey" id=5]
+control = true
 meta = true
 command = true
 scancode = 50
@@ -26,83 +30,88 @@ scancode = 50
 alt = true
 scancode = 96
 
-[sub_resource type="InputEventKey" id=18]
+[sub_resource type="InputEventKey" id=7]
 control = true
+command = true
 scancode = 123
 
-[sub_resource type="InputEventKey" id=19]
+[sub_resource type="InputEventKey" id=8]
 control = true
+command = true
 scancode = 125
 
 [sub_resource type="InputEventKey" id=9]
 alt = true
 control = true
+command = true
 scancode = 90
 
 [sub_resource type="InputEventKey" id=10]
 shift = true
+control = true
 meta = true
 command = true
 scancode = 70
 
 [sub_resource type="InputEventKey" id=11]
+control = true
 meta = true
 command = true
 scancode = 47
 
 [sub_resource type="InputEventKey" id=12]
 control = true
+command = true
 scancode = 90
 
 [sub_resource type="InputEventKey" id=13]
 alt = true
 shift = true
 control = true
+command = true
 scancode = 90
 
 [sub_resource type="InputEventKey" id=14]
 control = true
+command = true
 scancode = 71
 
 [sub_resource type="InputEventKey" id=15]
 control = true
+command = true
 scancode = 16777220
 
 [sub_resource type="InputEventKey" id=16]
 control = true
+command = true
 scancode = 80
 
-[sub_resource type="InputEventKey" id=17]
-control = true
-scancode = 66
-
 [resource]
-interface/editor/display_scale = 4
+interface/editor/display_scale = 5
 interface/editor/main_font_size = 16
 interface/editor/code_font_size = 20
-interface/editor/main_font_bold = "/Users/gadzhi/Library/Fonts/Inter-Medium.otf"
-interface/editor/code_font = "/Users/gadzhi/Library/Fonts/iosevka-regular.ttf"
 interface/scene_tabs/minimum_width = 80
 text_editor/theme/color_theme = "Default"
 text_editor/indent/convert_indent_on_save = true
-text_editor/line_numbers/show_line_numbers = false
-text_editor/line_numbers/show_line_length_guideline = true
-text_editor/open_scripts/v_scroll_speed = 120
+text_editor/navigation/smooth_scrolling = false
 text_editor/files/trim_trailing_whitespace_on_save = true
 text_editor/cursor/scroll_past_end_of_file = true
 text_editor/completion/add_type_hints = true
+text_editor/help/help_font_size = 20
+text_editor/help/help_source_font_size = 20
+text_editor/help/help_title_font_size = 28
 editors/3d/primary_grid_color = Color( 0.564706, 0.564706, 0.564706, 1 )
 editors/3d/secondary_grid_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 editors/3d/navigation/invert_y_axis = true
 editors/3d/navigation/zoom_style = 1
 editors/3d/navigation/emulate_3_button_mouse = true
 editors/2d/grid_color = Color( 1, 1, 1, 0.16 )
-editors/2d/simple_spacebar_panning = true
-run/output/always_close_output_on_stop = true
-text_editor/help/help_font_size = 20
-text_editor/help/help_source_font_size = 20
-text_editor/help/help_title_font_size = 28
 run/output/font_size = 16
+run/output/always_close_output_on_stop = true
+text_editor/line_numbers/show_line_numbers = false
+text_editor/line_numbers/show_line_length_guideline = true
+text_editor/open_scripts/v_scroll_speed = 120
+editors/2d/simple_spacebar_panning = true
 docks/filesystem/files_display_mode = 1
 interface/editor/hidpi_mode = 1
 filesystem/directories/default_project_export_path = ""
@@ -119,8 +128,6 @@ text_editor/highlighting/indent_guide_color = Color( 1, 1, 1, 0.14 )
 editors/3d/navigation/invert_y-axis = true
 docks/filesystem/disable_split = false
 docks/filesystem/split_mode_minimum_height = 600
-network/debug/remote_host = "127.0.0.1"
-network/debug/remote_port = 6007
 asset_library/use_threads = true
 export/android/adb = "/usr/local/bin/adb"
 export/android/jarsigner = "/usr/bin/jarsigner"
@@ -217,8 +224,8 @@ interface/editors/derive_script_globals_by_name = true
 interface/editors/show_scene_tree_root_selection = true
 editors/3d_gizmos/gizmo_colors/path = Color( 0.5, 0.5, 1, 0.8 )
 editors/3d_gizmos/gizmo_colors/csg = Color( 0.2, 0.5, 1, 0.1 )
-text_editor/highlighting/gdscript/function_definition_color = Color( 0.00392157, 0.882353, 1, 1 )
-text_editor/highlighting/gdscript/node_path_color = Color( 0.392157, 0.756863, 0.352941, 1 )
+text_editor/highlighting/gdscript/function_definition_color = Color( 0, 0.88, 1, 1 )
+text_editor/highlighting/gdscript/node_path_color = Color( 0.39, 0.76, 0.35, 1 )
 _::Users::gadzhi::Downloads::ludumdare42-master::LD42/_recent_scenes = PoolStringArray( "Scenes/Player/Player.tscn", "Scenes/Other/World/World.tscn", "Scenes/Other/Win/Win.tscn", "Scenes/Other/BG/ParallaxBackground.tscn", "Scenes/Meteor/Meteor.tscn", "Scenes/Earth/Earth.tscn", "Scenes/Title/TitleScreen.tscn" )
 _::Users::gadzhi::Downloads::godot-demo-projects-master::gui::drag_and_drop/_recent_scenes = PoolStringArray( "drag_and_drop.tscn" )
 _::Users::gadzhi::Downloads::godot-demo-projects-master::gui::input_mapping/_recent_scenes = PoolStringArray( "controls.tscn" )
@@ -242,7 +249,6 @@ editors/grid_map/editor_side = 1
 _::Users::gadzhi::Documents::godot::zipper-clone/_recent_scenes = PoolStringArray( "Level/Level.tscn", "Level/LevelPlayground.tscn", "Player/Player.tscn", "Game.tscn", "levels/Level5.tscn", "levels/Level4.tscn", "levels/Level3.tscn", "levels/Level2.tscn", "levels/Level1.tscn", "Level/MovingBlock/MovingBlock.tscn" )
 _::Users::gadzhi::Documents::GitHub::ld42/_recent_scenes = PoolStringArray( "Scene/globalscene.tscn", "Scene/ExitArea.tscn", "Scene/credits.tscn", "Scene/ButtonsP2.tscn", "Scene/ButtonsP1.tscn", "Assets/Transition.tscn", "Levels/level500.tscn", "Levels/level310.tscn", "Levels/level225.tscn", "Levels/level120.tscn" )
 _::Users::gadzhi::Documents::godot-projects::zipper-clone/_recent_scenes = PoolStringArray( "levels/Level6.tscn", "levels/Level1.tscn", "Player/Player.tscn", "Game.tscn", "Level/LevelPlayground.tscn", "Interactables/Rotator/Rotator.tscn", "Level/Level.tscn", "Interactables/Interactable.tscn", "Interactables/Tilevoid/Tilevoid.tscn", "levels/Level2.tscn" )
-network/ssl/editor_ssl_certificates = ""
 interface/inspector/horizontal_vector_types_editing = true
 interface/inspector/auto_unfold_edited = true
 interface/inspector/auto_unfold_foreign_scenes = true
@@ -255,5 +261,18 @@ interface/inspector/default_float_step = 0.01
 _default_feature_profile = "2d"
 projects/::Users::gadzhi::github::godot-metroidvania-2d::hook!-full-game = "/Users/gadzhi/github/godot-metroidvania-2d/hook!-full-game"
 projects/::Users::gadzhi::godot-projects::auto = "/Users/gadzhi/godot-projects/auto"
-text_editor/completion/code_complete_delay = 0.3
-shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_help", SubResource( 4 ), "editor/editor_script", SubResource( 5 ), "editor/next_tab", SubResource( 6 ), "editor/open_scene", null, "script_editor/history_next", SubResource( 18 ), "script_editor/history_previous", SubResource( 19 ), "script_text_editor/fold_all_lines", SubResource( 9 ), "script_text_editor/replace", SubResource( 10 ), "script_text_editor/toggle_comment", SubResource( 11 ), "script_text_editor/toggle_fold_line", SubResource( 12 ), "script_text_editor/unfold_all_lines", SubResource( 13 ), "tile_map_editor/bucket_fill", SubResource( 14 ), "tile_map_editor/erase_selection", SubResource( 15 ), "tile_map_editor/paint_tile", SubResource( 16 ), "tile_map_editor/select", SubResource( 17 ) ]
+projects/::home::kkga::GodotProjects::autoro = "/home/kkga/GodotProjects/autoro"
+projects/::home::kkga::GodotProjects::meteorite = "/home/kkga/GodotProjects/meteorite"
+projects/::home::kkga::GodotProjects::click = "/home/kkga/GodotProjects/click"
+interface/inspector/default_color_picker_mode = 0
+text_editor/script_list/script_temperature_enabled = true
+text_editor/script_list/highlight_current_script = true
+text_editor/script_list/script_temperature_history_size = 15
+text_editor/script_list/current_script_background_color = Color( 1, 1, 1, 0.3 )
+text_editor/script_list/group_help_pages = true
+text_editor/script_list/sort_scripts_by = 0
+text_editor/script_list/list_script_names_as = 0
+network/language_server/remote_port = 6008
+network/language_server/enable_smart_resolve = false
+network/language_server/show_native_symbols_in_editor = false
+shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_help", SubResource( 4 ), "editor/editor_script", SubResource( 5 ), "editor/next_tab", SubResource( 6 ), "editor/open_scene", null, "script_editor/history_next", SubResource( 7 ), "script_editor/history_previous", SubResource( 8 ), "script_text_editor/fold_all_lines", SubResource( 9 ), "script_text_editor/replace", SubResource( 10 ), "script_text_editor/toggle_comment", SubResource( 11 ), "script_text_editor/toggle_fold_line", SubResource( 12 ), "script_text_editor/unfold_all_lines", SubResource( 13 ), "tile_map_editor/bucket_fill", SubResource( 14 ), "tile_map_editor/erase_selection", SubResource( 15 ), "tile_map_editor/paint_tile", SubResource( 16 ) ]

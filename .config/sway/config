@@ -18,7 +18,7 @@ set $term /var/home/kkga/.local/kitty.app/bin/kitty
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $launcher dmenu_path | fzf | xargs swaymsg exec
+set $launcher ~/.local/bin/wofi --show drun | xargs swaymsg exec --
 
 # }}}
 
@@ -53,8 +53,8 @@ input "2131:308:LEOPOLD_Mini_Keyboard" {
 # output * bg $color0 solid_color
 
 # Devices
-output DP-1 pos 0 0 res 3840x2160 scale 2
-output DP-2 res 3840x2160 scale 2
+output DP-2 pos 0 0 res 3840x2160 scale 2
+output DP-1 res 3840x2160 scale 2
 
 # Backlight
 #bindsym $mod+F9 exec light -U 5
@@ -96,7 +96,7 @@ smart_gaps on
 # Key bindings {{{
 
 # start a terminal
-bindsym $mod+d exec $term
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -104,7 +104,8 @@ bindsym $mod+Shift+q kill
 # lock screen
 bindsym $mod+Shift+Ctrl+L exec swaylock -c 000000
 
-#bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
+# bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
+bindsym $mod+d exec $launcher
 
 # bindsym $mod+d exec alacritty --config-file ~/.config/alacritty/launcher.yml --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
 # bindsym $mod+d exec $term --class=launcher -T=launcher -e "sway-launcher"
@@ -280,24 +281,23 @@ client.urgent           $bg     $bg     $fg      $fg     $color1
 # Read `man 5 sway-bar` for more information about this section.
 
 bar {
-    swaybar_command waybar
-    # position top
-    # height 20
-    # tray_output DP-1
-    # status_command ~/.local/bin/i3status-rs ~/.config/i3status-rust/config.toml
-    # font pango:Iosevka Term 9
-    # separator_symbol ""
-    # colors {
-    #      background $bg
-    #      statusline $fg
-    #      separator $fg
+     position top
+     height 16
+     tray_output DP-1
+     status_command ~/.local/bin/i3status-rs ~/.config/i3status-rust/config.toml
+     font pango:Cascadia Code 9
+     separator_symbol ""
+     colors {
+          background $bg
+          statusline $fg
+          separator $fg
 
-    #      focused_workspace  $fg $fg $bg
-    #      active_workspace   $bg $bg $fg
-    #      inactive_workspace $bg $bg $fg
-    #      urgent_workspace   $bg $bg $fg
-    #      binding_mode       $color1 $color1 $color15
-    # }
+          focused_workspace  $fg $fg $bg
+          active_workspace   $bg $bg $fg
+          inactive_workspace $bg $bg $fg
+          urgent_workspace   $bg $bg $fg
+          binding_mode       $color1 $color1 $color15
+     }
 }
 
 # }}}
