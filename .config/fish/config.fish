@@ -23,7 +23,7 @@ set fish_greeting ''
 # set -gx TODOTXT_DEFAULT_ACTION ls
 # set -gx FZF_DEFAULT_COMMAND 'rg --files --follow'
 
-set pure_symbol_prompt '∫'
+set pure_symbol_prompt '→'
 set pure_symbol_reverse_prompt '<'
 
 alias vim '$EDITOR'
