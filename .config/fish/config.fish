@@ -23,7 +23,7 @@ set fish_greeting ''
 # set -gx TODOTXT_DEFAULT_ACTION ls
 # set -gx FZF_DEFAULT_COMMAND 'rg --files --follow'
 
-set pure_symbol_prompt '→'
+set pure_symbol_prompt '>'
 set pure_symbol_reverse_prompt '<'
 
 alias vim '$EDITOR'
@@ -33,8 +33,8 @@ alias d 'kitty +kitten diff'
 alias ls 'exa'
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat "kitty +kitten icat"
-alias light "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/pencillight.conf"
-alias dark "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/pencildark.conf"
+# alias light "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/pencillight.conf"
+# alias dark "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/pencildark.conf"
 
 # if status --is-interactive
 #     set BASE16_SHELL "$HOME/.config/base16-shell/"

@@ -275,24 +275,23 @@ client.urgent           $bg     $bg     $fg      $fg     $color1
 # Read `man 5 sway-bar` for more information about this section.
 
 bar {
-    swaybar_command waybar
-     # position top
-     # height 16
-     # tray_output DP-1
-     # status_command ~/.local/bin/i3status-rs ~/.config/i3status-rust/config.toml
-     # font pango:Cascadia Code 8
-     # separator_symbol ""
-     # colors {
-     #      background $bg
-     #      statusline $fg
-     #      separator $fg
+     position top
+     height 20
+     tray_output DP-1
+     status_command i3status-rs ~/.config/i3status-rust/config.toml
+     font pango:Cascadia Code, FontAwesome 9
+     separator_symbol ""
+     colors {
+          background $color0
+          statusline $fg
+          separator $fg
 
-     #      focused_workspace  $fg $fg $bg
-     #      active_workspace   $bg $bg $fg
-     #      inactive_workspace $bg $bg $fg
-     #      urgent_workspace   $bg $bg $fg
-     #      binding_mode       $color1 $color1 $color15
-     # }
+          focused_workspace  $fg $fg $bg
+          active_workspace   $bg $bg $fg
+          inactive_workspace $bg $bg $fg
+          urgent_workspace   $bg $bg $fg
+          binding_mode       $color1 $color1 $color15
+     }
 }
 
 # }}}
