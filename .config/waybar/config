@@ -1,12 +1,12 @@
 {
     "layer": "top",
     // "output": "DP-2",
-    "position": "bottom",
+    "position": "top",
     "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-right": ["custom/nuvola", "custom/vpn", "pulseaudio", "network", "cpu", "clock", "tray"],
     "sway/workspaces": {
-        "pesistant_workspaces": {
+        "pesistent_workspaces": {
             "1": ["DP-1"],
             "2": ["DP-2"],
             "3": ["DP-2"],

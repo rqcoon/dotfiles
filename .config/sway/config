@@ -14,11 +14,11 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term /var/home/kkga/.local/kitty.app/bin/kitty
+set $term kitty
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $launcher ~/.local/bin/wofi --show drun | xargs swaymsg exec --
+set $launcher wofi -S drun -c ~/.config/wofi/config -s ~/.config/wofi/style.css | xargs swaymsg exec --
 
 # }}}
 
@@ -78,7 +78,7 @@ exec swayidle -w \
 
 # Visual settings {{{
 
-font pango:Iosevka Term 10
+font pango:Sudo Variable 10
 
 # window borders
 default_orientation auto
@@ -104,13 +104,7 @@ bindsym $mod+Shift+q kill
 # lock screen
 bindsym $mod+Shift+Ctrl+L exec swaylock -c 000000
 
-# bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
 bindsym $mod+d exec $launcher
-
-# bindsym $mod+d exec alacritty --config-file ~/.config/alacritty/launcher.yml --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
-# bindsym $mod+d exec $term --class=launcher -T=launcher -e "sway-launcher"
-for_window [title="^launcher$"] floating enable, border pixel
-for_window [floating] border csd
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -281,23 +275,24 @@ client.urgent           $bg     $bg     $fg      $fg     $color1
 # Read `man 5 sway-bar` for more information about this section.
 
 bar {
-     position top
-     height 16
-     tray_output DP-1
-     status_command ~/.local/bin/i3status-rs ~/.config/i3status-rust/config.toml
-     font pango:Cascadia Code 9
-     separator_symbol ""
-     colors {
-          background $bg
-          statusline $fg
-          separator $fg
+    swaybar_command waybar
+     # position top
+     # height 16
+     # tray_output DP-1
+     # status_command ~/.local/bin/i3status-rs ~/.config/i3status-rust/config.toml
+     # font pango:Cascadia Code 8
+     # separator_symbol ""
+     # colors {
+     #      background $bg
+     #      statusline $fg
+     #      separator $fg
 
-          focused_workspace  $fg $fg $bg
-          active_workspace   $bg $bg $fg
-          inactive_workspace $bg $bg $fg
-          urgent_workspace   $bg $bg $fg
-          binding_mode       $color1 $color1 $color15
-     }
+     #      focused_workspace  $fg $fg $bg
+     #      active_workspace   $bg $bg $fg
+     #      inactive_workspace $bg $bg $fg
+     #      urgent_workspace   $bg $bg $fg
+     #      binding_mode       $color1 $color1 $color15
+     # }
 }
 
 # }}}

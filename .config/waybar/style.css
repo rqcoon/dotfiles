@@ -1,14 +1,13 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-family: Inter;
   font-size: 11px;
   min-height: 0;
-  font-weight: 500;
 }
 
 window#waybar {
-  background: #262626;
+  background: #111111;
   color: #bcbcbc;
 }
 
