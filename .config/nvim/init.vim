@@ -71,6 +71,7 @@ augroup MyColors
     autocmd!
     autocmd ColorScheme * call MyHighlights()
 augroup END
+set notgc
 colorscheme apprentice
 " }}}
 " Thematic {{{

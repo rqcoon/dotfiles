@@ -35,8 +35,3 @@ alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat "kitty +kitten icat"
 # alias light "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/pencillight.conf"
 # alias dark "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/pencildark.conf"
-
-# if status --is-interactive
-#     set BASE16_SHELL "$HOME/.config/base16-shell/"
-#     source "$BASE16_SHELL/profile_helper.fish"
-# end ☼

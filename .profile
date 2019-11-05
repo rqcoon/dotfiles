@@ -9,6 +9,7 @@ export VISUAL=EDITOR
 
 export TODOTXT_DEFAULT_ACTION=ls
 export FZF_DEFAULT_COMMAND='rg --files --follow'
+export FZF_DEFAULT_OPS='--color=bw'
 
 # Wayland
 export MOZ_ENABLE_WAYLAND=1
