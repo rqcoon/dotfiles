@@ -14,11 +14,12 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term kitty
+set $term kitty -1
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $launcher wofi -S drun -c ~/.config/wofi/config -s ~/.config/wofi/style.css | xargs swaymsg exec --
+# set $launcher wofi -S drun -c ~/.config/wofi/config -s ~/.config/wofi/style.css | xargs swaymsg exec --
+set $launcher j4-dmenu-desktop --dmenu='bemenu -i -H 20 -p "" --tb "#ffffff" --tf "#6c6c6c" --fb "#ffffff" --ff "#1c1c1c" --hb "#8fafd7" --hf "#000000"  --nb "#ffffff" --nf "#444444" --fn "Envy Code R bold 10"' --term='kitty' | xargs swaymsg exec --
 
 # }}}
 
@@ -102,7 +103,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym $mod+Shift+Ctrl+L exec swaylock -c 000000
+bindsym $mod+Shift+Ctrl+L exec swaylock -c 111111
 
 bindsym $mod+d exec $launcher
 
