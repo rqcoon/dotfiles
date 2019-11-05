@@ -16,11 +16,15 @@ separator_bg = "#1c1c1c"
 separator_fg = "#444444"
 
 [icons]
-name = "none"
+name = "awesome"
 [icons.overrides]
 time = ""
 cogs = ""
 cpu = ""
+
+[[block]]
+block = "bluetooth"
+mac = "2C:41:A1:4A:81:7A"
 
 [[block]]
 block = "pacman"

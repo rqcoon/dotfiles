@@ -79,7 +79,7 @@ exec swayidle -w \
 
 # Visual settings {{{
 
-font pango: Envy Code R 10
+font pango: Inter Medium 9
 
 # window borders
 default_orientation auto
@@ -281,7 +281,7 @@ bar {
      tray_output DP-1
      status_command i3status-rs ~/.config/i3status-rust/config.toml
      font pango: Envy Code R 10
-     separator_symbol "/"
+     separator_symbol " "
      colors {
           background $color0
           statusline $fg
