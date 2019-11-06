@@ -20,11 +20,9 @@ set fish_greeting ''
 # export SDL_VIDEODRIVER=wayland
 # export _JAVA_AWT_WM_NONREPARENTING=1
 
-# set -gx TODOTXT_DEFAULT_ACTION ls
-# set -gx FZF_DEFAULT_COMMAND 'rg --files --follow'
-
-set pure_symbol_prompt '→'
-set pure_symbol_reverse_prompt '<'
+set -gx TODOTXT_DEFAULT_ACTION ls
+set -gx FZF_DEFAULT_COMMAND 'rg --files --follow'
+set -gx FZF_DEFAULT_OPTS '--color bw'
 
 alias vim '$EDITOR'
 alias t 'topydo'
