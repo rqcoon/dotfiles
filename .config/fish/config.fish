@@ -33,5 +33,5 @@ alias d 'kitty +kitten diff'
 alias ls 'exa'
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat "kitty +kitten icat"
-# alias light "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/pencillight.conf"
-# alias dark "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/pencildark.conf"
+alias light "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/PencilLight.conf"
+alias dark "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/PencilDark.conf"
