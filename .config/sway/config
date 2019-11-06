@@ -19,7 +19,7 @@ set $term kitty -1
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 # set $launcher wofi -S drun -c ~/.config/wofi/config -s ~/.config/wofi/style.css | xargs swaymsg exec --
-set $launcher j4-dmenu-desktop --dmenu='bemenu -i -H 20 -p "" --tb "#ffffff" --tf "#6c6c6c" --fb "#ffffff" --ff "#1c1c1c" --hb "#8fafd7" --hf "#000000"  --nb "#ffffff" --nf "#444444" --fn "Envy Code R bold 10"' --term='kitty' | xargs swaymsg exec --
+set $launcher j4-dmenu-desktop --dmenu='bemenu -i -H 20 -p "" --tb "#bcbcbc" --tf "#6c6c6c" --fb "#bcbcbc" --ff "#262626" --hb "#ffffff" --hf "#1c1c1c"  --nb "#bcbcbc" --nf "#444444" --fn "Envy Code R bold 10"' --term='kitty' | xargs swaymsg exec --
 
 # }}}
 
@@ -102,6 +102,9 @@ bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# show clipboard
+bindsym $mod+Shift+c exec clipman pick --tool=STDOUT | bemenu -p "clipboard" -i -H 20 -l 12  --tb "#bcbcbc" --tf "#6c6c6c" --fb "#bcbcbc" --ff "#262626" --hb "#ffffff" --hf "#1c1c1c"  --nb "#bcbcbc" --nf "#444444" --fn "Envy Code R bold 10" | wl-copy
+
 # lock screen
 bindsym $mod+Shift+Ctrl+L exec swaylock -c 111111
 
@@ -115,7 +118,7 @@ bindsym $mod+d exec $launcher
 floating_modifier $mod normal
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 
 # exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -300,6 +303,12 @@ bar {
 # Startup apps {{{
 exec dropbox start
 exec mako
+
+# clipboard to clipman
+exec_always pkill wl-paste
+exec_always wl-paste -t text --watch clipman store 1>> ~/clipman.log 2>&1
+exec_always wl-paste -p -t text --watch clipman store --histpath="~/.local/share/clipman-primary.json
+
 # }}}
 
 # xwayland disable
