@@ -12,6 +12,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
+Plug 'reedes/vim-colors-pencil'
+Plug 'andreypopp/vim-colors-plain'
 Plug 'reedes/vim-thematic'
 Plug 'mbbill/undotree'
 Plug 'justinmk/vim-dirvish'
@@ -93,7 +95,7 @@ let g:wiki_list_todos = ['[ ]', '[x]']
 let g:wiki_link_target_type = 'txt'
 let g:wiki_mappings_use_defaults = 1
 let g:wiki_mappings_global = {
-	\ '<plug>(wiki-list-toggle)' : '<c-x>',
+	\ '<plug>(wiki-list-toggle)' : '<c-t>',
 	\ '<plug>(wiki-link-next)' : '<c-j>',
 	\ '<plug>(wiki-link-prev)' : '<c-k>',
 	\}
@@ -175,6 +177,11 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 augroup fzf_statusline
     autocmd! FileType fzf
     autocmd  FileType fzf set laststatus=0 noshowmode noruler
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
+augroup skim_statusline
+    autocmd! FileType skim
+    autocmd  FileType skim set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
 " }}}
