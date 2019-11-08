@@ -1,13 +1,13 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Inter;
-  font-size: 11px;
+  font-family: "Envy Code R", "Font Awesome";
+  font-size: 12px;
   min-height: 0;
 }
 
 window#waybar {
-  background: #111111;
+  background: #1c1c1c;
   color: #bcbcbc;
 }
 

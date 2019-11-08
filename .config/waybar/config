@@ -4,7 +4,7 @@
     "position": "top",
     "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["custom/nuvola", "custom/vpn", "pulseaudio", "network", "cpu", "clock", "tray"],
+    "modules-right": ["custom/nuvola", "backlight", "custom/vpn", "pulseaudio", "network", "cpu", "clock", "tray"],
     "sway/workspaces": {
         "pesistent_workspaces": {
             "1": ["DP-1"],
@@ -64,7 +64,7 @@
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "KITTY_ENABLE_WAYLAND=1 kitty -e nmtui"
+        "on-click": "kitty -e nmtui"
     },
     "pulseaudio": {
         "format": "vol {volume}%",

@@ -14,8 +14,8 @@ export FZF_DEFAULT_OPS='--color=bw'
 # Wayland
 export MOZ_ENABLE_WAYLAND=1
 export KITTY_ENABLE_WAYLAND=1
-# export QT_AUTO_SCREEN_SCALE_FACTOR=1
-# export QT_QPA_PLATFORM=wayland-egl
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_QPA_PLATFORM=wayland-egl
 # export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 # export QT_WAYLAND_FORCE_DPI=physical
 # export GDK_BACKEND=wayland

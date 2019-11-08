@@ -54,8 +54,8 @@ input "2131:308:LEOPOLD_Mini_Keyboard" {
 # output * bg $color0 solid_color
 
 # Devices
-output DP-2 pos 0 0 res 3840x2160 scale 2
-output DP-1 res 3840x2160 scale 2
+output DP-2 position 0,0 mode 3840x2160 scale 2
+output DP-1 mode 3840x2160 scale 2
 
 # Backlight
 #bindsym $mod+F9 exec light -U 5
@@ -103,7 +103,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # show clipboard
-bindsym $mod+Shift+c exec clipman pick --tool=STDOUT | bemenu -p "clipboard" -i -H 20 -l 12  --tb "#bcbcbc" --tf "#6c6c6c" --fb "#bcbcbc" --ff "#262626" --hb "#ffffff" --hf "#1c1c1c"  --nb "#bcbcbc" --nf "#444444" --fn "Envy Code R bold 10" | wl-copy
+bindsym $mod+Shift+c exec clipman pick --histpath="~/.local/share/clipman-primary.json" --tool=STDOUT | bemenu -p "clipboard" -i -H 20 -l 12  --tb "#bcbcbc" --tf "#6c6c6c" --fb "#bcbcbc" --ff "#262626" --hb "#ffffff" --hf "#1c1c1c"  --nb "#bcbcbc" --nf "#444444" --fn "Envy Code R bold 10" | wl-copy
 
 # lock screen
 bindsym $mod+Shift+Ctrl+L exec swaylock -c 111111
@@ -301,13 +301,13 @@ bar {
 # }}}
 
 # Startup apps {{{
-exec dropbox start
+exec dropbox-cli start
 exec mako
+exec redshift
 
 # clipboard to clipman
-exec_always pkill wl-paste
-exec_always wl-paste -t text --watch clipman store 1>> ~/clipman.log 2>&1
-exec_always wl-paste -p -t text --watch clipman store --histpath="~/.local/share/clipman-primary.json
+exec wl-paste -t text --watch clipman store 1>> ~/clipman.log 2>&1
+exec wl-paste -p -t text --watch clipman store --histpath="~/.local/share/clipman-primary.json"
 
 # }}}
 
