@@ -1,0 +1,41 @@
+window {
+margin: 8px;
+background-color: #111;
+font-family: Envy Code R;
+font-size: 16px;
+}
+
+#outer-box {
+border: 1px solid black;
+background-color: #262626;
+}
+
+#input {
+margin: 0;
+border-radius: 0;
+padding: 4px;
+background-color: #111;
+border: none;
+color: #ffffff;
+}
+
+#inner-box {
+margin: 0px;
+}
+
+#scroll {
+margin: 0px;
+}
+
+#text {
+margin: 4px 8px;
+color: #fff;
+} 
+
+#img {
+margin-right: 8px;
+}
+
+#entry {
+color: #ffffff;
+}

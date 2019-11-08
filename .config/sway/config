@@ -14,11 +14,12 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term /var/home/kkga/.local/kitty.app/bin/kitty
+set $term kitty
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $launcher ~/.local/bin/wofi --show drun | xargs swaymsg exec --
+# set $launcher wofi -S drun -c ~/.config/wofi/config -s ~/.config/wofi/style.css | xargs swaymsg exec --
+set $launcher j4-dmenu-desktop --dmenu='bemenu -i -H 20 -p "" --tb "#bcbcbc" --tf "#6c6c6c" --fb "#bcbcbc" --ff "#262626" --hb "#ffffff" --hf "#1c1c1c"  --nb "#bcbcbc" --nf "#444444" --fn "Envy Code R bold 10"' --term='kitty' | xargs swaymsg exec --
 
 # }}}
 
@@ -53,8 +54,8 @@ input "2131:308:LEOPOLD_Mini_Keyboard" {
 # output * bg $color0 solid_color
 
 # Devices
-output DP-2 pos 0 0 res 3840x2160 scale 2
-output DP-1 res 3840x2160 scale 2
+output DP-2 position 0,0 mode 3840x2160 scale 2
+output DP-1 mode 3840x2160 scale 2
 
 # Backlight
 #bindsym $mod+F9 exec light -U 5
@@ -65,10 +66,10 @@ output DP-1 res 3840x2160 scale 2
 # Idle configuration {{{
 
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -c 111111' \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -c 111111'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -78,7 +79,7 @@ exec swayidle -w \
 
 # Visual settings {{{
 
-font pango:Iosevka Term 10
+font pango: Inter Medium 9
 
 # window borders
 default_orientation auto
@@ -101,16 +102,13 @@ bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# show clipboard
+bindsym $mod+Shift+c exec clipman pick --histpath="~/.local/share/clipman-primary.json" --tool=STDOUT | bemenu -p "clipboard" -i -H 20 -l 12  --tb "#bcbcbc" --tf "#6c6c6c" --fb "#bcbcbc" --ff "#262626" --hb "#ffffff" --hf "#1c1c1c"  --nb "#bcbcbc" --nf "#444444" --fn "Envy Code R bold 10" | wl-copy
+
 # lock screen
-bindsym $mod+Shift+Ctrl+L exec swaylock -c 000000
+bindsym $mod+Shift+Ctrl+L exec swaylock -c 111111
 
-# bindsym $mod+d exec $term --title=launcher -e "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
 bindsym $mod+d exec $launcher
-
-# bindsym $mod+d exec alacritty --config-file ~/.config/alacritty/launcher.yml --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
-# bindsym $mod+d exec $term --class=launcher -T=launcher -e "sway-launcher"
-for_window [title="^launcher$"] floating enable, border pixel
-for_window [floating] border csd
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -120,7 +118,7 @@ for_window [floating] border csd
 floating_modifier $mod normal
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 
 # exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -226,16 +224,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 24px
+    bindsym $down resize grow height 24px
+    bindsym $up resize shrink height 24px
+    bindsym $right resize grow width 24px
 
     # ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 24px
+    bindsym Down resize grow height 24px
+    bindsym Up resize shrink height 24px
+    bindsym Right resize grow width 24px
 
     # return to default mode
     bindsym Return mode "default"
@@ -282,19 +280,19 @@ client.urgent           $bg     $bg     $fg      $fg     $color1
 
 bar {
      position top
-     height 16
+     height 20
      tray_output DP-1
-     status_command ~/.local/bin/i3status-rs ~/.config/i3status-rust/config.toml
-     font pango:Cascadia Code 9
-     separator_symbol ""
+     status_command i3status-rs ~/.config/i3status-rust/config.toml
+     font pango: Envy Code R 10
+     separator_symbol " "
      colors {
-          background $bg
+          background $color0
           statusline $fg
           separator $fg
 
-          focused_workspace  $fg $fg $bg
-          active_workspace   $bg $bg $fg
-          inactive_workspace $bg $bg $fg
+          focused_workspace  $bg $bg $color15
+          active_workspace   $color0 $color0 $fg
+          inactive_workspace $color0 $color0 $color7
           urgent_workspace   $bg $bg $fg
           binding_mode       $color1 $color1 $color15
      }
@@ -303,10 +301,17 @@ bar {
 # }}}
 
 # Startup apps {{{
-exec dropbox start
+exec dropbox-cli start
 exec mako
+exec redshift
+
+# clipboard to clipman
+exec wl-paste -t text --watch clipman store 1>> ~/clipman.log 2>&1
+exec wl-paste -p -t text --watch clipman store --histpath="~/.local/share/clipman-primary.json"
+
 # }}}
 
 # xwayland disable
 
 include /etc/sway/config.d/*
+exec "systemctl --user import-environment; systemctl --user start sway-session.target"
