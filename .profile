@@ -1,8 +1,3 @@
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
-
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 PATH="$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
