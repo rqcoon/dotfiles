@@ -95,7 +95,7 @@ let g:wiki_list_todos = ['[ ]', '[x]']
 let g:wiki_link_target_type = 'txt'
 let g:wiki_mappings_use_defaults = 1
 let g:wiki_mappings_global = {
-	\ '<plug>(wiki-list-toggle)' : '<c-t>',
+	\ '<plug>(wiki-list-toggle)' : '<c-x>',
 	\ '<plug>(wiki-link-next)' : '<c-j>',
 	\ '<plug>(wiki-link-prev)' : '<c-k>',
 	\}

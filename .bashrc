@@ -11,4 +11,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.fzf.colors ] && source ~/.fzf.colors
 
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+# 	ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+# fi
+# if [[ ! "$SSH_AUTH_SOCK" ]]; then
+# 	eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+# fi
+
+
 [ -x $(which fish) ] && SHELL=$(which fish) exec $(which fish)
