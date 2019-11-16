@@ -22,7 +22,6 @@ Plug 'davidoc/taskpaper.vim'
 Plug 'freitass/todo.txt-vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
-Plug 'sidofc/mkdx'
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
 Plug 'konfekt/fastfold'
@@ -105,14 +104,6 @@ let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
-" }}}
-" MKDX {{{
-let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
-                        \ 'enter': { 'enable': 1, 'shift': 1 },
-			\ 'checkbox': { 'toggles': [' ', 'x'] },
-                        \ 'links': { 'external': { 'enable': 1 } },
-                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 0 },
-                        \ 'fold': { 'enable': 0 } }
 " }}}
 " ALE {{{
 let g:ale_lintes = {
