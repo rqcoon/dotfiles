@@ -3,8 +3,10 @@ autoconf
 automake
 baobab
 base
+bemenu-git
 binutils
 bison
+bluez-utils
 cheese
 chromium
 dosfstools
@@ -62,6 +64,7 @@ gvfs-nfs
 gvfs-smb
 gzip
 htop
+i3status-rust-git
 imv
 lf
 libtool
@@ -69,6 +72,7 @@ linux
 linux-firmware
 m4
 make
+mako
 mousetweaks
 mpv
 mtools
@@ -87,6 +91,7 @@ pkgconf
 pulseaudio
 pulseaudio-alsa
 python-pip
+restic
 ripgrep
 rygel
 sed

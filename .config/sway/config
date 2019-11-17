@@ -1,6 +1,6 @@
 # vim:foldmethod=marker:foldlevel=0
 
-# Config for sway.
+# Personal config for sway.
 # Read `man 5 sway` for a complete reference.
 # Author: Gadzhi Kharkharov <me@kkga.me>
 
@@ -311,7 +311,7 @@ exec wl-paste -p -t text --watch clipman store --histpath="~/.local/share/clipma
 
 # }}}
 
-# xwayland disable
+xwayland disable
 
 include /etc/sway/config.d/*
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
