@@ -4,7 +4,8 @@ set -gx TODOTXT_DEFAULT_ACTION ls
 set -gx FZF_DEFAULT_COMMAND 'rg --files --follow'
 set -gx FZF_DEFAULT_OPTS '--color bw'
 
-alias vim '$EDITOR'
+alias v '$EDITOR'
+alias p 'sudo pacman'
 alias t 'topydo'
 alias c 'clear'
 alias d 'kitty +kitten diff'
