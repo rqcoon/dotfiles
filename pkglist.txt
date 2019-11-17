@@ -66,6 +66,7 @@ gzip
 htop
 i3status-rust-git
 imv
+j4-dmenu-desktop
 lf
 libtool
 linux

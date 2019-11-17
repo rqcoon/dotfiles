@@ -22,9 +22,9 @@ time = ""
 cogs = ""
 cpu = ""
 
-[[block]]
-block = "bluetooth"
-mac = "2C:41:A1:4A:81:7A"
+# [[block]]
+# block = "bluetooth"
+# mac = "2C:41:A1:4A:81:7A"
 
 [[block]]
 block = "pacman"
