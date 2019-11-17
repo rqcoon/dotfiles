@@ -12,7 +12,11 @@ Plug 'tpope/vim-eunuch'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
+Plug 'andreypopp/vim-colors-plain'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'reedes/vim-thematic'
+Plug 'lifepillar/vim-colortemplate'
 Plug 'mbbill/undotree'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/vim-peekaboo'
@@ -22,14 +26,12 @@ Plug 'davidoc/taskpaper.vim'
 Plug 'freitass/todo.txt-vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
-Plug 'sidofc/mkdx'
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
 Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-outlaw'
-" Plug 'lifepillar/vim-mucomplete'
+Plug 'lifepillar/vim-mucomplete'
 Plug 'lifepillar/vim-cheat40'
-Plug 'mxw/vim-jsx'
 " Plug 'tmsvg/pear-tree'
 Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
 Plug 'dense-analysis/ale'
@@ -41,39 +43,49 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 Plug 'https://github.com/Alok/notational-fzf-vim'
+
+" TESTING
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
-function! MyHighlights() abort
-    hi Normal ctermbg=NONE ctermfg=250 cterm=NONE guibg=NONE guifg=#BCBCBC gui=NONE
-    " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
-    hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
-    hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
-    hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
-    hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
-    hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
-endfunction
-augroup MyColors
-    autocmd!
-    autocmd ColorScheme * call MyHighlights()
-augroup END
-colorscheme apprentice
+" Colortemplate {{{
+let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
+" }}}
+" Theme tweaks {{{
+" function! MyHighlights() abort
+    " hi Normal ctermbg=NONE guibg=NONE
+    " " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    " hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    " hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    " hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    " hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
+    " hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    " hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    " hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    " hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
+    " hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
+    " hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
+    " hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
+    " hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
+" endfunction
+" augroup MyColors
+"     autocmd!
+"     autocmd ColorScheme * call MyHighlights()
+" augroup END
+
+set termguicolors
+set background=dark
+colorscheme envy
 " }}}
 " Thematic {{{
 let g:thematic#themes = {
-\ 'pencil_dark' :{'colorscheme': 'pencil',
-\                 'background': 'dark',
-\                },
-\ 'pencil_lite' :{'colorscheme': 'pencil',
-\                 'background': 'light',
-\                },
+\ 'dark' :{'colorscheme': 'paramount',
+\          'background': 'dark',
+\         },
+\ 'lite' :{'colorscheme': 'paramount',
+\          'background': 'light',
+\         },
 \ }
 " }}}
 " Taskpaper {{{
@@ -102,17 +114,9 @@ let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_auto_insert_bullets = 1
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
-" }}}
-" MKDX {{{
-let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
-                        \ 'enter': { 'enable': 1, 'shift': 1 },
-			\ 'checkbox': { 'toggles': [' ', 'x'] },
-                        \ 'links': { 'external': { 'enable': 1 } },
-                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 0 },
-                        \ 'fold': { 'enable': 0 } }
 " }}}
 " ALE {{{
 let g:ale_lintes = {
@@ -288,7 +292,7 @@ function! LinterStatus() abort
    let l:all_errors = l:counts.error + l:counts.style_error
    let l:all_non_errors = l:counts.total - l:all_errors
    return l:counts.total == 0 ? '' : printf(
-   \ '▏%d⁄%d▕',
+   \ ' %d⁄%d ',
    \ l:all_non_errors,
    \ l:all_errors
    \)
@@ -311,8 +315,8 @@ let mapleader = "\\"
 let maplocalleader = ","
 
 " theme switcher
-nnoremap <Leader>d :Thematic pencil_dark<CR>
-nnoremap <Leader>l :Thematic pencil_lite<CR>
+nnoremap <Leader>d :Thematic dark<CR>
+nnoremap <Leader>l :Thematic lite<CR>
 
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
@@ -373,7 +377,7 @@ nnoremap Q nop
 " toggle wrap
 nnoremap <leader>wr :ToggleWrap<CR>
 
-" turn off highlight
+" clear search highlight
 nnoremap <leader>cc :nohl<CR>
 
 " change/source config
@@ -433,6 +437,15 @@ nnoremap <space> za
 
 "}}}
 " FUNCTIONS {{{
+
+" show highlight
+nmap <leader>sp :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " toggle wrap
 function! ToggleWrap()

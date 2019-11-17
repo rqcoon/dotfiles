@@ -11,5 +11,7 @@ alias d 'kitty +kitten diff'
 alias ls 'exa'
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat "kitty +kitten icat"
-alias light "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/PencilLight.conf"
-alias dark "kitty @ set-colors -a ~/.config/kitty/kitty-themes/themes/PencilDark.conf"
+alias term-light "alacritty-colorscheme -a envy_light.yaml"
+alias term-dark "alacritty-colorscheme -a envy_dark.yaml"
+
+starship init fish | source
