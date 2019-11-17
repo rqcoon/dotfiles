@@ -6,7 +6,9 @@ base
 binutils
 bison
 cheese
+chromium
 dosfstools
+dropbox
 efibootmgr
 eog
 evince
@@ -26,7 +28,6 @@ gcc
 gdm
 gettext
 git
-gnome-backgrounds
 gnome-boxes
 gnome-characters
 gnome-color-manager
@@ -35,13 +36,12 @@ gnome-disk-utility
 gnome-keyring
 gnome-logs
 gnome-menus
-gnome-remote-desktop
 gnome-screenshot
 gnome-session
 gnome-settings-daemon
 gnome-shell
+gnome-shell-extension-easyscreencast-git
 gnome-shell-extensions
-gnome-software
 gnome-system-monitor
 gnome-terminal
 gnome-themes-extra
@@ -70,6 +70,7 @@ linux-firmware
 m4
 make
 mousetweaks
+mpv
 mtools
 mutter
 nautilus
@@ -86,6 +87,7 @@ pkgconf
 pkgstats
 pulseaudio
 pulseaudio-alsa
+python-pip
 ripgrep
 rygel
 sed
