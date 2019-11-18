@@ -12,9 +12,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
-Plug 'andreypopp/vim-colors-plain'
-Plug 'owickstrom/vim-colors-paramount'
-Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'reedes/vim-thematic'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'mbbill/undotree'
@@ -41,11 +38,9 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
-Plug 'https://github.com/Alok/notational-fzf-vim'
 
 " TESTING
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
@@ -311,8 +306,8 @@ set statusline+=\ %3l:%-2.2c\ %P
 " MAPPINGS {{{
 
 " leader
-let mapleader = "\\"
-let maplocalleader = ","
+let mapleader = ","
+let maplocalleader = "\\"
 
 " theme switcher
 nnoremap <Leader>d :Thematic dark<CR>

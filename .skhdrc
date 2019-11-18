@@ -1,19 +1,19 @@
 # open terminal
-# ctrl + cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
-ctrl + cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+ctrl + cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# ctrl + cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
 # quick restart
 alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # screenshot
-alt + cmd - s : ~/bin/screenshot
+alt + cmd - s : screenshot
 
 # WINDOWS
 
 # navigate windows and spaces
 alt - h : yabai -m window --focus prev
-alt - j : yabai -m space  --focus next
-alt - k : yabai -m space  --focus prev
+# alt - j : yabai -m space  --focus next
+# alt - k : yabai -m space  --focus prev
 alt - l : yabai -m window --focus next
 
 # move window
