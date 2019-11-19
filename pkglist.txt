@@ -123,8 +123,6 @@ xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
-xorg-fonts-100dpi
-xorg-fonts-75dpi
 xorg-fonts-encodings
 xorg-iceauth
 xorg-luit
