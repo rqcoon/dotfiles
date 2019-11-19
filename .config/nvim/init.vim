@@ -22,10 +22,10 @@ Plug 'lervag/wiki.vim'
 Plug 'davidoc/taskpaper.vim'
 Plug 'freitass/todo.txt-vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'reedes/vim-pencil', { 'for': 'markdown' }
-Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
+" Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+" Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
-Plug 'konfekt/fastfold'
+" Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-outlaw'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'lifepillar/vim-cheat40'
