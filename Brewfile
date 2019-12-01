@@ -34,7 +34,7 @@ brew "geoip"
 brew "git"
 brew "git-lfs"
 brew "git-now"
-brew "gnupg", link: false
+brew "gnupg"
 brew "gpgme"
 brew "gopass"
 brew "htop"
@@ -56,7 +56,6 @@ brew "msmtp"
 brew "mu"
 brew "neofetch"
 brew "neovim", args: ["HEAD"]
-brew "node"
 brew "rust"
 brew "nushell"
 brew "openvpn"
@@ -133,18 +132,22 @@ cask "vlc"
 cask "yt-music"
 mas "1Blocker", id: 1107421413
 mas "1Password 7", id: 1333542190
+mas "AdGuard for Safari", id: 1440147259
 mas "Agent Intercept", id: 1470156914
 mas "Annotate", id: 918207447
 mas "Claquette", id: 587748131
 mas "Frank DeLoupe", id: 530458789
 mas "GIPHY CAPTURE", id: 668208984
 mas "iA Writer", id: 775737590
+mas "iStat Menus", id: 1319778037
 mas "Keep It", id: 1272768911
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
+mas "OverPicture", id: 1188020834
 mas "Pages", id: 409201541
 mas "Soulver", id: 413965349
 mas "SwiftoDo Desktop", id: 1143641091
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
 mas "WiFi Explorer Lite", id: 1408727408
+mas "Xcode", id: 497799835
