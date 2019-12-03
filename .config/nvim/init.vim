@@ -74,7 +74,7 @@ let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
 
 " set termguicolors
 set background=dark
-colorscheme envy
+colorscheme apprentice
 " }}}
 " Thematic {{{
 let g:thematic#themes = {
@@ -90,7 +90,7 @@ let g:thematic#themes = {
 
 " }}}
 " Wiki {{{
-let g:wiki_root = '~/Dropbox/Notes/'
+let g:wiki_root = '~/Documents/Notes/'
 let g:wiki_filetypes = ['txt']
 let g:wiki_link_extension = '.txt'
 let g:wiki_list_todos = ['[ ]', '[x]']

@@ -1,6 +1,5 @@
 # open terminal
-shift + ctrl - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
-# shift + ctrl - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+ctrl + cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # quick restart
 alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
