@@ -11,6 +11,9 @@ matches:
   - trigger: ":espanso"
     replace: "Hi there!"
 
+  - trigger: ":@@"
+    replace: "me@kkga.me"
+
   # Dates
   - trigger: ":date"
     replace: "{{mydate}}"

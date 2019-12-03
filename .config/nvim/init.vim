@@ -9,9 +9,11 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-markdown'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
+Plug 'andreypopp/vim-colors-plain'
 Plug 'reedes/vim-thematic'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'mbbill/undotree'
@@ -21,8 +23,8 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'lervag/wiki.vim'
 Plug 'davidoc/taskpaper.vim'
 Plug 'freitass/todo.txt-vim'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-" Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 " Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
 " Plug 'konfekt/fastfold'
@@ -32,9 +34,10 @@ Plug 'lifepillar/vim-cheat40'
 " Plug 'tmsvg/pear-tree'
 Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
 Plug 'dense-analysis/ale'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'editorconfig/editorconfig-vim'
+Plug 'rust-lang/rust.vim'
+" Plug 'ludovicchabant/vim-gutentags'
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'editorconfig/editorconfig-vim'
 " Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -69,16 +72,16 @@ let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
 "     autocmd ColorScheme * call MyHighlights()
 " augroup END
 
-set termguicolors
+" set termguicolors
 set background=dark
 colorscheme envy
 " }}}
 " Thematic {{{
 let g:thematic#themes = {
-\ 'dark' :{'colorscheme': 'paramount',
+\ 'dark' :{'colorscheme': 'envy',
 \          'background': 'dark',
 \         },
-\ 'lite' :{'colorscheme': 'paramount',
+\ 'lite' :{'colorscheme': 'envy',
 \          'background': 'light',
 \         },
 \ }
@@ -100,18 +103,19 @@ let g:wiki_mappings_global = {
 	\}
 " }}}
 " Markdown {{{
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_no_extensions_in_markdown = 1
-let g:vim_markdown_auto_extension_ext = 'txt'
-let g:vim_markdown_autowrite = 1
-let g:vim_markdown_edit_url_in = 'vsplit'
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_auto_insert_bullets = 1
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
+" let g:vim_markdown_frontmatter = 1
+" let g:vim_markdown_no_extensions_in_markdown = 1
+" let g:vim_markdown_auto_extension_ext = 'txt'
+" let g:vim_markdown_autowrite = 1
+" let g:vim_markdown_edit_url_in = 'vsplit'
+" let g:vim_markdown_auto_insert_bullets = 0
+" " let g:vim_markdown_folding_style_pythonic = 1
+" let g:vim_markdown_folding_level = 3
+" let g:vim_markdown_no_default_key_mappings = 1
+" let g:vim_markdown_toc_autofit = 1
+" let g:vim_markdown_auto_insert_bullets = 1
+" let g:vim_markdown_new_list_item_indent = 0
+" let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
 " }}}
 " ALE {{{
 let g:ale_lintes = {
@@ -220,6 +224,7 @@ set backspace=indent,eol,start  " Allow backspace in insert mode
 set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
 set conceallevel=2              " Conceals markdown syntax
+" set foldlevelstart=99
 set mouse=a
 
 " disable backups and swap
@@ -383,7 +388,7 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>cm :Commands<CR>
-nnoremap <leader>nn :NV<CR>
+nnoremap <leader>wf :WikiFzfPages<CR>
 nnoremap <leader>rg :Rg<CR>
 
 " quick save

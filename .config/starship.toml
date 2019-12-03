@@ -20,11 +20,9 @@ disabled = true
 disabled = true
 
 [directory]
-style = "fg:15"
+style = "fg:fg"
 
 [git_branch]
-style = "bold"
 symbol = ""
-
-[git_status]
-style = "fg:3 bold"
+truncation_length = 8
+truncation_symbol = "..."

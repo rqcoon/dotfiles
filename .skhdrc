@@ -1,26 +1,29 @@
 # open terminal
-ctrl + cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
-# ctrl + cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+shift + ctrl - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# shift + ctrl - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
 # quick restart
 alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # screenshot
-alt + cmd - s : screenshot
+# alt + cmd - s : screenshot
+
 
 # WINDOWS
 
 # navigate windows and spaces
 alt - h : yabai -m window --focus prev
-alt - j : yabai -m space  --focus next
-alt - k : yabai -m space  --focus prev
+alt - k : yabai -m window --focus prev
 alt - l : yabai -m window --focus next
+alt - j : yabai -m window --focus next
+alt + ctrl - j : yabai -m space  --focus next
+alt + ctrl - k : yabai -m space  --focus prev
 
 # move window
-shift + alt - h : yabai -m window --warp prev
-shift + alt - j : yabai -m window --space next; yabai -m space --focus next
-shift + alt - k : yabai -m window --space prev; yabai -m space --focus prev
-shift + alt - l : yabai -m window --warp next
+shift + alt - k : yabai -m window --warp prev
+# shift + alt - j : yabai -m window --space next; yabai -m space --focus next
+# shift + alt - k : yabai -m window --space prev; yabai -m space --focus prev
+shift + alt - j : yabai -m window --warp next
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
@@ -33,7 +36,6 @@ shift + alt - 0 : yabai -m space --balance
 
 # make floating window fill right-half of screen
 # shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
-
 
 
 # SPACES
@@ -88,6 +90,10 @@ shift + alt - tab : yabai -m window --space last; yabai -m space --focus last
 # DISPLAYS
 
 # focus display
+ctrl + alt - 1 : yabai -m display --focus 1
+ctrl + alt - 2 : yabai -m display --focus 2
+ctrl + alt + shift - 1 : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + alt + shift - 2 : yabai -m window --display 2; yabai -m display --focus 2
 ctrl + alt - tab  : yabai -m display --focus recent
 
 # send window to display and follow focus
