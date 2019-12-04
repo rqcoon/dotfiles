@@ -112,6 +112,7 @@ cask "github"
 cask "godot"
 cask "hammerspoon"
 cask "iina"
+cask "itch"
 cask "iterm2"
 cask "itsycal"
 cask "karabiner-elements"
@@ -122,6 +123,7 @@ cask "obs"
 cask "protonvpn"
 cask "quitter"
 cask "qutebrowser"
+cask "sf-symbols"
 cask "slack"
 cask "steam"
 cask "sublime-text"
@@ -132,7 +134,6 @@ cask "ubersicht"
 cask "vlc"
 cask "zoomus"
 mas "1Blocker", id: 1107421413
-mas "1Password 7", id: 1333542190
 mas "AdGuard for Safari", id: 1440147259
 mas "Agent Intercept", id: 1470156914
 mas "Annotate", id: 918207447

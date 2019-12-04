@@ -2,8 +2,8 @@
 
 # bar settings
 yabai -m config status_bar                   off
-yabai -m config status_bar_text_font         "SF Compact Display:Medium:12.0"
-yabai -m config status_bar_icon_font         "SF Compact Display:Medium:12.0"
+yabai -m config status_bar_text_font         "SF Pro Display:Medium:12.0"
+yabai -m config status_bar_icon_font         "SF Pro Display:Medium:12.0"
 yabai -m config status_bar_background_color  0x00262626
 yabai -m config status_bar_foreground_color  0xffBCBCBC
 yabai -m config status_bar_space_icon_strip  􀆪 2 3 􀛸  5 6 7 􀙚 􀙚
@@ -50,8 +50,8 @@ yabai -m rule --add app="^Preview$" manage=off border=off
 yabai -m rule --add app="^zoom.us$" manage=off
 
 yabai -m rule --add app="^Safari$" space=1
-yabai -m rule --add app="^Firefox$" space=2
 yabai -m rule --add app="^Firefox Nightly$" space=1
+yabai -m rule --add app="^Firefox$" space=2
 yabai -m rule --add app="^Brave Browser Beta$" space=3
 yabai -m rule --add app="^Brave Browser$" space=3
 
