@@ -32,9 +32,9 @@ Plug 'lifepillar/vim-outlaw'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'lifepillar/vim-cheat40'
 " Plug 'tmsvg/pear-tree'
-Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
-Plug 'dense-analysis/ale'
-Plug 'rust-lang/rust.vim'
+" Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
+" Plug 'dense-analysis/ale'
+" Plug 'rust-lang/rust.vim'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Plug 'editorconfig/editorconfig-vim'
@@ -311,7 +311,7 @@ set statusline+=\ %3l:%-2.2c\ %P
 " MAPPINGS {{{
 
 " leader
-let mapleader = ","
+let mapleader = "\<space>"
 let maplocalleader = "\\"
 
 " theme switcher
@@ -433,7 +433,7 @@ xnoremap <leader>k :m-2<cr>gv=gv
 nnoremap <leader>g :Goyo<CR>
 
 " quick folding
-nnoremap <space> za
+nnoremap <tab> za
 
 "}}}
 " FUNCTIONS {{{

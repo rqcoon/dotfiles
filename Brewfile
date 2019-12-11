@@ -8,6 +8,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "lukakerr/things"
 tap "mananapr/cfiles"
 tap "mas-cli/tap"
 tap "mongodb/brew"
@@ -19,11 +20,12 @@ brew "asciinema"
 brew "awscli"
 brew "fontconfig"
 brew "coreutils"
+brew "libevent"
+brew "crystal"
 brew "dust"
 brew "exa"
 brew "exercism"
 brew "fd"
-brew "libevent"
 brew "icu4c"
 brew "ffmpeg"
 brew "fish"
@@ -75,6 +77,7 @@ brew "todo-txt"
 brew "trash"
 brew "vcprompt"
 brew "vim"
+brew "w3m"
 brew "wget"
 brew "yarn"
 brew "youtube-dl"
@@ -89,8 +92,8 @@ cask "amethyst"
 cask "appcleaner"
 cask "bitwarden"
 cask "blender"
+cask "cheetah3d"
 cask "chromium"
-cask "cinebench"
 cask "dejalu"
 cask "docker"
 cask "dozer"
@@ -98,6 +101,7 @@ cask "dropshare"
 cask "epic-games"
 cask "figma"
 cask "firefox"
+cask "firefox-developer-edition"
 cask "firefox-nightly"
 cask "font-cascadia"
 cask "font-envy-code-r"
@@ -107,7 +111,8 @@ cask "font-hack"
 cask "font-inter"
 cask "font-m-plus"
 cask "font-sudo"
-cask "geekbench"
+cask "gifox"
+cask "gimp"
 cask "github"
 cask "godot"
 cask "hammerspoon"
@@ -115,43 +120,46 @@ cask "iina"
 cask "itch"
 cask "iterm2"
 cask "itsycal"
+cask "kap"
 cask "karabiner-elements"
 cask "kitty"
+cask "latest"
 cask "mpv"
 cask "nativedisplaybrightness"
+cask "nvalt"
 cask "obs"
 cask "protonvpn"
 cask "quitter"
 cask "qutebrowser"
 cask "sf-symbols"
 cask "slack"
+cask "sloth"
 cask "steam"
 cask "sublime-text"
 cask "telegram"
 cask "tomighty"
 cask "twine"
 cask "ubersicht"
-cask "vlc"
+cask "viscosity"
 cask "zoomus"
 mas "1Blocker", id: 1107421413
-mas "AdGuard for Safari", id: 1440147259
-mas "Agent Intercept", id: 1470156914
 mas "Annotate", id: 918207447
+mas "app.seashore", id: 1448648921
+mas "Blackmagic RAW Speed Test", id: 1466185689
 mas "Bumpr", id: 1166066070
 mas "Claquette", id: 587748131
-mas "GarageBand", id: 682658836
-mas "GIPHY CAPTURE", id: 668208984
+mas "Disk Speed Test", id: 425264550
+mas "Gifski", id: 1351639930
 mas "iA Writer", id: 775737590
-mas "iMovie", id: 408981434
 mas "iStat Menus", id: 1319778037
 mas "Keep It", id: 1272768911
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "OverPicture", id: 1188020834
-mas "Pages", id: 409201541
 mas "Soulver", id: 413965349
 mas "SwiftoDo Desktop", id: 1143641091
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
 mas "WiFi Explorer Lite", id: 1408727408
+mas "Wipr", id: 1320666476
 mas "Xcode", id: 497799835

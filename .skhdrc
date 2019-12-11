@@ -53,6 +53,12 @@ cmd + alt - n : yabai -m space --create;\
 # destroy space
 cmd + alt - w : yabai -m space --destroy
 
+# toggle mission control
+alt + ctrl - a : yabai -m space --toggle mission-control
+
+# show desktop
+alt + ctrl - d : yabai -m space --toggle show-desktop
+
 # move spaces
 shift + alt + cmd - j : yabai -m space --move next
 shift + alt + cmd - k : yabai -m space --move prev

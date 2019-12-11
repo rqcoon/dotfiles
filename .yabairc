@@ -2,14 +2,14 @@
 
 # bar settings
 yabai -m config status_bar                   off
-yabai -m config status_bar_text_font         "SF Pro Display:Medium:12.0"
-yabai -m config status_bar_icon_font         "SF Pro Display:Medium:12.0"
-yabai -m config status_bar_background_color  0x00262626
-yabai -m config status_bar_foreground_color  0xffBCBCBC
-yabai -m config status_bar_space_icon_strip  􀆪 2 3 􀛸  5 6 7 􀙚 􀙚
-yabai -m config status_bar_power_icon_strip  􀋪 􀋦
-yabai -m config status_bar_space_icon        #
-yabai -m config status_bar_clock_icon
+# yabai -m config status_bar_text_font         "SF Pro Display:Medium:11.0"
+# yabai -m config status_bar_icon_font         "SF Pro Display:Medium:11.0"
+# yabai -m config status_bar_background_color  0x00262626
+# yabai -m config status_bar_foreground_color  0xffBCBCBC
+# yabai -m config status_bar_space_icon_strip  1 2 3 4 5 6 7 8 9
+# yabai -m config status_bar_power_icon_strip  􀋪 􀋦
+# yabai -m config status_bar_space_icon        #
+# yabai -m config status_bar_clock_icon
 
 # global settings
 yabai -m config mouse_follows_focus          on
@@ -36,7 +36,7 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  20
+yabai -m config top_padding                  23
 yabai -m config bottom_padding               0
 yabai -m config left_padding                 0
 yabai -m config right_padding                0
@@ -49,19 +49,19 @@ yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Preview$" manage=off border=off
 yabai -m rule --add app="^zoom.us$" manage=off
 
-yabai -m rule --add app="^Safari$" space=1
-yabai -m rule --add app="^Firefox Nightly$" space=1
-yabai -m rule --add app="^Firefox$" space=2
-yabai -m rule --add app="^Brave Browser Beta$" space=3
-yabai -m rule --add app="^Brave Browser$" space=3
+yabai -m rule --add app="^Safari$" space=^1
+yabai -m rule --add app="^Firefox Nightly$" space=^1
+yabai -m rule --add app="^Firefox$" space=^2
+yabai -m rule --add app="^Brave Browser Beta$" space=^3
+yabai -m rule --add app="^Brave Browser$" space=^3
 
-yabai -m rule --add app="^Godot$" manage=off
-# yabai -m rule --add app="^Figma$" space=4 manage=off
+yabai -m rule --add app="Godot" space=^4 manage=off
+yabai -m rule --add app="Figma" space=^4 manage=off
 
-yabai -m rule --add app="^Keep It$" space=3
+yabai -m rule --add app="^Keep It$" space=^3
 
-yabai -m rule --add app="^Telegram$" space=6
-yabai -m rule --add app="^DejaLu$" space=6
+yabai -m rule --add app="^Telegram$" space=^6
+yabai -m rule --add app="^DejaLu$" space=^6
 
 # yabai -m rule --add app="^kitty$" display=^2
 yabai -m rule --add app="^YT Music$" display=^2 manage=off
@@ -69,11 +69,11 @@ yabai -m rule --add app="^Music$" display=^2 manage=off
 
 yabai -m signal --add event=space_changed \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-# yabai -m signal --add event=window_focused \
-#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+yabai -m signal --add event=window_focused \
+    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
 yabai -m signal --add event=space_changed \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
-# yabai -m signal --add event=window_focused \
-#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+yabai -m signal --add event=window_focused \
+    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
 
 # YABAI_CERT=yabai-cert sh -c "$(curl -sSL "https://git.io/update-yabai")" &

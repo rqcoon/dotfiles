@@ -6,13 +6,10 @@ set -gx FZF_DEFAULT_OPTS '--color bw'
 
 alias vim '$EDITOR'
 alias p 'sudo pacman'
-alias t 'topydo'
 alias c 'clear'
 alias d 'kitty +kitten diff'
 alias ls 'exa'
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat "kitty +kitten icat"
-alias term-light "kitty @ set-colors -a $HOME/.config/kitty/envy-light.conf"
-alias term-dark "kitty @ set-colors -a $HOME/.config/kitty/envy-dark.conf"
 
 starship init fish | source
