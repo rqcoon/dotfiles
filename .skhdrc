@@ -11,10 +11,10 @@ alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 # WINDOWS
 
 # navigate windows and spaces
-alt - h : yabai -m window --focus prev
-alt - k : yabai -m window --focus prev
-alt - l : yabai -m window --focus next
+# alt - h : yabai -m window --focus prev
+# alt - k : yabai -m window --focus prev
 alt - j : yabai -m window --focus next
+alt - k : yabai -m window --focus prev
 alt + ctrl - j : yabai -m space  --focus next
 alt + ctrl - k : yabai -m space  --focus prev
 
@@ -139,7 +139,7 @@ alt - r : yabai -m space --rotate 90
 alt - x : yabai -m space --mirror y-axis
 
 # toggle desktop offset
-alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
+alt - o : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window parent zoom
 alt - d : yabai -m window --toggle zoom-parent
@@ -164,8 +164,8 @@ shift + alt - space : yabai -m window --toggle float;\
 alt - s : yabai -m window --toggle sticky
 
 # toggle sticky, float and resize to picture-in-picture size
-alt - p : yabai -m window --toggle sticky;\
-          yabai -m window --grid 5:5:4:0:1:1
+# alt - p : yabai -m window --toggle sticky;\
+#           yabai -m window --grid 5:5:4:0:1:1
 
 # change layout of desktop
 ctrl + alt - b : yabai -m space --layout bsp

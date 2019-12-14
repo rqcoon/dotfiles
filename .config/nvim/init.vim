@@ -301,7 +301,7 @@ endfunction
 set statusline=
 set statusline+=%t\ %M\ %{ReadOnly()}\ %w
 set statusline+=%=
-set statusline+=%#error#%{LinterStatus()}%*
+" set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
 set statusline+=\ %y
 set statusline+=\ %3l:%-2.2c\ %P
