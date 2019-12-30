@@ -11,6 +11,6 @@ alias d 'kitty +kitten diff'
 alias ls 'exa'
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat 'kitty +kitten icat'
-alias brewup 'brew update && brew upgrade'
+alias brewup 'brew update && brew upgrade && brew cask upgrade'
 
 starship init fish | source

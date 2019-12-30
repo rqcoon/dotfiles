@@ -139,7 +139,7 @@ alt - r : yabai -m space --rotate 90
 alt - x : yabai -m space --mirror y-axis
 
 # toggle desktop offset
-alt - o : yabai -m space --toggle padding; yabai -m space --toggle gap
+alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window parent zoom
 alt - d : yabai -m window --toggle zoom-parent

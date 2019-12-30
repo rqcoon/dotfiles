@@ -44,7 +44,6 @@ brew "libtool"
 brew "imagemagick"
 brew "jq"
 brew "kakoune"
-brew "khard"
 brew "lf"
 brew "libuv"
 brew "links"
@@ -66,6 +65,7 @@ brew "ripgrep"
 brew "ripmime"
 brew "rtv"
 brew "rust"
+brew "scons"
 brew "speedtest-cli"
 brew "starship"
 brew "syncthing"
@@ -87,12 +87,14 @@ brew "federico-terzi/espanso/espanso"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "mongodb/brew/mongodb-community@3.6", link: true
+cask "acorn"
 cask "alacritty"
 cask "alfred"
 cask "appcleaner"
 cask "bitwarden"
 cask "blender"
 cask "chromium"
+cask "coconutbattery"
 cask "dejalu"
 cask "docker"
 cask "dozer"
@@ -107,14 +109,19 @@ cask "font-envy-code-r"
 cask "font-fantasque-sans-mono"
 cask "font-fontawesome"
 cask "font-hack"
+cask "font-input"
 cask "font-inter"
+cask "font-luculent"
 cask "font-m-plus"
 cask "font-sudo"
+cask "fsnotes"
 cask "gifox"
 cask "github"
+cask "gltfquicklook"
 cask "godot"
 cask "hammerspoon"
 cask "iina"
+cask "intel-power-gadget"
 cask "itch"
 cask "iterm2"
 cask "itsycal"
@@ -122,13 +129,12 @@ cask "kap"
 cask "karabiner-elements"
 cask "kitty"
 cask "latest"
-cask "launchbar"
 cask "magicavoxel"
 cask "mpv"
 cask "nativedisplaybrightness"
-cask "obs"
 cask "protonvpn"
 cask "quitter"
+cask "safari-technology-preview"
 cask "sf-symbols"
 cask "slack"
 cask "sloth"
@@ -140,6 +146,7 @@ cask "tomighty"
 cask "twine"
 cask "ubersicht"
 cask "viscosity"
+cask "visual-studio-code"
 cask "zoomus"
 mas "1Blocker", id: 1107421413
 mas "Annotate", id: 918207447
@@ -149,11 +156,13 @@ mas "Bumpr", id: 1166066070
 mas "Claquette", id: 587748131
 mas "Disk Speed Test", id: 425264550
 mas "Gifski", id: 1351639930
+mas "Hot Lava", id: 1469254409
 mas "iA Writer", id: 775737590
 mas "iStat Menus", id: 1319778037
 mas "Keep It", id: 1272768911
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
+mas "Overland", id: 1467652041
 mas "OverPicture", id: 1188020834
 mas "Soulver", id: 413965349
 mas "SwiftoDo Desktop", id: 1143641091

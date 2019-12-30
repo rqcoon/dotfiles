@@ -55,7 +55,7 @@ yabai -m rule --add app="^Firefox$" space=^2
 yabai -m rule --add app="^Brave Browser Beta$" space=^3
 yabai -m rule --add app="^Brave Browser$" space=^3
 
-yabai -m rule --add app="Godot" space=^4 manage=off
+yabai -m rule --add app="Godot" display=^2 manage=off
 yabai -m rule --add app="Figma" space=^4 manage=off
 
 yabai -m rule --add app="^Keep It$" space=^3
