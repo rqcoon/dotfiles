@@ -1,4 +1,4 @@
-[gd_resource type="EditorSettings" load_steps=10 format=2]
+[gd_resource type="EditorSettings" load_steps=12 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
@@ -23,17 +23,25 @@ meta = true
 command = true
 scancode = 51
 
-[sub_resource type="InputEventKey" id=8]
+[sub_resource type="InputEventKey" id=10]
+control = true
+scancode = 125
+
+[sub_resource type="InputEventKey" id=11]
+control = true
+scancode = 123
+
+[sub_resource type="InputEventKey" id=6]
 shift = true
 control = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=6]
+[sub_resource type="InputEventKey" id=7]
 meta = true
 command = true
 scancode = 47
 
-[sub_resource type="InputEventKey" id=7]
+[sub_resource type="InputEventKey" id=8]
 control = true
 scancode = 90
 
@@ -45,11 +53,12 @@ scancode = 90
 [resource]
 interface/editor/display_scale = 4
 interface/editor/main_font_size = 16
-interface/editor/code_font_size = 18
+interface/editor/code_font_size = 17
 interface/editor/main_font = "/Users/kkga/Library/Fonts/Inter-Regular.otf"
 interface/editor/main_font_bold = "/Users/kkga/Library/Fonts/Inter-Bold.otf"
-interface/editor/code_font = "/Users/kkga/Library/Fonts/InputMonoNarrow-Regular.ttf"
+interface/editor/code_font = "/Users/kkga/Library/Fonts/JetBrainsMono-Regular.ttf"
 interface/editor/separate_distraction_mode = true
+interface/editor/hide_console_window = true
 interface/theme/preset = "Grey"
 interface/theme/base_color = Color( 0.24, 0.24, 0.24, 1 )
 interface/theme/accent_color = Color( 0.72, 0.89, 1, 1 )
@@ -86,14 +95,15 @@ text_editor/highlighting/bookmark_color = Color( 0.45098, 0.815686, 1, 1 )
 text_editor/highlighting/code_folding_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text_editor/highlighting/search_result_color = Color( 0.396078, 0.211765, 0.0941176, 1 )
 text_editor/highlighting/search_result_border_color = Color( 0, 0, 0, 0 )
+text_editor/indent/draw_tabs = false
 text_editor/navigation/v_scroll_speed = 120
+text_editor/appearance/show_line_numbers = false
 text_editor/files/trim_trailing_whitespace_on_save = true
 text_editor/cursor/scroll_past_end_of_file = true
 text_editor/completion/add_type_hints = true
 text_editor/help/help_font_size = 18
 text_editor/help/help_source_font_size = 18
-text_editor/help/help_title_font_size = 24
-run/window_placement/rect = 2
+text_editor/help/help_title_font_size = 32
 run/window_placement/rect_custom_position = Vector2( 100, 100 )
 asset_library/use_threads = true
 export/android/adb = ""
@@ -122,7 +132,7 @@ filesystem/file_server/port = 6010
 filesystem/file_server/password = ""
 editors/3d/manipulator_gizmo_size = 80
 editors/3d/manipulator_gizmo_opacity = 0.4
-debugger/auto_switch_to_remote_scene_tree = false
+debugger/auto_switch_to_remote_scene_tree = true
 debugger/remote_scene_tree_refresh_interval = 1.0
 debugger/remote_inspect_refresh_interval = 0.2
 debugger/profiler_frame_history_size = 600
@@ -190,12 +200,11 @@ text_editor/script_list/script_temperature_history_size = 15
 text_editor/script_list/current_script_background_color = Color( 1, 1, 1, 0.3 )
 text_editor/script_list/group_help_pages = true
 text_editor/script_list/sort_scripts_by = 0
-text_editor/script_list/list_script_names_as = 0
+text_editor/script_list/list_script_names_as = 1
 network/language_server/remote_port = 6008
 network/language_server/enable_smart_resolve = false
 network/language_server/show_native_symbols_in_editor = false
 projects/::Users::kkga::repos::godot-demo-projects::2d::screen_space_shaders = "/Users/kkga/repos/godot-demo-projects/2d/screen_space_shaders"
-projects/::Users::kkga::godot-projects::3d-test = "/Users/kkga/godot-projects/3d-test"
 projects/::Users::kkga::godot-projects::Getaway = "/Users/kkga/godot-projects/Getaway"
 projects/::Users::kkga::godot-projects::autoro = "/Users/kkga/godot-projects/autoro"
 projects/::Users::kkga::godot-projects::PSXShaderDemo = "/Users/kkga/godot-projects/PSXShaderDemo"
@@ -206,4 +215,6 @@ projects/::Users::kkga::godot-projects::tps-demo = "/Users/kkga/godot-projects/t
 projects/::Users::kkga::godot-projects::3d-character::start = "/Users/kkga/godot-projects/3d-character/start"
 projects/::Users::kkga::godot-projects::3d-character::03.the-camera-rig = "/Users/kkga/godot-projects/3d-character/03.the-camera-rig"
 projects/::Users::kkga::godot-projects::3d-character::final = "/Users/kkga/godot-projects/3d-character/final"
-shortcuts = [ "editor/distraction_free_mode", SubResource( 1 ), "editor/editor_2d", SubResource( 2 ), "editor/editor_3d", SubResource( 3 ), "editor/editor_help", SubResource( 4 ), "editor/editor_script", SubResource( 5 ), "script_text_editor/fold_all_lines", SubResource( 8 ), "script_text_editor/toggle_comment", SubResource( 6 ), "script_text_editor/toggle_fold_line", SubResource( 7 ), "script_text_editor/unfold_all_lines", SubResource( 9 ) ]
+projects/::Users::kkga::godot-projects::click = "/Users/kkga/godot-projects/click"
+network/language_server/use_thread = false
+shortcuts = [ "editor/distraction_free_mode", SubResource( 1 ), "editor/editor_2d", SubResource( 2 ), "editor/editor_3d", SubResource( 3 ), "editor/editor_help", SubResource( 4 ), "editor/editor_script", SubResource( 5 ), "script_editor/history_next", SubResource( 10 ), "script_editor/history_previous", SubResource( 11 ), "script_text_editor/fold_all_lines", SubResource( 6 ), "script_text_editor/toggle_comment", SubResource( 7 ), "script_text_editor/toggle_fold_line", SubResource( 8 ), "script_text_editor/unfold_all_lines", SubResource( 9 ) ]

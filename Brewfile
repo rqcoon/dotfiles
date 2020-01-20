@@ -3,6 +3,7 @@ tap "dustinwilson/tap"
 tap "federico-terzi/espanso"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
@@ -13,19 +14,21 @@ tap "mananapr/cfiles"
 tap "mas-cli/tap"
 tap "mongodb/brew"
 tap "neovim/neovim"
+tap "vitorgalvao/tiny-scripts"
 brew "gdbm"
 brew "sqlite"
-brew "python"
 brew "asciinema"
 brew "awscli"
+brew "icu4c"
+brew "bitwarden-cli"
 brew "fontconfig"
+brew "python"
 brew "coreutils"
 brew "dust"
 brew "exa"
 brew "exercism"
 brew "fd"
 brew "libevent"
-brew "icu4c"
 brew "ffmpeg"
 brew "fish"
 brew "fzf"
@@ -87,6 +90,7 @@ brew "federico-terzi/espanso/espanso"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "mongodb/brew/mongodb-community@3.6", link: true
+brew "vitorgalvao/tiny-scripts/cask-repair"
 cask "acorn"
 cask "alacritty"
 cask "alfred"
@@ -111,10 +115,12 @@ cask "font-fontawesome"
 cask "font-hack"
 cask "font-input"
 cask "font-inter"
+cask "font-jetbrains-mono"
 cask "font-luculent"
 cask "font-m-plus"
 cask "font-sudo"
 cask "fsnotes"
+cask "geekbench"
 cask "gifox"
 cask "github"
 cask "gltfquicklook"
@@ -130,8 +136,8 @@ cask "karabiner-elements"
 cask "kitty"
 cask "latest"
 cask "magicavoxel"
-cask "mpv"
 cask "nativedisplaybrightness"
+cask "plexamp"
 cask "protonvpn"
 cask "quitter"
 cask "safari-technology-preview"
@@ -139,6 +145,7 @@ cask "sf-symbols"
 cask "slack"
 cask "sloth"
 cask "steam"
+cask "sublime-merge"
 cask "sublime-text"
 cask "telegram"
 cask "textual"
@@ -155,6 +162,7 @@ mas "Blackmagic RAW Speed Test", id: 1466185689
 mas "Bumpr", id: 1166066070
 mas "Claquette", id: 587748131
 mas "Disk Speed Test", id: 425264550
+mas "GIF Brewery 3", id: 1081413713
 mas "Gifski", id: 1351639930
 mas "Hot Lava", id: 1469254409
 mas "iA Writer", id: 775737590
@@ -168,6 +176,7 @@ mas "Soulver", id: 413965349
 mas "SwiftoDo Desktop", id: 1143641091
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
+mas "Trello", id: 1278508951
 mas "WiFi Explorer Lite", id: 1408727408
 mas "Wipr", id: 1320666476
 mas "Xcode", id: 497799835
