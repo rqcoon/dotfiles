@@ -23,29 +23,29 @@ meta = true
 command = true
 scancode = 51
 
-[sub_resource type="InputEventKey" id=10]
+[sub_resource type="InputEventKey" id=6]
 control = true
 scancode = 125
 
-[sub_resource type="InputEventKey" id=11]
+[sub_resource type="InputEventKey" id=7]
 control = true
 scancode = 123
 
-[sub_resource type="InputEventKey" id=6]
+[sub_resource type="InputEventKey" id=8]
 shift = true
 control = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=7]
+[sub_resource type="InputEventKey" id=9]
 meta = true
 command = true
 scancode = 47
 
-[sub_resource type="InputEventKey" id=8]
+[sub_resource type="InputEventKey" id=10]
 control = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=9]
+[sub_resource type="InputEventKey" id=11]
 alt = true
 control = true
 scancode = 90
@@ -53,7 +53,7 @@ scancode = 90
 [resource]
 interface/editor/display_scale = 4
 interface/editor/main_font_size = 16
-interface/editor/code_font_size = 17
+interface/editor/code_font_size = 18
 interface/editor/main_font = "/Users/kkga/Library/Fonts/Inter-Regular.otf"
 interface/editor/main_font_bold = "/Users/kkga/Library/Fonts/Inter-Bold.otf"
 interface/editor/code_font = "/Users/kkga/Library/Fonts/JetBrainsMono-Regular.ttf"
@@ -69,7 +69,6 @@ text_editor/highlighting/symbol_color = Color( 0.8, 0.8, 0.8, 1 )
 text_editor/highlighting/keyword_color = Color( 0.8, 0.509804, 0.258824, 1 )
 text_editor/highlighting/base_type_color = Color( 0.647059, 0.760784, 0.380392, 1 )
 text_editor/highlighting/engine_type_color = Color( 1, 0.776471, 0.427451, 1 )
-text_editor/highlighting/user_type_color = Color( 0.45098, 0.815686, 1, 1 )
 text_editor/highlighting/comment_color = Color( 0.439216, 0.439216, 0.439216, 1 )
 text_editor/highlighting/string_color = Color( 0.415686, 0.529412, 0.34902, 1 )
 text_editor/highlighting/background_color = Color( 0.141176, 0.141176, 0.141176, 1 )
@@ -79,7 +78,6 @@ text_editor/highlighting/completion_existing_color = Color( 0.87451, 0.87451, 0.
 text_editor/highlighting/completion_font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 text_editor/highlighting/text_color = Color( 0.8, 0.8, 0.8, 1 )
 text_editor/highlighting/line_number_color = Color( 0.4, 0.4, 0.4, 1 )
-text_editor/highlighting/safe_line_number_color = Color( 0.2, 0.4, 0.301961, 1 )
 text_editor/highlighting/caret_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 text_editor/highlighting/caret_background_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 text_editor/highlighting/text_selected_color = Color( 0.8, 0.8, 0.8, 1 )
@@ -91,7 +89,6 @@ text_editor/highlighting/number_color = Color( 0.478431, 0.619608, 0.760784, 1 )
 text_editor/highlighting/function_color = Color( 1, 0.776471, 0.427451, 1 )
 text_editor/highlighting/member_variable_color = Color( 0.619608, 0.482353, 0.690196, 1 )
 text_editor/highlighting/mark_color = Color( 1, 0.196078, 0.196078, 0.219608 )
-text_editor/highlighting/bookmark_color = Color( 0.45098, 0.815686, 1, 1 )
 text_editor/highlighting/code_folding_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text_editor/highlighting/search_result_color = Color( 0.396078, 0.211765, 0.0941176, 1 )
 text_editor/highlighting/search_result_border_color = Color( 0, 0, 0, 0 )
@@ -105,6 +102,7 @@ text_editor/help/help_font_size = 18
 text_editor/help/help_source_font_size = 18
 text_editor/help/help_title_font_size = 32
 run/window_placement/rect_custom_position = Vector2( 100, 100 )
+project_manager/sorting_order = 2
 asset_library/use_threads = true
 export/android/adb = ""
 export/android/jarsigner = ""
@@ -116,8 +114,8 @@ export/android/timestamping_authority_url = ""
 export/android/shutdown_adb_on_exit = true
 export/windows/rcedit = ""
 export/windows/wine = ""
-interface/scene_tabs/always_show_close_button = false
-interface/scene_tabs/restore_scenes_on_load = false
+interface/scene_tabs/always_show_close_button = true
+interface/scene_tabs/restore_scenes_on_load = true
 interface/inspector/capitalize_properties = true
 interface/inspector/disable_folding = false
 interface/inspector/auto_unfold_foreign_scenes = true
@@ -200,7 +198,7 @@ text_editor/script_list/script_temperature_history_size = 15
 text_editor/script_list/current_script_background_color = Color( 1, 1, 1, 0.3 )
 text_editor/script_list/group_help_pages = true
 text_editor/script_list/sort_scripts_by = 0
-text_editor/script_list/list_script_names_as = 1
+text_editor/script_list/list_script_names_as = 2
 network/language_server/remote_port = 6008
 network/language_server/enable_smart_resolve = false
 network/language_server/show_native_symbols_in_editor = false
@@ -217,4 +215,12 @@ projects/::Users::kkga::godot-projects::3d-character::03.the-camera-rig = "/User
 projects/::Users::kkga::godot-projects::3d-character::final = "/Users/kkga/godot-projects/3d-character/final"
 projects/::Users::kkga::godot-projects::click = "/Users/kkga/godot-projects/click"
 network/language_server/use_thread = false
-shortcuts = [ "editor/distraction_free_mode", SubResource( 1 ), "editor/editor_2d", SubResource( 2 ), "editor/editor_3d", SubResource( 3 ), "editor/editor_help", SubResource( 4 ), "editor/editor_script", SubResource( 5 ), "script_editor/history_next", SubResource( 10 ), "script_editor/history_previous", SubResource( 11 ), "script_text_editor/fold_all_lines", SubResource( 6 ), "script_text_editor/toggle_comment", SubResource( 7 ), "script_text_editor/toggle_fold_line", SubResource( 8 ), "script_text_editor/unfold_all_lines", SubResource( 9 ) ]
+projects/::Users::kkga::godot-projects::godot-platformer-2d::game = "/Users/kkga/godot-projects/godot-platformer-2d/game"
+projects/::Users::kkga::repos::godot-demo-projects::3d::kinematic_character = "/Users/kkga/repos/godot-demo-projects/3d/kinematic_character"
+projects/::Users::kkga::repos::godot-demo-projects::3d::truck_town = "/Users/kkga/repos/godot-demo-projects/3d/truck_town"
+projects/::Users::kkga::repos::godot-demo-projects::3d::ik = "/Users/kkga/repos/godot-demo-projects/3d/ik"
+projects/::Users::kkga::repos::godot-demo-projects::3d::navmesh = "/Users/kkga/repos/godot-demo-projects/3d/navmesh"
+projects/::Users::kkga::repos::godot-steering-toolkit::project = "/Users/kkga/repos/godot-steering-toolkit/project"
+projects/::Users::kkga::repos::godot-3d-fps-beginner-series::godot = "/Users/kkga/repos/godot-3d-fps-beginner-series/godot"
+projects/::Users::kkga::repos::godot-platformer-2d::game = "/Users/kkga/repos/godot-platformer-2d/game"
+shortcuts = [ "editor/distraction_free_mode", SubResource( 1 ), "editor/editor_2d", SubResource( 2 ), "editor/editor_3d", SubResource( 3 ), "editor/editor_help", SubResource( 4 ), "editor/editor_script", SubResource( 5 ), "script_editor/history_next", SubResource( 6 ), "script_editor/history_previous", SubResource( 7 ), "script_text_editor/fold_all_lines", SubResource( 8 ), "script_text_editor/toggle_comment", SubResource( 9 ), "script_text_editor/toggle_fold_line", SubResource( 10 ), "script_text_editor/unfold_all_lines", SubResource( 11 ) ]

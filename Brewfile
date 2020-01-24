@@ -82,6 +82,7 @@ brew "vcprompt"
 brew "vim"
 brew "w3m"
 brew "wget"
+brew "wireguard-tools"
 brew "yarn"
 brew "youtube-dl"
 brew "z"
@@ -136,8 +137,8 @@ cask "karabiner-elements"
 cask "kitty"
 cask "latest"
 cask "magicavoxel"
+cask "mullvadvpn"
 cask "nativedisplaybrightness"
-cask "plexamp"
 cask "protonvpn"
 cask "quitter"
 cask "safari-technology-preview"
@@ -164,13 +165,11 @@ mas "Claquette", id: 587748131
 mas "Disk Speed Test", id: 425264550
 mas "GIF Brewery 3", id: 1081413713
 mas "Gifski", id: 1351639930
-mas "Hot Lava", id: 1469254409
 mas "iA Writer", id: 775737590
 mas "iStat Menus", id: 1319778037
 mas "Keep It", id: 1272768911
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
-mas "Overland", id: 1467652041
 mas "OverPicture", id: 1188020834
 mas "Soulver", id: 413965349
 mas "SwiftoDo Desktop", id: 1143641091

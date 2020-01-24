@@ -12,5 +12,6 @@ alias ls 'exa'
 alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat 'kitty +kitten icat'
 alias brewup 'brew update && brew upgrade && brew cask upgrade'
+alias gdocs 'open ~/repos/godot-docs/_build/html/index.html'
 
 starship init fish | source
