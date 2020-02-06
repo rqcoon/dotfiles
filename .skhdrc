@@ -1,5 +1,12 @@
-# open terminal
-ctrl + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# open apps
+
+# term
+fn - t : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# browser
+fn - b : /Applications/Firefox\ Nightly.app/Contents/MacOS/firefox
+# finder
+fn - f : open ~
+
 
 # quick restart
 alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"

@@ -13,5 +13,6 @@ alias cfg '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias icat 'kitty +kitten icat'
 alias brewup 'brew update && brew upgrade && brew cask upgrade'
 alias gdocs 'open ~/repos/godot-docs/_build/html/index.html'
+alias godot '/Applications/Godot.app/Contents/MacOS/Godot'
 
 starship init fish | source

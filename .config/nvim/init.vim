@@ -21,16 +21,20 @@ Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lervag/wiki.vim'
-Plug 'davidoc/taskpaper.vim'
+Plug 'cweagans/vim-taskpaper'
+Plug 'jceb/vim-orgmode'
 Plug 'freitass/todo.txt-vim'
+Plug 'mhinz/vim-startify'
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+Plug 'reedes/vim-colors-pencil'
 " Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
 " Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-outlaw'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'lifepillar/vim-cheat40'
+Plug 'Alok/notational-fzf-vim'
 " Plug 'tmsvg/pear-tree'
 Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
 " Plug 'dense-analysis/ale'
@@ -50,7 +54,7 @@ call plug#end()
 " Colortemplate {{{
 let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
 " }}}
-" Theme tweaks {{{
+" Apprentice theme tweaks {{{
 " function! MyHighlights() abort
     " hi Normal ctermbg=NONE guibg=NONE
     " " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
@@ -73,15 +77,20 @@ let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
 " augroup END
 
 " set termguicolors
-set background=dark
-colorscheme apprentice
+" }}}
+" Pencil {{{
+colorscheme pencil
+let g:pencil_higher_contrast_ui = 1
+let g:pencil_terminal_italics = 1
+let g:pencil#wrapModeDefault = 'soft'
+let g:pencil#autoformat = 1
 " }}}
 " Thematic {{{
 let g:thematic#themes = {
-\ 'dark' :{'colorscheme': 'envy',
+\ 'dark' :{'colorscheme': 'pencil',
 \          'background': 'dark',
 \         },
-\ 'lite' :{'colorscheme': 'envy',
+\ 'lite' :{'colorscheme': 'pencil',
 \          'background': 'light',
 \         },
 \ }
@@ -200,7 +209,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " }}}
 " NV {{{
-let g:nv_search_paths = ['~/Dropbox/Notes/']
+let g:nv_search_paths = ['~/Documents/Notes/']
 let g:nv_use_short_pathnames = 1
 " }}}
 " }}}
@@ -234,12 +243,12 @@ set noswapfile
 
 " text, tabs and indents
 " set expandtab                   " Tabs are spaces
-" set shiftwidth=4                " # of spaces to use for autoindent
-" set tabstop=4                   " # of spaces that a tab counts for
-" set softtabstop=4               " # of spaces in tab when editing
-" set linebreak                   " Wrap lines when convenient
-" set wrap                        " Wrap lines
-" set autoindent                  " Minimal automatic indenting for any filetype
+set shiftwidth=4                " # of spaces to use for autoindent
+set tabstop=4                   " # of spaces that a tab counts for
+set softtabstop=4               " # of spaces in tab when editing
+set linebreak                   " Wrap lines when convenient
+set wrap                        " Wrap lines
+set autoindent                  " Minimal automatic indenting for any filetype
 " set listchars=tab:▸\ ,eol:¬,
 " set list
 
@@ -465,6 +474,13 @@ augroup Markdown
   autocmd!
   autocmd BufRead *.txt set filetype=markdown
 augroup END
+" }}}
+" pencil {{{
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd  call pencil#init()
+"   autocmd FileType text          call pencil#init()
+" augroup END
 " }}}
 " outlaw {{{
 augroup Outlaw

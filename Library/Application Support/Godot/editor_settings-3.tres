@@ -1,58 +1,62 @@
-[gd_resource type="EditorSettings" load_steps=12 format=2]
+[gd_resource type="EditorSettings" load_steps=13 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
-scancode = 32
+scancode = 96
 
 [sub_resource type="InputEventKey" id=2]
-meta = true
-command = true
-scancode = 49
+control = true
+scancode = 32
 
 [sub_resource type="InputEventKey" id=3]
 meta = true
 command = true
-scancode = 50
+scancode = 49
 
 [sub_resource type="InputEventKey" id=4]
+meta = true
+command = true
+scancode = 50
+
+[sub_resource type="InputEventKey" id=5]
 scancode = 16777247
 unicode = 16777247
 
-[sub_resource type="InputEventKey" id=5]
+[sub_resource type="InputEventKey" id=6]
 meta = true
 command = true
 scancode = 51
 
-[sub_resource type="InputEventKey" id=6]
+[sub_resource type="InputEventKey" id=7]
 control = true
 scancode = 125
 
-[sub_resource type="InputEventKey" id=7]
+[sub_resource type="InputEventKey" id=8]
 control = true
 scancode = 123
 
-[sub_resource type="InputEventKey" id=8]
+[sub_resource type="InputEventKey" id=9]
 shift = true
 control = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=9]
+[sub_resource type="InputEventKey" id=10]
 meta = true
 command = true
 scancode = 47
 
-[sub_resource type="InputEventKey" id=10]
+[sub_resource type="InputEventKey" id=11]
 control = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=11]
+[sub_resource type="InputEventKey" id=12]
 alt = true
 control = true
 scancode = 90
 
 [resource]
 interface/editor/display_scale = 4
-interface/editor/main_font_size = 16
+interface/editor/main_font_size = 15
 interface/editor/code_font_size = 18
 interface/editor/main_font = "/Users/kkga/Library/Fonts/Inter-Regular.otf"
 interface/editor/main_font_bold = "/Users/kkga/Library/Fonts/Inter-Bold.otf"
@@ -62,7 +66,7 @@ interface/theme/preset = "Custom"
 interface/theme/base_color = Color( 0.266667, 0.266667, 0.266667, 1 )
 interface/theme/accent_color = Color( 0.560784, 0.686275, 0.843137, 1 )
 interface/theme/contrast = 0.2
-text_editor/theme/color_theme = "Custom"
+text_editor/theme/color_theme = "Apprentice"
 text_editor/theme/line_spacing = 4
 text_editor/highlighting/symbol_color = Color( 0.737255, 0.737255, 0.737255, 1 )
 text_editor/highlighting/keyword_color = Color( 0.560784, 0.686275, 0.843137, 1 )
@@ -73,9 +77,10 @@ text_editor/highlighting/comment_color = Color( 0.423529, 0.423529, 0.423529, 1 
 text_editor/highlighting/string_color = Color( 0.529412, 0.686275, 0.529412, 1 )
 text_editor/highlighting/background_color = Color( 0.14902, 0.14902, 0.14902, 1 )
 text_editor/highlighting/completion_background_color = Color( 0.266667, 0.266667, 0.266667, 1 )
-text_editor/highlighting/completion_selected_color = Color( 0.27451, 0.27451, 0.27451, 1 )
-text_editor/highlighting/completion_existing_color = Color( 0.87451, 0.87451, 0.87451, 0.129412 )
-text_editor/highlighting/completion_font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+text_editor/highlighting/completion_selected_color = Color( 0.423529, 0.423529, 0.423529, 1 )
+text_editor/highlighting/completion_existing_color = Color( 0.372549, 0.686275, 0.686275, 0.34902 )
+text_editor/highlighting/completion_scroll_color = Color( 0.423529, 0.423529, 0.423529, 1 )
+text_editor/highlighting/completion_font_color = Color( 0.737255, 0.737255, 0.737255, 1 )
 text_editor/highlighting/text_color = Color( 0.737255, 0.737255, 0.737255, 1 )
 text_editor/highlighting/line_number_color = Color( 0.266667, 0.266667, 0.266667, 1 )
 text_editor/highlighting/safe_line_number_color = Color( 0.372549, 0.529412, 0.372549, 0.34902 )
@@ -96,7 +101,8 @@ text_editor/highlighting/code_folding_color = Color( 0.423529, 0.423529, 0.42352
 text_editor/highlighting/search_result_color = Color( 0.372549, 0.686275, 0.686275, 0.34902 )
 text_editor/highlighting/search_result_border_color = Color( 0, 0, 0, 0 )
 text_editor/indent/draw_tabs = false
-text_editor/navigation/v_scroll_speed = 120
+text_editor/navigation/v_scroll_speed = 160
+text_editor/navigation/minimap_width = 50
 text_editor/appearance/show_line_numbers = false
 text_editor/files/trim_trailing_whitespace_on_save = true
 text_editor/cursor/scroll_past_end_of_file = true
@@ -106,6 +112,7 @@ text_editor/help/help_source_font_size = 18
 text_editor/help/help_title_font_size = 32
 run/window_placement/rect = 2
 run/window_placement/rect_custom_position = Vector2( 100, 100 )
+run/output/always_close_output_on_stop = true
 project_manager/sorting_order = 2
 asset_library/use_threads = true
 export/android/adb = ""
@@ -228,4 +235,4 @@ projects/::Users::kkga::repos::godot-steering-toolkit::project = "/Users/kkga/re
 projects/::Users::kkga::repos::godot-3d-fps-beginner-series::godot = "/Users/kkga/repos/godot-3d-fps-beginner-series/godot"
 projects/::Users::kkga::repos::godot-platformer-2d::game = "/Users/kkga/repos/godot-platformer-2d/game"
 projects/::Users::kkga::repos::FPS-MP = "/Users/kkga/repos/FPS-MP"
-shortcuts = [ "editor/distraction_free_mode", SubResource( 1 ), "editor/editor_2d", SubResource( 2 ), "editor/editor_3d", SubResource( 3 ), "editor/editor_help", SubResource( 4 ), "editor/editor_script", SubResource( 5 ), "script_editor/history_next", SubResource( 6 ), "script_editor/history_previous", SubResource( 7 ), "script_text_editor/fold_all_lines", SubResource( 8 ), "script_text_editor/toggle_comment", SubResource( 9 ), "script_text_editor/toggle_fold_line", SubResource( 10 ), "script_text_editor/unfold_all_lines", SubResource( 11 ) ]
+shortcuts = [ "debugger/keep_debugger_open", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_3d", SubResource( 4 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 6 ), "script_editor/history_next", SubResource( 7 ), "script_editor/history_previous", SubResource( 8 ), "script_text_editor/fold_all_lines", SubResource( 9 ), "script_text_editor/toggle_comment", SubResource( 10 ), "script_text_editor/toggle_fold_line", SubResource( 11 ), "script_text_editor/unfold_all_lines", SubResource( 12 ) ]
