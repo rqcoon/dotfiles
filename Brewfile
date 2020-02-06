@@ -80,13 +80,12 @@ brew "todo-txt"
 brew "trash"
 brew "vcprompt"
 brew "vim"
+brew "vulkan-headers"
 brew "w3m"
 brew "wget"
-brew "wireguard-tools"
 brew "yarn"
 brew "youtube-dl"
 brew "z"
-brew "zola"
 brew "federico-terzi/espanso/espanso"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
@@ -98,6 +97,7 @@ cask "alfred"
 cask "appcleaner"
 cask "bitwarden"
 cask "blender"
+cask "cakebrew"
 cask "chromium"
 cask "coconutbattery"
 cask "dejalu"
@@ -105,6 +105,7 @@ cask "docker"
 cask "dozer"
 cask "dropshare"
 cask "epic-games"
+cask "etrecheckpro"
 cask "figma"
 cask "firefox"
 cask "firefox-developer-edition"
@@ -139,17 +140,23 @@ cask "latest"
 cask "magicavoxel"
 cask "mullvadvpn"
 cask "nativedisplaybrightness"
+cask "netnewswire"
+cask "notable"
 cask "protonvpn"
 cask "quitter"
 cask "safari-technology-preview"
+cask "scapple"
 cask "sf-symbols"
 cask "slack"
 cask "sloth"
 cask "steam"
 cask "sublime-merge"
 cask "sublime-text"
+cask "taskpaper"
 cask "telegram"
+cask "textmate"
 cask "textual"
+cask "timemachineeditor"
 cask "tomighty"
 cask "twine"
 cask "ubersicht"
@@ -165,6 +172,7 @@ mas "Claquette", id: 587748131
 mas "Disk Speed Test", id: 425264550
 mas "GIF Brewery 3", id: 1081413713
 mas "Gifski", id: 1351639930
+mas "GoodNotes", id: 1480793815
 mas "iA Writer", id: 775737590
 mas "iStat Menus", id: 1319778037
 mas "Keep It", id: 1272768911
@@ -178,4 +186,5 @@ mas "Things", id: 904280696
 mas "Trello", id: 1278508951
 mas "WiFi Explorer Lite", id: 1408727408
 mas "Wipr", id: 1320666476
+mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
