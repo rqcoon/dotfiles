@@ -9,26 +9,29 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-markdown'
+" Plug 'tpope/vim-markdown'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'romainl/Apprentice'
-Plug 'andreypopp/vim-colors-plain'
+" Plug 'andreypopp/vim-colors-plain'
+" Plug 'reedes/vim-colors-pencil'
+Plug 'jaredgorski/fogbell.vim'
+Plug 'robertmeta/nofrils'
+Plug 'axvr/photon.vim'
 Plug 'reedes/vim-thematic'
-Plug 'lifepillar/vim-colortemplate'
+" Plug 'lifepillar/vim-colortemplate'
 Plug 'mbbill/undotree'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lervag/wiki.vim'
-Plug 'cweagans/vim-taskpaper'
-Plug 'jceb/vim-orgmode'
-Plug 'freitass/todo.txt-vim'
+" Plug 'cweagans/vim-taskpaper'
+" Plug 'jceb/vim-orgmode'
+Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
-" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
-Plug 'reedes/vim-colors-pencil'
-" Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
+Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
 " Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-outlaw'
@@ -37,9 +40,8 @@ Plug 'lifepillar/vim-cheat40'
 Plug 'Alok/notational-fzf-vim'
 " Plug 'tmsvg/pear-tree'
 Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 " Plug 'rust-lang/rust.vim'
-" Plug 'ludovicchabant/vim-gutentags'
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Plug 'editorconfig/editorconfig-vim'
 " Plug '/usr/local/opt/fzf'
@@ -53,6 +55,10 @@ call plug#end()
 " PLUGIN SETTINGS {{{
 " Colortemplate {{{
 let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
+" }}}
+" Colors {{{
+" set termguicolors
+colorscheme fogbell_light
 " }}}
 " Apprentice theme tweaks {{{
 " function! MyHighlights() abort
@@ -76,14 +82,21 @@ let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
 "     autocmd ColorScheme * call MyHighlights()
 " augroup END
 
-" set termguicolors
 " }}}
-" Pencil {{{
-colorscheme pencil
-let g:pencil_higher_contrast_ui = 1
-let g:pencil_terminal_italics = 1
-let g:pencil#wrapModeDefault = 'soft'
-let g:pencil#autoformat = 1
+" Pencil/Theme {{{
+" function! MyHighlights() abort
+"     hi link taskpaperProject htmlH1
+" endfunction
+" augroup MyColors
+"     autocmd!
+"     autocmd ColorScheme * call MyHighlights()
+" augroup END
+" set termguicolors
+" colorscheme pencil
+" let g:pencil_higher_contrast_ui = 1
+" let g:pencil_terminal_italics = 1
+" let g:pencil#wrapModeDefault = 'soft'
+" let g:pencil#autoformat = 1
 " }}}
 " Thematic {{{
 let g:thematic#themes = {
@@ -112,19 +125,19 @@ let g:wiki_mappings_global = {
 	\}
 " }}}
 " Markdown {{{
-" let g:vim_markdown_frontmatter = 1
-" let g:vim_markdown_no_extensions_in_markdown = 1
-" let g:vim_markdown_auto_extension_ext = 'txt'
-" let g:vim_markdown_autowrite = 1
-" let g:vim_markdown_edit_url_in = 'vsplit'
-" let g:vim_markdown_auto_insert_bullets = 0
-" " let g:vim_markdown_folding_style_pythonic = 1
-" let g:vim_markdown_folding_level = 3
-" let g:vim_markdown_no_default_key_mappings = 1
-" let g:vim_markdown_toc_autofit = 1
-" let g:vim_markdown_auto_insert_bullets = 1
-" let g:vim_markdown_new_list_item_indent = 0
-" let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_auto_extension_ext = 'txt'
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'vsplit'
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_level = 3
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_auto_insert_bullets = 1
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
 " }}}
 " ALE {{{
 let g:ale_lintes = {
@@ -243,9 +256,9 @@ set noswapfile
 
 " text, tabs and indents
 " set expandtab                   " Tabs are spaces
-set shiftwidth=4                " # of spaces to use for autoindent
-set tabstop=4                   " # of spaces that a tab counts for
-set softtabstop=4               " # of spaces in tab when editing
+set shiftwidth=2                " # of spaces to use for autoindent
+set tabstop=2                   " # of spaces that a tab counts for
+set softtabstop=2               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
 set wrap                        " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
@@ -397,7 +410,7 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>cm :Commands<CR>
-nnoremap <leader>wf :WikiFzfPages<CR>
+nnoremap <leader>nn :WikiFzfPages<CR>
 nnoremap <leader>rg :Rg<CR>
 
 " quick save
@@ -407,8 +420,8 @@ inoremap <D-s> <esc>:w<cr>
 nnoremap <D-s> <esc>:w<cr>
 
 " split faster
-nnoremap <leader>h :split<CR>
-nnoremap <leader>v :vsplit<CR>
+" nnoremap <leader>h :split<CR>
+" nnoremap <leader>v :vsplit<CR>
 
 " easy split navigation
 nnoremap <C-J> <C-W><C-J>

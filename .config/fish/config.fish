@@ -14,5 +14,7 @@ alias icat 'kitty +kitten icat'
 alias brewup 'brew update && brew upgrade && brew cask upgrade'
 alias gdocs 'open ~/repos/godot-docs/_build/html/index.html'
 alias godot '/Applications/Godot.app/Contents/MacOS/Godot'
+alias kd 'kitty @ set-colors -a "~/.config/kitty/apprentice-theme.conf"'
+alias kl 'kitty @ set-colors -a "~/.config/kitty/apprentice-light-theme.conf"'
 
 starship init fish | source
