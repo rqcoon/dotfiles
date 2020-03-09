@@ -15,12 +15,9 @@ Plug 'airblade/vim-gitgutter'
 
 " themes
 Plug 'romainl/Apprentice'
-Plug 'https://git.sr.ht/~romainl/vim-bruin'
-" Plug 'reedes/vim-colors-pencil'
-" Plug 'jaredgorski/fogbell.vim'
-Plug 'axvr/photon.vim'
 Plug 'hardselius/warlock'
 Plug 'reedes/vim-thematic'
+Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 
 " Plug 'lifepillar/vim-colortemplate'
 Plug 'mbbill/undotree'
@@ -61,50 +58,35 @@ call plug#end()
 let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
 " }}}
 " Apprentice theme tweaks {{{
-function! MyHighlights() abort
-    hi Normal ctermbg=NONE guibg=NONE
-    " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
-    hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
-    hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
-    hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
-    hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
-    hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
-endfunction
-augroup MyColors
-    autocmd!
-    autocmd ColorScheme * call MyHighlights()
-augroup END
-colorscheme apprentice
-
-" }}}
-" Pencil/Theme {{{
 " function! MyHighlights() abort
-"     hi link taskpaperProject htmlH1
+"     hi Normal ctermbg=NONE guibg=NONE
+"     " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+"     hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+"     hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+"     hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+"     hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
+"     hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+"     hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+"     hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+"     hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
+"     hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
+"     hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
+"     hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
+"     hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
 " endfunction
 " augroup MyColors
 "     autocmd!
 "     autocmd ColorScheme * call MyHighlights()
 " augroup END
-" set termguicolors
-" colorscheme pencil
-" let g:pencil_higher_contrast_ui = 1
-" let g:pencil_terminal_italics = 1
-" let g:pencil#wrapModeDefault = 'soft'
-" let g:pencil#autoformat = 1
+" colorscheme apprentice
+
 " }}}
 " Thematic {{{
 let g:thematic#themes = {
-\ 'dark' :{'colorscheme': 'pencil',
+\ 'dark' :{'colorscheme': 'tempus_rift',
 \          'background': 'dark',
 \         },
-\ 'lite' :{'colorscheme': 'pencil',
+\ 'lite' :{'colorscheme': 'tempus_day',
 \          'background': 'light',
 \         },
 \ }
@@ -231,6 +213,8 @@ let g:nv_use_short_pathnames = 1
 
 filetype plugin indent on       " no idea
 syntax on
+set termguicolors
+colorscheme tempus_rift
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -338,8 +322,8 @@ let mapleader = "\<space>"
 let maplocalleader = "\\"
 
 " theme switcher
-nnoremap <Leader>d :Thematic dark<CR>
-nnoremap <Leader>l :Thematic lite<CR>
+nnoremap <Leader>cd :Thematic dark<CR>
+nnoremap <Leader>cl :Thematic lite<CR>
 
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>

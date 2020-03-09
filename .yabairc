@@ -52,6 +52,7 @@ yabai -m rule --add app="^Kap$" manage=off
 yabai -m rule --add app="^YT Music$" display=^2 manage=off
 yabai -m rule --add app="^Music$" display=^2 manage=off
 yabai -m rule --add app="Bitwarden" manage=off
+yabai -m rule --add app="Emacs" manage=on
 
 yabai -m rule --add app="^Safari$" space=^1
 yabai -m rule --add app="^Firefox Nightly$" space=^1
@@ -78,5 +79,3 @@ yabai -m signal --add event=space_changed \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
 yabai -m signal --add event=display_changed \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
-
-

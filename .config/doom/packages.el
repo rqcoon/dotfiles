@@ -18,6 +18,13 @@
 ;; Use it to unpin multiple packages
 ;(unpin! pinned-package another-pinned-package)
 
+(package! gdscript-mode
+          :recipe (:host github
+                   :repo "GDQuest/emacs-gdscript-mode"
+                   :files ("*.el" "data/*.txt")))
+
+(package! modus-operandi-theme)
+(package! modus-vivendi-theme)
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
