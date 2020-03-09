@@ -9,16 +9,19 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
-" Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
+
+" themes
 Plug 'romainl/Apprentice'
-" Plug 'andreypopp/vim-colors-plain'
+Plug 'https://git.sr.ht/~romainl/vim-bruin'
 " Plug 'reedes/vim-colors-pencil'
-Plug 'jaredgorski/fogbell.vim'
-Plug 'robertmeta/nofrils'
+" Plug 'jaredgorski/fogbell.vim'
 Plug 'axvr/photon.vim'
+Plug 'hardselius/warlock'
 Plug 'reedes/vim-thematic'
+
 " Plug 'lifepillar/vim-colortemplate'
 Plug 'mbbill/undotree'
 Plug 'justinmk/vim-dirvish'
@@ -26,10 +29,9 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lervag/wiki.vim'
 " Plug 'cweagans/vim-taskpaper'
-" Plug 'jceb/vim-orgmode'
 Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
@@ -50,37 +52,36 @@ Plug 'junegunn/fzf.vim'
 
 " TESTING
 Plug 'sheerun/vim-polyglot'
+Plug 'justinmk/vim-sneak'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
 " Colortemplate {{{
 let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
 " }}}
-" Colors {{{
-" set termguicolors
-colorscheme fogbell_light
-" }}}
 " Apprentice theme tweaks {{{
-" function! MyHighlights() abort
-    " hi Normal ctermbg=NONE guibg=NONE
-    " " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    " hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    " hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    " hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-    " hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
-    " hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    " hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    " hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-    " hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
-    " hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
-    " hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
-    " hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
-    " hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
-" endfunction
-" augroup MyColors
-"     autocmd!
-"     autocmd ColorScheme * call MyHighlights()
-" augroup END
+function! MyHighlights() abort
+    hi Normal ctermbg=NONE guibg=NONE
+    " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
+    hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
+    hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
+    hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
+    hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
+    hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
+    hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
+    hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
+endfunction
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
+colorscheme apprentice
 
 " }}}
 " Pencil/Theme {{{
@@ -113,10 +114,10 @@ let g:thematic#themes = {
 " }}}
 " Wiki {{{
 let g:wiki_root = '~/Documents/Notes/'
-let g:wiki_filetypes = ['txt']
-let g:wiki_link_extension = '.txt'
+let g:wiki_filetypes = ['md']
+let g:wiki_link_extension = '.md'
 let g:wiki_list_todos = ['[ ]', '[x]']
-let g:wiki_link_target_type = 'txt'
+let g:wiki_link_target_type = 'md'
 let g:wiki_mappings_use_defaults = 1
 let g:wiki_mappings_global = {
 	\ '<plug>(wiki-list-toggle)' : '<c-t>',
@@ -127,7 +128,7 @@ let g:wiki_mappings_global = {
 " Markdown {{{
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
-let g:vim_markdown_auto_extension_ext = 'txt'
+let g:vim_markdown_auto_extension_ext = 'md'
 let g:vim_markdown_autowrite = 1
 let g:vim_markdown_edit_url_in = 'vsplit'
 let g:vim_markdown_auto_insert_bullets = 0
@@ -397,7 +398,7 @@ nnoremap gV `[v`]<Paste>
 nnoremap Q nop
 
 " toggle wrap
-nnoremap <leader>wr :ToggleWrap<CR>
+nnoremap <leader>tw :ToggleWrap<CR>
 
 " clear search highlight
 nnoremap <leader>cc :nohl<CR>
@@ -411,6 +412,7 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>cm :Commands<CR>
 nnoremap <leader>nn :WikiFzfPages<CR>
+nnoremap <leader>nv :NV<CR>
 nnoremap <leader>rg :Rg<CR>
 
 " quick save
@@ -418,25 +420,20 @@ inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> <esc>:w<cr>
 inoremap <D-s> <esc>:w<cr>
 nnoremap <D-s> <esc>:w<cr>
+nnoremap <leader>fs :w<CR>
 
 " split faster
-" nnoremap <leader>h :split<CR>
-" nnoremap <leader>v :vsplit<CR>
-
-" easy split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>ws :split<CR>
+nnoremap <leader>wv :vsplit<CR>
 
 " tabs
-nnoremap tn :tabnew<Space>
-nnoremap tk :tabprevious<CR>
-nnoremap tj :tabnext<CR>
-nnoremap th :tabfirst<CR>
-nnoremap tl :tablast<CR>
-nnoremap <S-Tab> gt
-nnoremap <silent> <S-t> :tabnew<CR>
+nnoremap <leader>tn :tabnew<Space>
+nnoremap <leader>tk :tabprevious<CR>
+nnoremap <leader>tj :tabnext<CR>
+nnoremap <leader>th :tabfirst<CR>
+nnoremap <leader>tl :tablast<CR>
+" nnoremap <S-Tab> gt
+" nnoremap <silent> <S-t> :tabnew<CR>
 
 " jump between ALE warnings
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
@@ -452,10 +449,11 @@ nnoremap <leader>j :m+<cr>==
 xnoremap <leader>k :m-2<cr>gv=gv
 
 " open goyo
-nnoremap <leader>g :Goyo<CR>
+nnoremap <leader>go :Goyo<CR>
 
 " quick folding
 nnoremap <tab> za
+nnoremap <S-tab> zA
 
 "}}}
 " FUNCTIONS {{{
@@ -489,11 +487,11 @@ augroup Markdown
 augroup END
 " }}}
 " pencil {{{
-" augroup pencil
-"   autocmd!
-"   autocmd FileType markdown,mkd  call pencil#init()
-"   autocmd FileType text          call pencil#init()
-" augroup END
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd  call pencil#init()
+  autocmd FileType text          call pencil#init()
+augroup END
 " }}}
 " outlaw {{{
 augroup Outlaw

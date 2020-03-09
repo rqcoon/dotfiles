@@ -5,6 +5,7 @@ set -gx FZF_DEFAULT_COMMAND 'rg --files --follow'
 set -gx FZF_DEFAULT_OPTS '--color bw'
 
 alias vim '$EDITOR'
+alias doom '~/.emacs.d/bin/doom'
 alias p 'sudo pacman'
 alias c 'clear'
 alias d 'kitty +kitten diff'
@@ -18,3 +19,4 @@ alias kd 'kitty @ set-colors -a "~/.config/kitty/apprentice-theme.conf"'
 alias kl 'kitty @ set-colors -a "~/.config/kitty/apprentice-light-theme.conf"'
 
 starship init fish | source
+set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
