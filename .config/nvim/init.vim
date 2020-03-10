@@ -18,21 +18,20 @@ Plug 'romainl/Apprentice'
 Plug 'hardselius/warlock'
 Plug 'reedes/vim-thematic'
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
+Plug 'lifepillar/vim-solarized8'
 
-" Plug 'lifepillar/vim-colortemplate'
+Plug 'lifepillar/vim-colortemplate'
 Plug 'mbbill/undotree'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lervag/wiki.vim'
 " Plug 'cweagans/vim-taskpaper'
-Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
-" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
 Plug 'junegunn/goyo.vim'
-" Plug 'konfekt/fastfold'
+Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-outlaw'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'lifepillar/vim-cheat40'
@@ -40,10 +39,6 @@ Plug 'Alok/notational-fzf-vim'
 " Plug 'tmsvg/pear-tree'
 Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
 Plug 'dense-analysis/ale'
-" Plug 'rust-lang/rust.vim'
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" Plug 'editorconfig/editorconfig-vim'
-" Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -83,10 +78,10 @@ let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
 " }}}
 " Thematic {{{
 let g:thematic#themes = {
-\ 'dark' :{'colorscheme': 'tempus_rift',
+\ 'dark' :{'colorscheme': 'selenized',
 \          'background': 'dark',
 \         },
-\ 'lite' :{'colorscheme': 'tempus_day',
+\ 'lite' :{'colorscheme': 'selenized',
 \          'background': 'light',
 \         },
 \ }
@@ -121,6 +116,10 @@ let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_auto_insert_bullets = 1
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
+let g:pencil#autoformat = 0
+let g:pencil#conceallevel = 3     " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
+let g:pencil#concealcursor = 'c'  " n=normal, v=visual, i=insert, c=command (def)
+let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
 " }}}
 " ALE {{{
 let g:ale_lintes = {
@@ -133,7 +132,7 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'markdown': ['prettier']
 \}
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_lint_on_save = 1
 " }}}
 " FZF {{{
@@ -214,7 +213,7 @@ let g:nv_use_short_pathnames = 1
 filetype plugin indent on       " no idea
 syntax on
 set termguicolors
-colorscheme tempus_rift
+colorscheme selenized
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -230,8 +229,8 @@ set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
-set conceallevel=2              " Conceals markdown syntax
-" set foldlevelstart=99
+" set conceallevel=0              " Conceals markdown syntax
+set foldlevelstart=1
 set mouse=a
 
 " disable backups and swap
@@ -395,7 +394,7 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>cm :Commands<CR>
-nnoremap <leader>nn :WikiFzfPages<CR>
+nnoremap <leader>nf :WikiFzfPages<CR>
 nnoremap <leader>nv :NV<CR>
 nnoremap <leader>rg :Rg<CR>
 
@@ -483,4 +482,32 @@ augroup Outlaw
   autocmd FileType outlaw setlocal tw=80 sw=4 ts=4 sts=0 et
 augroup END
 " }}}
+" }}}
+" COMMANDS {{{
+" command! -bang -nargs=? -complete=dir Files
+"     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" }}}
+" NOTETAKING {{{
+" https://vimways.org/2019/personal-notetaking-in-vim/
+func! ZettelEdit(...)
+
+  " build the file name
+  let l:sep = ''
+  if len(a:000) > 0
+    let l:sep = '-'
+  endif
+  let l:fname = expand('~/Documents/Notes/') . strftime("%F-%H%M") . l:sep . join(a:000, '-') . '.md'
+
+  " edit the new file
+  exec "e " . l:fname
+
+  " enter the title and timestamp (using ultisnips) in the new file
+  if len(a:000) > 0
+    exec "normal ggO\<c-r>=strftime('%Y-%m-%d %H:%M')\<cr> " . join(a:000) . "\<cr>\<esc>G"
+  else
+    exec "normal ggO\<c-r>=strftime('%Y-%m-%d %H:%M')\<cr>\<cr>\<esc>G"
+  endif
+endfunc
+
+command! -nargs=* Zet call ZettelEdit(<f-args>)
 " }}}

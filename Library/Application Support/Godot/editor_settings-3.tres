@@ -63,8 +63,7 @@ scancode = 90
 [resource]
 interface/editor/display_scale = 4
 interface/editor/main_font_size = 15
-interface/editor/code_font_size = 16.6667
-interface/editor/font_hinting = 3
+interface/editor/code_font_size = 17
 interface/editor/main_font = "/Users/kkga/Library/Fonts/Inter-Regular.otf"
 interface/editor/main_font_bold = "/Users/kkga/Library/Fonts/Inter-Bold.otf"
 interface/editor/code_font = "/Users/kkga/Library/Fonts/JetBrainsMono-Regular.ttf"

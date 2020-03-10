@@ -15,8 +15,12 @@ alias icat 'kitty +kitten icat'
 alias brewup 'brew update && brew upgrade && brew cask upgrade'
 alias gdocs 'open ~/repos/godot-docs/_build/html/index.html'
 alias godot '/Applications/Godot.app/Contents/MacOS/Godot'
-alias kd 'kitty @ set-colors -a "~/.config/kitty/tempus-themes/tempus_rift.conf"'
-alias kl 'kitty @ set-colors -a "~/.config/kitty/tempus-themes/tempus_day.conf"'
+alias kd 'kitty @ set-colors -a "~/.config/kitty/selenized/kitty-selenized-dark.conf"'
+alias kl 'kitty @ set-colors -a "~/.config/kitty/selenized/kitty-selenized-light.conf"'
 
 starship init fish | source
 set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+
+# if status --is-interactive
+#   sh ~/.vim/plugged/snow/shell/snow_dark.sh
+# end

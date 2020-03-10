@@ -1,15 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR ZO_CMD:zo
-SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/kkga/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/kkga/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:/Users/kkga
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3100
-SETUVAR fish_color_autosuggestion:--dim
+SETUVAR fish_color_autosuggestion:\x2d\x2ddim
 SETUVAR fish_color_cancel:red
 SETUVAR fish_color_command:cyan
 SETUVAR fish_color_comment:brblack

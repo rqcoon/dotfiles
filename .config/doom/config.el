@@ -62,5 +62,5 @@
 (require 'gdscript-mode)
 
 ;; fixes for yabai tiling
-(menu-bar-mode t)
+;; (menu-bar-mode t)
 (setq frame-resize-pixelwise t)
