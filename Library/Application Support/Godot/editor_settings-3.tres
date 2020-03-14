@@ -63,10 +63,10 @@ scancode = 90
 [resource]
 interface/editor/display_scale = 4
 interface/editor/main_font_size = 15
-interface/editor/code_font_size = 17
+interface/editor/code_font_size = 18
 interface/editor/main_font = "/Users/kkga/Library/Fonts/Inter-Regular.otf"
 interface/editor/main_font_bold = "/Users/kkga/Library/Fonts/Inter-Bold.otf"
-interface/editor/code_font = "/Users/kkga/Library/Fonts/JetBrainsMono-Regular.ttf"
+interface/editor/code_font = "/Users/kkga/Library/Fonts/iosevka-custom-extended.ttf"
 interface/editor/separate_distraction_mode = true
 interface/editor/hide_console_window = true
 interface/theme/preset = "Grey"

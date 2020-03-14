@@ -1,5 +1,3 @@
-#!/usr/bin/env fish
-
 function open_godot_project --description 'Searches for Godot projects and opens the first project found.'
     argparse --name=open_godot_project 'p/path=' 'e/edge' 'r/run' 'h/help' -- $argv
     or return

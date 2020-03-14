@@ -2,6 +2,8 @@
 
 " PLUGINS {{{
 call plug#begin('~/.config/nvim/plugged')
+
+" basics
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
@@ -9,9 +11,9 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-markdown'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
+Plug 'godlygeek/tabular'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -19,38 +21,63 @@ Plug 'hardselius/warlock'
 Plug 'reedes/vim-thematic'
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 Plug 'lifepillar/vim-solarized8'
-
 Plug 'lifepillar/vim-colortemplate'
-Plug 'mbbill/undotree'
+
+" markdown and note-taking
+" Plug 'tpope/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'lifepillar/vim-outlaw'
+Plug 'lervag/wiki.vim'
+Plug 'reedes/vim-pencil', { 'for': 'markdown' }
+Plug 'Alok/notational-fzf-vim'
+Plug 'junegunn/goyo.vim'
+
+" snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" file browsing
 Plug 'justinmk/vim-dirvish'
+Plug 'preservim/nerdtree'
+
+" utils
+Plug 'mbbill/undotree'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'lervag/wiki.vim'
-" Plug 'cweagans/vim-taskpaper'
 Plug 'mhinz/vim-startify'
-Plug 'reedes/vim-pencil', { 'for': 'markdown' }
-Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
-Plug 'junegunn/goyo.vim'
 Plug 'konfekt/fastfold'
-Plug 'lifepillar/vim-outlaw'
-Plug 'lifepillar/vim-mucomplete'
 Plug 'lifepillar/vim-cheat40'
-Plug 'Alok/notational-fzf-vim'
-" Plug 'tmsvg/pear-tree'
-Plug 'SirVer/ultisnips', { 'for': 'markdown' } | Plug 'honza/vim-snippets'
-Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" TESTING
-Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
+
+" tags
+" Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'liuchengxu/vista.vim'
+
+" linting
+Plug 'dense-analysis/ale'
+
+" autocompletion
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete-lsp'
+Plug 'lifepillar/vim-mucomplete'
+
+" lang
+Plug 'sheerun/vim-polyglot'
+Plug 'calviken/vim-gdscript3'
+
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
+" Sneak {{{
+" let g:sneak#label = 1
+" }}}
 " Colortemplate {{{
-let b:colortemplate_outdir = "/Users/gadzhi/.config/nvim"
+let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
 " }}}
 " Apprentice theme tweaks {{{
 " function! MyHighlights() abort
@@ -103,23 +130,16 @@ let g:wiki_mappings_global = {
 	\}
 " }}}
 " Markdown {{{
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_no_extensions_in_markdown = 1
-let g:vim_markdown_auto_extension_ext = 'md'
-let g:vim_markdown_autowrite = 1
-let g:vim_markdown_edit_url_in = 'vsplit'
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_folding_level = 3
-let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_auto_insert_bullets = 1
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_fenced_languages = ['gdscript=gdscript3']
 let g:pencil#autoformat = 0
 let g:pencil#conceallevel = 3     " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
 let g:pencil#concealcursor = 'c'  " n=normal, v=visual, i=insert, c=command (def)
 let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
+let g:pandoc#folding#mode = "syntax"
+let g:pandoc#folding#level = 2
+let g:pandoc#folding#fdc = 4
+let g:pandoc#spell#enabled = 0
+let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+" let g:pandoc#filetypes#pandoc_markdown = 1
 " }}}
 " ALE {{{
 let g:ale_lintes = {
@@ -146,11 +166,8 @@ let g:fzf_action = {
 " Default fzf layout
 " - down / up / left / right
 " let g:fzf_layout = { 'down': '~40%' }
+" let g:fzf_layout = { 'window': { 'width': 0.8 , 'height': 0.6 } }
 
-" In Neovim, you can set up fzf window using a Vim command
-" let g:fzf_layout = { 'window': 'enew' }
-" let g:fzf_layout = { 'window': '-tabnew' }
-" let g:fzf_layout = { 'window': '10new' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -178,11 +195,7 @@ augroup fzf_statusline
     autocmd  FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
-augroup skim_statusline
-    autocmd! FileType skim
-    autocmd  FileType skim set laststatus=0 noshowmode noruler
-      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-augroup END
+
 " }}}
 " Mucomplete {{{
 set completeopt+=menuone
@@ -190,6 +203,11 @@ set completeopt+=noselect
 set shortmess+=c
 set belloff+=ctrlg
 let g:mucomplete#enable_auto_at_startup = 1
+
+" inoremap <silent> <expr> <plug>MyCR
+"     \ mucomplete#ultisnips#expand_snippet("\<cr>")
+" imap <cr> <plug>MyCR
+
 " }}}
 " Fastfold {{{
 " nmap zz <Plug>(FastFoldUpdate)
@@ -202,10 +220,21 @@ let g:markdown_folding = 1
 let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/snippets']
 " }}}
 " NV {{{
 let g:nv_search_paths = ['~/Documents/Notes/']
 let g:nv_use_short_pathnames = 1
+" }}}
+" Tags {{{
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+\ }
 " }}}
 " }}}
 " SETTINGS {{{
@@ -213,7 +242,7 @@ let g:nv_use_short_pathnames = 1
 filetype plugin indent on       " no idea
 syntax on
 set termguicolors
-colorscheme selenized
+colorscheme solarized8_flat
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -230,7 +259,9 @@ set backspace=indent,eol,start  " Allow backspace in insert mode
 set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
 " set conceallevel=0              " Conceals markdown syntax
-set foldlevelstart=1
+" set foldlevelstart=1
+" set foldcolumn=4
+set nospell
 set mouse=a
 
 " disable backups and swap
@@ -241,8 +272,8 @@ set noswapfile
 " text, tabs and indents
 " set expandtab                   " Tabs are spaces
 set shiftwidth=2                " # of spaces to use for autoindent
-set tabstop=2                   " # of spaces that a tab counts for
-set softtabstop=2               " # of spaces in tab when editing
+set tabstop=4                   " # of spaces that a tab counts for
+set softtabstop=4               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
 set wrap                        " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
@@ -253,10 +284,10 @@ set autoindent                  " Minimal automatic indenting for any filetype
 " set nonumber                      " Show line number
 " set norelativenumber              " Relative numbers are good
 " set numberwidth=4               " Wider linenumbers
-set nocursorline                  " Show line
+set cursorline                  " Show line
 set nocursorcolumn
 set norelativenumber
-set synmaxcol=200
+" set synmaxcol=200
 " let loaded_matchparen = 1
 
 " splits
@@ -267,7 +298,7 @@ set splitbelow                  " Splitting will put the new window below
 set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 
 " scrollin
-set scrolloff=999               " Working line will always be in the center
+set scrolloff=8               " Working line will always be in the center
 
 " undo
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
@@ -307,11 +338,11 @@ endfunction
 set statusline=
 set statusline+=%t\ %M\ %{ReadOnly()}\ %w
 set statusline+=%=
-" set statusline+=%#error#%{LinterStatus()}%*
+set statusline+=%#error#%{LinterStatus()}%*
 set statusline+=\ %{GitInfo()}
 set statusline+=\ %y
 set statusline+=\ %3l:%-2.2c\ %P
-" set statusline+=\ %*
+set statusline+=\ %*
 
 " }}}
 " MAPPINGS {{{
@@ -319,6 +350,10 @@ set statusline+=\ %3l:%-2.2c\ %P
 " leader
 let mapleader = "\<space>"
 let maplocalleader = "\\"
+
+" sneak
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 " theme switcher
 nnoremap <Leader>cd :Thematic dark<CR>
@@ -334,9 +369,6 @@ vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
-
-" toggle spell
-nnoremap <leader>sp :set spell<CR>
 
 " motion across wrapped lines
 nnoremap j gj
@@ -384,7 +416,7 @@ nnoremap Q nop
 nnoremap <leader>tw :ToggleWrap<CR>
 
 " clear search highlight
-nnoremap <leader>cc :nohl<CR>
+nnoremap <esc><esc> :nohl<CR>
 
 " change/source config
 nnoremap <leader>vr :vsp $MYVIMRC<cr>
@@ -401,8 +433,6 @@ nnoremap <leader>rg :Rg<CR>
 " quick save
 inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> <esc>:w<cr>
-inoremap <D-s> <esc>:w<cr>
-nnoremap <D-s> <esc>:w<cr>
 nnoremap <leader>fs :w<CR>
 
 " split faster
@@ -415,12 +445,11 @@ nnoremap <leader>tk :tabprevious<CR>
 nnoremap <leader>tj :tabnext<CR>
 nnoremap <leader>th :tabfirst<CR>
 nnoremap <leader>tl :tablast<CR>
-" nnoremap <S-Tab> gt
-" nnoremap <silent> <S-t> :tabnew<CR>
+nnoremap <leader>tc :tabclose<CR>
 
 " jump between ALE warnings
-nmap <silent> <C-n> <Plug>(ale_next_wrap)
-nmap <silent> <C-p> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-n> <Plug>(ale_next_wrap)
+" nmap <silent> <C-p> <Plug>(ale_previous_wrap)
 
 " replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
@@ -464,28 +493,25 @@ command! ToggleWrap call ToggleWrap()
 " }}}
 " AUGROUPS {{{
 " markdown {{{
-augroup Markdown
-  autocmd!
-  autocmd BufRead *.txt set filetype=markdown
+augroup pandoc_syntax
+    autocmd!
+    autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown.pandoc
 augroup END
 " }}}
 " pencil {{{
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd  call pencil#init()
-  autocmd FileType text          call pencil#init()
-augroup END
+" augroup pencil
+  " autocmd!
+  " autocmd FileType markdown,mkd  call pencil#init()
+  " autocmd FileType text          call pencil#init()
+" augroup END
 " }}}
 " outlaw {{{
 augroup Outlaw
   autocmd!
+  autocmd BufNewFile,BufFilePre,BufRead *-outline.md set filetype=outlaw
   autocmd FileType outlaw setlocal tw=80 sw=4 ts=4 sts=0 et
 augroup END
 " }}}
-" }}}
-" COMMANDS {{{
-" command! -bang -nargs=? -complete=dir Files
-"     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 " }}}
 " NOTETAKING {{{
 " https://vimways.org/2019/personal-notetaking-in-vim/
@@ -509,5 +535,11 @@ func! ZettelEdit(...)
   endif
 endfunc
 
+" new note creation
 command! -nargs=* Zet call ZettelEdit(<f-args>)
+
+command! -bang -nargs=? -complete=dir NoteFiles
+    \ call fzf#vim#files('~/Documents/Notes/', {'options': ['--info=inline', '--preview', 'cat {}']}, <bang>0)
+
 " }}}
+
