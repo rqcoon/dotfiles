@@ -50,7 +50,10 @@ c.colors.statusbar.insert.bg = "#5f8787"
 c.colors.statusbar.insert.fg = "#ffffff"
 
 # Web fonts
+c.fonts.web.family.standard = 'Inter, sans-serif'
 c.fonts.web.family.sans_serif = 'Inter, sans-serif'
+c.fonts.web.family.serif = 'Georgia, serif'
+c.fonts.web.family.fixed = 'Iosevka Custom, monospace'
 
 # UI
 c.tabs.padding = {"bottom": 1, "left": 8, "right": 8, "top": 1}

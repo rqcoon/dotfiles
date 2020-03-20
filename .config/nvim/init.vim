@@ -7,19 +7,21 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-obsession'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
 
 " themes
 Plug 'romainl/Apprentice'
 Plug 'hardselius/warlock'
-Plug 'reedes/vim-thematic'
-Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
+Plug 'junegunn/seoul256.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
 
@@ -45,26 +47,35 @@ Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'mhinz/vim-startify'
 Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-cheat40'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'easymotion/vim-easymotion'
+" Plug 'justinmk/vim-sneak'
+Plug 'rhysd/clever-f.vim'
+
+" searching
+Plug 'mhinz/vim-grepper'
+let g:grepper = {}
+let g:grepper.tools = ["rg"]
+runtime autoload/grepper.vim
+let g:grepper.jump = 1
+nnoremap <leader>/ :GrepperRg<Space>
+nnoremap gs :Grepper -cword -noprompt<CR>
+xmap gs <Plug>(GrepperOperator)
 
 " tags
 " Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 
 " linting
 Plug 'dense-analysis/ale'
 
-" autocompletion
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'Shougo/deoplete-lsp'
-Plug 'lifepillar/vim-mucomplete'
+" Autocomplete
+Plug 'maralla/completor.vim'
+
+Plug 'tpope/vim-flagship'
 
 " lang
 Plug 'sheerun/vim-polyglot'
@@ -101,19 +112,6 @@ let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
 "     autocmd ColorScheme * call MyHighlights()
 " augroup END
 " colorscheme apprentice
-
-" }}}
-" Thematic {{{
-let g:thematic#themes = {
-\ 'dark' :{'colorscheme': 'selenized',
-\          'background': 'dark',
-\         },
-\ 'lite' :{'colorscheme': 'selenized',
-\          'background': 'light',
-\         },
-\ }
-" }}}
-" Taskpaper {{{
 
 " }}}
 " Wiki {{{
@@ -197,18 +195,6 @@ augroup fzf_statusline
 augroup END
 
 " }}}
-" Mucomplete {{{
-set completeopt+=menuone
-set completeopt+=noselect
-set shortmess+=c
-set belloff+=ctrlg
-let g:mucomplete#enable_auto_at_startup = 1
-
-" inoremap <silent> <expr> <plug>MyCR
-"     \ mucomplete#ultisnips#expand_snippet("\<cr>")
-" imap <cr> <plug>MyCR
-
-" }}}
 " Fastfold {{{
 " nmap zz <Plug>(FastFoldUpdate)
 let g:fastfold_savehook = 1
@@ -235,6 +221,20 @@ let g:tagbar_type_markdown = {
         \ 'k:Heading_L3'
     \ ]
 \ }
+" }}}
+" Completor {{{
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+" }}}
+" Flagship {{{
+let g:tabprefix = ''
+set laststatus=2
+set showtabline=2
+set guioptions-=e
+" }}}
+" sleuth {{{
+let g:sleuth_automatic = 1
 " }}}
 " }}}
 " SETTINGS {{{
@@ -307,44 +307,6 @@ set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 " }}}
-" STATUSLINE {{{
-
-function! ReadOnly()
-  if &readonly || !&modifiable
-    return ''
-  else
-    return ''
-endfunction
-
-function! GitInfo()
-  let git = fugitive#head()
-  if git != ''
-    return ' '.fugitive#head()
-  else
-    return ''
-endfunction
-
-function! LinterStatus() abort
-   let l:counts = ale#statusline#Count(bufnr(''))
-   let l:all_errors = l:counts.error + l:counts.style_error
-   let l:all_non_errors = l:counts.total - l:all_errors
-   return l:counts.total == 0 ? '' : printf(
-   \ ' %d⁄%d ',
-   \ l:all_non_errors,
-   \ l:all_errors
-   \)
-endfunction
-
-set statusline=
-set statusline+=%t\ %M\ %{ReadOnly()}\ %w
-set statusline+=%=
-set statusline+=%#error#%{LinterStatus()}%*
-set statusline+=\ %{GitInfo()}
-set statusline+=\ %y
-set statusline+=\ %3l:%-2.2c\ %P
-set statusline+=\ %*
-
-" }}}
 " MAPPINGS {{{
 
 " leader
@@ -356,8 +318,8 @@ map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
 " theme switcher
-nnoremap <Leader>cd :Thematic dark<CR>
-nnoremap <Leader>cl :Thematic lite<CR>
+nnoremap <Leader>cd :set bg=dark<CR>
+nnoremap <Leader>cl :set bg=light<CR>
 
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
@@ -465,7 +427,6 @@ nnoremap <leader>go :Goyo<CR>
 
 " quick folding
 nnoremap <tab> za
-nnoremap <S-tab> zA
 
 "}}}
 " FUNCTIONS {{{
@@ -497,13 +458,6 @@ augroup pandoc_syntax
     autocmd!
     autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown.pandoc
 augroup END
-" }}}
-" pencil {{{
-" augroup pencil
-  " autocmd!
-  " autocmd FileType markdown,mkd  call pencil#init()
-  " autocmd FileType text          call pencil#init()
-" augroup END
 " }}}
 " outlaw {{{
 augroup Outlaw

@@ -1,15 +1,18 @@
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
-PATH="$HOME/.scripts:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="$HOME/.scripts:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 export PATH
 export EDITOR=nvim
 export BROWSER=firefox
-export VISUAL=EDITOR
+export VISUAL=nvim
 
 export TODOTXT_DEFAULT_ACTION=ls
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_DEFAULT_OPS='--color=bw'
+
+export RESTIC_REPOSITORY='sftp:gadzhi.synology.me:/home/restic-backup'
+export RESTIC_PASSWORD_COMMAND='security find-generic-password -s backup-restic-repository -a restic_backup -w'
 
 # Wayland
 # export MOZ_ENABLE_WAYLAND=1

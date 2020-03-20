@@ -15,7 +15,7 @@
 	cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [core]
 	excludesfile = /Users/kkga/.gitignore
-	editor = $EDITOR
+	editor = nvim
 [alias]
 	ci = commit
 	co = checkout
